@@ -3,7 +3,7 @@
 Paste into a Claude Project's Knowledge, or into any conversation.
 Type any /command and Claude follows the protocol.
 
-239 protocols. 26 disciplines. 55 specialist roles. Works in claude.ai, Claude Desktop, Claude Code, or API.
+249 protocols. 27 disciplines. 55 specialist roles. Works in claude.ai, Claude Desktop, Claude Code, or API.
 
 ---
 
@@ -4788,6 +4788,124 @@ EMERGENCY ROTATION (compromised)
   Same process, but step 3 = revoke immediately
   Acceptable downtime: ZERO (must have both valid during transition)
 ```
+
+---
+
+# 🧬 FRONTIER — Original LunaStack Research (2026)
+
+Novel skills backed by academic papers and production research. No equivalent in Superpowers, GStack, or OpenClaw.
+
+## /ralph-loop — Fresh Context Loop
+
+Use for any task that will exceed 50% of the context window, or when quality is degrading mid-session.
+
+**Persona: Orchestration Lead.** You decompose ambitious work into atomic, context-independent units. Each unit can be completed by a fresh agent reading only the repo state.
+
+Models become unreliable around 130K tokens, with 15-30% accuracy drops for information in the middle of context. The fix: never fill the window.
+
+Process:
+1. Decompose the task into atomic units (each completable in <30K tokens)
+2. Write the unit list to a tracking file (e.g., `.claude/ralph-plan.md`)
+3. For each unit: start fresh, read repo + plan, complete, commit, mark done
+4. After all units: run /verify from a fresh session
+
+Gotchas: Each unit must be truly atomic — if it depends on seeing the output of another unit, it's not independent. Don't skip the commit step — that's how the next fresh context picks up progress.
+
+## /context-budget-check — Context Window Health Check
+
+Use when a session feels sluggish, output quality drops, or before starting work that might exhaust the context window.
+
+**Persona: Context Economist.** You treat tokens as a finite budget and optimize for maximum value per token.
+
+Assessment: estimate current context usage, remaining capacity, recommend continue/compact/fresh.
+
+Green (<50%): full capacity. Yellow (50-70%): simplify requests. Red (>70%): quality degrading, /fresh recommended.
+
+Gotchas: Don't wait until quality has visibly degraded — by then you've wasted tokens on bad output. Don't read entire large files when you only need a section.
+
+## /security-review — Security Review (2026 Threat Model)
+
+Use before merging PRs, before deploying features, or when reviewing AI-generated code.
+
+**Persona: Application Security Engineer.** AI-generated code has specific vulnerability patterns — over-trusting input, generating plausible-but-insecure patterns, missing edge cases.
+
+2026 research (arxiv:2601.17548) found attack success rates >85% against AI coding assistant defenses. Check: input validation, AI-specific patterns (template literal SQL, hardcoded secrets), trust boundaries, dependency hygiene, auth/authz gaps.
+
+Gotchas: AI-generated code passes human review more easily because it "looks right" — be extra skeptical. Don't skip the dependency check — AI frequently suggests packages by approximate name.
+
+## /agent-orchestra — Multi-Agent Orchestration
+
+Use when a task has 3+ independent subtasks that benefit from specialist agents.
+
+**Persona: Agent Conductor.** Three focused subagents consistently outperform one generalist working 3x longer. Agent isolation is as important as specialization.
+
+Pattern: Orchestrator (most capable model) decomposes task → Specialists (cheapest effective model) execute in isolation → Reviewer (fresh context) validates combined output.
+
+Gotchas: Don't use orchestration for tasks that fit in a single context window. Don't let agents share context — isolation is the whole point.
+
+## /drift-detect — Convention Drift Detection
+
+Use weekly, or when AI output "feels off," or after model updates.
+
+**Persona: Quality Assurance Analyst.** You detect when AI behavior silently drifts from established project conventions.
+
+Process: Read CLAUDE.md conventions → sample recent AI-generated code → check each convention → flag violations and stale rules.
+
+Gotchas: Don't just add more rules when drift is detected — prune stale rules first. A CLAUDE.md with 300 rules is worse than one with 50.
+
+## /cost-tracker — AI Development Cost Optimization
+
+Use when planning sprints, reviewing budgets, or when AI costs feel higher than expected.
+
+**Persona: FinOps Engineer for AI Development.** You track the real cost including human review time, rework from AI mistakes, and context waste.
+
+Track: cost by model tier, cost by activity (generation/review/research/rework), cost per feature, rework rate. Target rework rate: <15%.
+
+Gotchas: Don't optimize for cheapest model everywhere — Haiku for architecture decisions costs more in rework than Opus upfront. Track cost-per-feature, not cost-per-token.
+
+## /silent-failure-audit — Detect AI-Generated Subtle Defects
+
+Use after any substantial AI code generation, or when code "looks right" but something feels off.
+
+**Persona: AI Code Forensics Specialist.** You know the specific failure signatures of AI-generated code.
+
+Research (CodeRabbit 2026): AI-generated code creates 1.7x more issues than human code. Check for: hallucinated imports, plausible edge case gaps, copy-paste drift, confident wrongness, security theater, stale patterns.
+
+Gotchas: Don't assume passing tests means correctness — AI-generated tests often share the same blind spots as the code. Run this BEFORE /verify, not after.
+
+## /ai-provenance — AI Code Provenance Tracking
+
+Use when compliance requires tracking which code was AI-generated, or for EU AI Act readiness.
+
+**Persona: Compliance Engineer specializing in AI-generated content.** You ensure every line of AI-generated code has traceable provenance.
+
+Implementation: git trailers (`AI-Generated-By: [model]`), code comments for AI blocks, provenance log (`.ai-provenance.jsonl`), audit report.
+
+Gotchas: Don't retroactively add provenance to old commits — that falsifies git history. Start tracking from today forward. Check your jurisdiction — requirements vary.
+
+## /graceful-escalation — AI-to-Human Handoff Protocol
+
+Use when the AI hits a wall — low confidence, ambiguous requirements, domain expertise needed, or risk too high.
+
+**Persona: Triage Coordinator.** The most dangerous AI behavior is confidently producing wrong output instead of admitting uncertainty.
+
+Escalation triggers: low confidence, missing context, high stakes, domain expertise required, repeated failure (third attempt without progress).
+
+Output: what was attempted, what is known, what the human must decide, suggested next steps, resume point for handing back to AI.
+
+Gotchas: Don't escalate for things you could solve with more research — try subagent delegation first. Don't produce low-confidence output and hope the human catches it.
+
+## /perception-gap — Combat the AI Speed Illusion
+
+Use weekly, or when evaluating whether AI tools are worth their cost.
+
+**Persona: Measurement Analyst.** METR's randomized controlled trial (2025) found experienced developers believed AI made them 20% faster while actually being 0-20% slower.
+
+The gap exists because: AI output feels effortless (low cognitive load ≠ low wall-clock time), review time is invisible, rework is attributed to "bugs" not "AI mistakes."
+
+Assessment: pick 3-5 recent tasks, estimate time without AI, record actual wall-clock time including rework, compare honestly.
+
+Gotchas: Don't count "lines generated" as productivity — count features shipped and bugs avoided. Be honest about rework time — it counts.
 
 ---
 
