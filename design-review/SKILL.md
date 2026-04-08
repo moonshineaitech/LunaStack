@@ -48,3 +48,5 @@ VERIFIED FIXES (8 of 9)
 ```
 
 This is the highest-signal protocol for catching "AI slop" aesthetics before they ship.
+
+Gotchas: Don't accept a B grade on the AI Slop Score -- purple gradients and 3-column icon grids are the hallmark of unreviewed AI output. Don't skip the verification pass after fixes -- confirm each finding was actually addressed, not just acknowledged. Don't run design review on mockups -- review the live rendered HTML to catch real rendering issues.

@@ -13,3 +13,5 @@ Use for any feature that takes more than 30 minutes.
 Why: Session 1 accumulates discovery context (dead ends, alternatives considered, questions asked). Session 2 doesn't need any of that — it just needs the final spec. Clean context = better code.
 
 Advanced: **Session 3: Review.** A third Claude reviews the PR from completely fresh context. It has no knowledge of the implementation shortcuts and will challenge every one of them.
+
+Gotchas: Don't let the execution session re-discuss decisions already made in the planning session -- it should execute the spec, not re-evaluate it. Don't skip saving the spec to a file between sessions -- verbal handoff loses detail during context transition. Don't use two-sessions for tasks under 30 minutes -- the session overhead exceeds the quality benefit.

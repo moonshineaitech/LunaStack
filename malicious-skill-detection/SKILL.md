@@ -17,3 +17,5 @@ Detection signals:
 - Recently created accounts pushing too-good-to-be-true skills
 
 Tooling: combine /skill-security-audit with automated scanners. Never install based on stars alone — those can be bought.
+
+Gotchas: Don't install skills from accounts less than 90 days old without manual code review -- fresh accounts are the #1 vector for malicious skills. Don't trust star counts as a signal of safety -- stars can be purchased cheaply. Don't skip checking postinstall hooks -- they execute with full system permissions before you ever see the code.

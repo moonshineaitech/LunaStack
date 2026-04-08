@@ -33,3 +33,5 @@ COMPLIANCE
   □ Breach notification plan (72 hours for GDPR)
   □ Children's data? (COPPA if under 13)
 ```
+
+Gotchas: Don't collect data you don't have a legitimate purpose for -- every unnecessary data point is a liability in a breach. Don't assume your privacy policy matches actual practices -- audit the real data flows, not the documented ones. Don't forget about third-party processors -- every analytics tool, CRM, and email service that touches user data needs a DPA.

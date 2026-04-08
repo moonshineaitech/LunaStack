@@ -21,3 +21,5 @@ cd ../feature-search && claude
 ```
 
 Production teams run 4-5 parallel worktrees daily. Each session works on its own branch. Merge when ready.
+
+Gotchas: Don't create worktrees for dependent tasks -- parallel only works when tasks are truly independent. Don't forget to clean up worktrees after merging -- stale worktrees accumulate and confuse future sessions. Don't share a worktree between multiple Claude sessions -- each session needs its own isolated worktree to prevent file conflicts.

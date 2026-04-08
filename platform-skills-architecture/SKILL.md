@@ -26,4 +26,6 @@ Why: SKILL.md stays small (<5K tokens). References, examples, and scripts load o
 
 This is the same pattern Anthropic's official skills use. It's the right way.
 
+Gotchas: Don't put everything in SKILL.md -- keep the main file under 5K tokens and load references on demand. Don't forget progressive disclosure -- loading 50K of skill content when only 2K is needed wastes context budget. Don't put executable scripts in references/ -- those belong in scripts/ where they're explicitly invoked, not accidentally loaded as text.
+
 ---

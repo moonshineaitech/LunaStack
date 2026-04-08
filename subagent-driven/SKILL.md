@@ -19,3 +19,5 @@ Pattern:
 5. Critical issues block progress. Main agent doesn't continue until cleared.
 
 Why: Each task gets fresh context. The reviewer has no implementation bias. Two-stage review catches different bug types than one-stage.
+
+Gotchas: Don't skip the spec compliance review (Stage 1) and jump to code quality -- a well-written function that doesn't match the spec is a well-written bug. Don't let the main agent continue past critical issues found by subagents -- unresolved critical issues compound. Don't use subagent-driven for fewer than 3 tasks -- the overhead of spawning exceeds the benefit for small plans.

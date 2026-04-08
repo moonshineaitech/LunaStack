@@ -23,3 +23,5 @@ Success metric: [the one number that matters]
 Not doing: [what we're explicitly saying no to]
 Recommendation: [prioritized next steps with rationale]
 ```
+
+Gotchas: Don't try to optimize for all customer segments simultaneously -- pick one segment and win there first. Don't confuse a full roadmap with a strategy -- strategy is about what you're NOT doing. Don't set success metrics that the team can't influence directly -- a metric nobody can move is just decoration.

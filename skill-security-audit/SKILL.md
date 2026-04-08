@@ -43,3 +43,5 @@ VERDICT
 ```
 
 The 12% rule: assume any skill from an unvetted registry has a 1-in-8 chance of being malicious.
+
+Gotchas: Don't install skills from accounts with less than 6 months of commit history -- fresh accounts are the primary vector for malicious submissions. Don't skip reading the actual source code for skills that request network or credential access -- those permissions are the highest-risk. Don't assume "widely used" means safe -- popular registries had 12% malicious skills in audit.

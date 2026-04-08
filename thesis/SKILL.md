@@ -27,3 +27,5 @@ Cheapest test:       [how to validate in <1 week and <$500]
 Kill metric:         [number that means we're wrong — be specific]
 Pivot to:            [if wrong, what's the adjacent thesis?]
 ```
+
+Gotchas: Don't write a thesis without a kill metric -- if you can't define what failure looks like, you can't test the thesis. Don't test with more than $500 or 1 week of effort -- a thesis test should be cheap enough to run multiple. Don't skip the "pivot to" section -- knowing your adjacent thesis prevents starting from zero when the primary thesis fails.

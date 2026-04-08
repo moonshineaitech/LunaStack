@@ -30,3 +30,5 @@ WHAT WOULD CHANGE MY MIND: [the evidence that would make me reconsider]
 
 For two-way door decisions (easy to reverse): decide in 5 minutes, optimize later.
 For one-way door decisions (hard to reverse): invest more time, gather data, /spike if needed.
+
+Gotchas: Don't treat reversible decisions as one-way doors -- spending a week analyzing a two-way door is waste. Don't skip the "what would change my mind" question -- it prevents anchoring to your first instinct. Don't weight criteria equally -- force explicit weights to surface hidden priorities.

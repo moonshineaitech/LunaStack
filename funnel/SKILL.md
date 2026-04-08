@@ -22,3 +22,5 @@ HYPOTHESIS: Why they leave: [specific reason]
 EXPERIMENT: [what to test to improve this step]
 TARGET: Improve step [N] conversion from [X]% to [Y]%
 ```
+
+Gotchas: Don't optimize the wrong step -- fix the biggest drop-off first, not the easiest one. Don't compare funnels without segmenting by cohort -- aggregate numbers hide that new users and returning users have completely different patterns. Don't set improvement targets without a hypothesis for why they'll improve -- "we'll try harder" is not a strategy.

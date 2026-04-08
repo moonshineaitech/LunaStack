@@ -28,3 +28,5 @@ VERIFICATION
 ```
 
 Pattern: each project has its own `.lunastack/` directory with isolated memory. The compound learning loop runs within the project, not across.
+
+Gotchas: Don't write to global memory from client projects -- confidential data leaks across project boundaries. Don't skip the memory-leak-check before sensitive work -- cross-contamination can happen silently through shared conversation context. Don't assume worktree isolation provides memory isolation -- memory files may be shared at the user level.

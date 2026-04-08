@@ -15,3 +15,5 @@ Evidence: [what you found]
 Constraints discovered: [things you didn't know before]
 Recommendation: [proceed / abandon / second spike needed]
 ```
+
+Gotchas: Don't let a spike expand past its timebox -- the whole point is bounded investigation, not unbounded exploration. Don't build production code during a spike -- spike code is throwaway, meant to answer a question. Don't skip the report even if the answer is "no" -- negative results prevent the team from re-investigating the same dead end.

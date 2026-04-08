@@ -42,3 +42,5 @@ GROWTH OPPORTUNITIES
 LEARNINGS TO PROPAGATE
   [List of high-confidence learnings to add to global CLAUDE.md]
 ```
+
+Gotchas: Don't propagate learnings from one project to global CLAUDE.md without verifying they apply across projects. Don't compare tool efficiency without controlling for task complexity -- some tasks are inherently harder regardless of tool. Don't skip the shipping streak metric -- consecutive shipping days is the best leading indicator of team health.

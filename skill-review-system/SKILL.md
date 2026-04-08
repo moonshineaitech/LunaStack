@@ -35,3 +35,5 @@ ACCEPTANCE
 ```
 
 If you can't sustain human review of every submission, your registry will eventually be poisoned.
+
+Gotchas: Don't rely on automated review alone -- static analysis catches syntax but misses intent-level malice. Don't accept skills without running them on test cases -- a skill can pass static analysis and still behave maliciously at runtime. Don't skip the 90-day re-audit -- skills can be updated after acceptance to introduce malicious behavior.

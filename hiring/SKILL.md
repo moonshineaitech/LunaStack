@@ -23,3 +23,5 @@ Interview plan:
   Reference: [what to ask references specifically]
 Comp range: [market data if available]
 ```
+
+Gotchas: Don't list more than 5 must-have skills -- every additional requirement cuts your candidate pool in half. Don't use "culture fit" as a screen -- define specific behaviors you're looking for. Don't skip the anti-patterns section -- knowing what to screen OUT is as valuable as knowing what to screen IN.

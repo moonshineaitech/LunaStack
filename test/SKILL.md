@@ -13,4 +13,6 @@ What changed? (git diff). For each change:
 
 Report: tests added, coverage before → after, remaining gaps.
 
+Gotchas: Don't write tests after the code and call it TDD -- diff-aware test generation is retroactive, which is fine, but don't conflate it with test-first development. Don't test implementation details -- test behavior so tests survive refactors. Don't skip testing error paths -- the error handling code is where most production bugs live.
+
 ---

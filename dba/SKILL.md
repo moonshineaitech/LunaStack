@@ -23,3 +23,5 @@ Maintenance status: [vacuum, analyze, replication lag]
 Migration safety: [online-safe? reversible? tested at scale?]
 Recommendation: [top 3 fixes by performance impact]
 ```
+
+Gotchas: Don't add indexes without checking if they'll be used -- unused indexes slow writes and waste storage. Don't test migrations against small datasets -- a migration that takes 1 second on dev data can lock a production table for 30 minutes. Don't ignore connection pool exhaustion warnings -- when the pool runs dry, your entire app hangs.

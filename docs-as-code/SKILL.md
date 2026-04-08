@@ -33,4 +33,6 @@ EXPLANATION (understanding-oriented):
   - Can include opinion and context
 ```
 
+Gotchas: Don't mix tutorials with reference docs -- they serve different audiences and confuse both. Don't write docs that explain features instead of solving problems -- users don't care what it does, they care how to accomplish their goal. Don't skip testing your docs -- if the steps don't produce the stated result on a clean machine, the docs are broken.
+
 ---

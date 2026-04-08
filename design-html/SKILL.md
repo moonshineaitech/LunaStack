@@ -16,3 +16,5 @@ For each screen:
 6. Hand off as production-ready markup
 
 Why: HTML mockups are testable, reusable as production code, and force decisions about real constraints (responsive, accessibility, real text lengths) that Figma hides.
+
+Gotchas: Don't build HTML without reading DESIGN.md first -- designing without tokens produces inconsistent output. Don't skip the /design-review audit -- AI-generated HTML has predictable aesthetic failures that need explicit correction. Don't use placeholder text ("Lorem ipsum") -- real content lengths reveal layout problems that fake text hides.

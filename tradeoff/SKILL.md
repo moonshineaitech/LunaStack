@@ -20,3 +20,5 @@ Weighted:           7.05        6.30        6.55
 ```
 
 Plus qualitative: hidden costs, dealbreakers, reversibility.
+
+Gotchas: Don't weight all criteria equally -- force explicit weights to surface which factors actually matter most. Don't ignore dealbreakers in the weighted score -- a single 1/10 on a critical criterion should override a high weighted average. Don't skip the qualitative assessment -- hidden costs and reversibility often matter more than the numbers.

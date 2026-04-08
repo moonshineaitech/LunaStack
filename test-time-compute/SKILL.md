@@ -15,3 +15,5 @@ Patterns:
 - Session A implements approach 1. Session B implements approach 2. Compare.
 
 This is "test-time compute" — throwing more parallel reasoning at a problem instead of more sequential tokens.
+
+Gotchas: Don't use test-time compute for simple tasks -- the overhead of multiple sessions isn't justified for straightforward features. Don't let the review session see the implementation session's reasoning -- fresh context is the whole point. Don't skip comparing the approaches when running parallel implementations -- pick the best, don't just take the first one done.

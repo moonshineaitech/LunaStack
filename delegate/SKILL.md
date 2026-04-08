@@ -22,4 +22,6 @@ Anti-patterns: [known pitfalls for this type of task]
 
 Rule: if the person has to come back and ask clarifying questions, the delegation brief was incomplete.
 
+Gotchas: Don't delegate without defining "done" -- vague outcomes produce vague results. Don't skip the authority section -- people who don't know their decision boundary either block on everything or make wrong calls. Don't forget anti-patterns -- telling someone what NOT to do is as important as telling them what to do.
+
 ---

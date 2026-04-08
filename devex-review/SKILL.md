@@ -41,4 +41,6 @@ TOP 3 IMPROVEMENTS (by impact)
   3. ...
 ```
 
+Gotchas: Don't measure onboarding time with the person who set up the project -- use a fresh machine and a new team member. Don't let test run time creep above 30 seconds -- developers stop running tests when they're slow. Don't skip asking the team what slows them down -- metrics miss friction that humans feel daily.
+
 ---

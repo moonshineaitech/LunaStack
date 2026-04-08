@@ -13,3 +13,5 @@ After deploy, verify:
 - Database migrations completed
 
 Result: HEALTHY / DEGRADED (details) / UNHEALTHY (rollback recommended)
+
+Gotchas: Don't check only the health endpoint -- it can return 200 while the actual user flow is broken. Don't skip comparing error rates to historical baseline -- a "low" error rate may still be 5x normal. Don't wait more than 15 minutes to rollback an UNHEALTHY deploy -- every minute exposes more users to the issue.

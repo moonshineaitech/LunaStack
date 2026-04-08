@@ -17,3 +17,5 @@ Each session gets its own git worktree — parallel changes without conflicts.
 **Key insight: Claude Code's power comes from parallelization, not complexity. Multiple simple sessions beat one overloaded session.**
 
 For non-CC users: open multiple Claude conversations, each focused on one task. Don't try to do everything in one thread.
+
+Gotchas: Don't run parallel sessions on the same branch without worktrees -- you'll get merge conflicts constantly. Don't assign dependent tasks to parallel sessions -- dependencies force serial execution. Don't run more sessions than you can monitor -- unreviewed parallel output accumulates technical debt.

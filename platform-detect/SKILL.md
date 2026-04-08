@@ -32,3 +32,5 @@ RESULT
   Limitations: [list]
   Strategy: [which protocols to use, which to skip]
 ```
+
+Gotchas: Don't skip detection and assume Claude Code -- skills that use subagents will silently fail on platforms without subagent support. Don't hardcode platform-specific tool names in shared skills -- use /tool-mapping for translation. Don't assume shell access means full shell -- some platforms sandbox shell execution heavily.

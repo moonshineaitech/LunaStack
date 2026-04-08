@@ -17,3 +17,5 @@ Superpowers enforces YAGNI strictly:
 When you find yourself building something flexible, ask: "Did the spec ask for this flexibility?" If no, delete it.
 
 The simplest thing that works is also the easiest to change later when requirements emerge.
+
+Gotchas: Don't extract a pattern into an abstraction until you have 3 concrete examples -- premature abstraction creates the wrong abstraction. Don't add configuration options nobody asked for -- hardcode it and make it configurable when someone actually needs it. Don't build "framework" code for a single use case -- build specific, not general.

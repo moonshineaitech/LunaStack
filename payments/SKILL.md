@@ -31,4 +31,6 @@ WEBHOOK HANDLING
   NEVER respond non-200 unless signature is invalid
 ```
 
+Gotchas: Don't trust client-side price calculations -- always verify amounts server-side before charging. Don't skip idempotency keys on payment operations -- network retries without idempotency will double-charge users. Don't respond non-200 to webhooks on processing failure -- acknowledge receipt and retry from your own queue.
+
 ---

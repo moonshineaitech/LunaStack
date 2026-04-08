@@ -15,3 +15,5 @@ Given a system, feature, or codebase:
 5. Produce: proposed simplification with estimated effort and risk
 
 Rule: the best code is code that doesn't exist. The best feature is the one you don't build.
+
+Gotchas: Don't simplify code you don't understand -- use /dig first to learn why it exists. Don't merge similar-looking abstractions without checking all callers -- subtle differences break consumers. Don't count simplification by lines removed -- removing 100 lines of clear code and replacing with 20 lines of clever code is not simplification.

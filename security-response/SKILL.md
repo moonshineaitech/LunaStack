@@ -36,4 +36,6 @@ MEDIUM/LOW:
   3. Add to /verify checklist to prevent recurrence
 ```
 
+Gotchas: Don't investigate before mitigating a critical vulnerability -- disable the vulnerable feature first, then investigate. Don't overwrite logs during incident response -- they're evidence you'll need for the postmortem and potentially for legal. Don't skip notifying affected users if data was exposed -- GDPR requires notification within 72 hours.
+
 ---

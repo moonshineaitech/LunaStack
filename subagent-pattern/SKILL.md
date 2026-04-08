@@ -15,3 +15,5 @@ Best uses:
 - "Use subagents to search the codebase for all usages of [pattern]"
 
 Why: Context is your most precious resource. Every tool call, file read, and search result eats tokens. Subagents keep your main context clean for the actual implementation.
+
+Gotchas: Don't delegate tasks that need main context state to a subagent -- the subagent can't access the main agent's conversation history. Don't spawn subagents for tasks under 2 minutes -- the overhead of spawning exceeds the context savings. Don't trust subagent research without spot-checking -- subagents can hallucinate file paths and code patterns just like the main agent.

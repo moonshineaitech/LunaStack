@@ -27,3 +27,5 @@ NEXT 48 HOURS
   Watch: [metrics to monitor]
   Celebrate: [what went well — don't skip this]
 ```
+
+Gotchas: Don't skip the first 24 hours of monitoring -- most launch issues surface in the first day. Don't ignore unexpected behavior even if metrics look fine -- surprises are early indicators of misunderstood requirements. Don't forget to verify analytics are actually firing -- shipping without working tracking means flying blind.

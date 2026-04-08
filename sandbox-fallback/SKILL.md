@@ -23,3 +23,5 @@ Tool subset:            [list of unavailable tools]
 ADAPTATION STRATEGY
   [Specific adjustments for this sandbox]
 ```
+
+Gotchas: Don't assume /tmp is writable in all sandboxes -- some environments restrict all writes. Don't skip network tests without logging why -- silent failures in sandboxed environments hide real bugs. Don't write sandbox-specific workarounds in production code -- use adapter patterns so sandbox adaptations don't leak into normal operation.

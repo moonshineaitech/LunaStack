@@ -23,3 +23,5 @@ Error cost analysis: [false positive vs false negative impact]
 Serving plan: [batch / real-time, monitoring strategy]
 Recommendation: [approach + expected lift over baseline]
 ```
+
+Gotchas: Don't skip the baseline model -- if a simple heuristic gets 80% of the way there, the complex model may not be worth the maintenance. Don't optimize for offline metrics without validating online impact -- a model with great F1 can still hurt business outcomes. Don't deploy a model without monitoring for data drift -- yesterday's model on tomorrow's data degrades silently.

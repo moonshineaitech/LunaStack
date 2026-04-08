@@ -19,3 +19,5 @@ Use when rolling out LunaStack to a team — no vendored files in the repo.
 ```
 
 Key: the SessionStart hook runs at the START of every session, checks the LunaStack repo for updates (throttled), pulls if new, and continues. Zero friction for team members. No "did you update yet?" conversations.
+
+Gotchas: Don't vendor skill files into the project repo -- use the auto-updating hook so everyone stays current. Don't set the update throttle below 1 hour -- more frequent checks waste session startup time. Don't skip testing that the SessionStart hook works for new team members -- broken auto-update means the team silently falls behind.

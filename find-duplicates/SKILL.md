@@ -24,3 +24,5 @@ Category: User input validation
   → 3 functions, same intent, different implementations
   → Recommendation: extract to utils/validators.ts, delete the others
 ```
+
+Gotchas: Don't only look for syntactic duplication (copy-paste) -- semantic duplication (same intent, different implementation) is more common and harder to spot. Don't extract a shared function until you have 3+ duplicates -- premature abstraction creates the wrong abstraction. Don't consolidate without checking all callers -- subtle behavioral differences between "duplicates" can break consumers.

@@ -53,3 +53,5 @@ TRACE ANALYSIS
   Bottleneck: inventory check under high concurrency (no row lock)
   Failure point: payment method validation — if Stripe is down, order fails
 ```
+
+Gotchas: Don't trace only the happy path -- trace at least one failure scenario (timeout, auth failure, downstream service down). Don't skip counting total database queries -- N+1 problems are invisible without a trace. Don't forget to annotate trust boundaries -- every boundary crossing is a potential security vulnerability.

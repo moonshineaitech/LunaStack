@@ -15,3 +15,5 @@ Emerging framework from Cory Ondrejka (CTO Onebrief, ex-Google/Meta):
 **Pattern:** Instead of "build a notification system," say "users should never miss a time-sensitive update. How do we ensure that?" The AI reasons about the outcome and proposes the right architecture.
 
 Combine with /interview-me for best results: define the outcome you want, have Claude interview you about constraints, then let Claude design the solution.
+
+Gotchas: Don't define outcomes in terms of features ("build a notification system") -- define them in terms of user impact ("users never miss time-sensitive updates"). Don't skip constraint discovery -- the best outcome definition includes what's NOT acceptable. Don't let implementation details creep into the outcome definition -- outcomes should be technology-agnostic.

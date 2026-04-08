@@ -33,4 +33,6 @@ On Copilot CLI:
   - Limited subagent support
 ```
 
+Gotchas: Don't assume features available on Claude Code exist on other platforms -- subagent support and native skill tools vary significantly. Don't write platform-specific instructions in shared SKILL.md files -- use /platform-detect to branch at runtime. Don't test skills on one platform and ship for all -- each platform has different tool names and sandboxing.
+
 ---

@@ -37,4 +37,6 @@ EMERGENCY ROTATION (compromised)
   Acceptable downtime: ZERO (must have both valid during transition)
 ```
 
+Gotchas: Don't rotate credentials without a parallel-validity window -- immediately revoking old credentials causes downtime. Don't suppress rotation reminders -- credentials older than their rotation schedule are ticking time bombs. Don't store rotation history only in the secret manager -- maintain an audit log in a separate system for compliance.
+
 ---

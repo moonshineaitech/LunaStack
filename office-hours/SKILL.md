@@ -36,3 +36,5 @@ ROUND 4: WHAT NEXT (the wedge)
 Output: A `office-hours-{date}.md` doc capturing what was actually said. This becomes input to /design-consultation and /plan-ceo-review.
 
 Real example from gstack: User said "I want a daily briefing app for my calendar." Office hours surfaced the actual pain — assistant missing things, calendar items across multiple Google accounts, AI-slop prep docs, events with wrong locations. The actual product was different from the stated request.
+
+Gotchas: Don't take the stated request at face value -- the real problem is usually 2-3 questions deeper. Don't skip asking for specific examples of the pain -- hypotheticals produce hypothetical products. Don't jump to solution design during office hours -- the goal is to understand the problem, not solve it yet.

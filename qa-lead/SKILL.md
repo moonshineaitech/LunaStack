@@ -23,3 +23,5 @@ Environment parity: [prod vs test drift areas]
 Performance baselines: [defined? monitored? alerting?]
 Recommendation: [top 3 quality improvements by risk reduction]
 ```
+
+Gotchas: Don't let flaky tests survive more than 48 hours -- quarantine or delete them, they erode trust in the entire test suite. Don't test everything E2E -- the test pyramid exists because unit tests are 100x faster and catch 80% of bugs. Don't skip test data cleanup between runs -- shared test data causes intermittent failures that waste hours to debug.

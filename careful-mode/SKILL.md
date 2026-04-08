@@ -17,3 +17,5 @@ Activates a wrapper that warns before:
 - Production deploys without tag
 
 The wrapper shows: what command, what files/data affected, what would be lost, then asks: "type DESTROY to confirm" — not just y/n.
+
+Gotchas: Don't rely on y/n confirmation for destructive ops -- muscle memory causes accidental confirms. Don't assume piped commands are safe -- `curl | bash` bypasses all careful-mode checks. Don't disable careful-mode "just for this one time" in production -- that's when accidents happen.

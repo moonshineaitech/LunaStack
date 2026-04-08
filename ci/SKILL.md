@@ -32,3 +32,5 @@ RULES
   □ Feature branches auto-delete after merge
   □ Rollback is one button/command
 ```
+
+Gotchas: Don't let the total pipeline exceed 10 minutes -- developers will stop running it and push without testing. Don't tolerate flaky tests above 1% -- quarantine or delete them within 48 hours. Don't skip the security audit step to deploy faster -- that's how vulnerabilities ship.

@@ -33,3 +33,5 @@ AUDIT
   Every message → action logged with timestamp
   Anomaly detection: unusual command patterns alert immediately
 ```
+
+Gotchas: Don't allow free-form code execution over chat -- only predefined, audited workflows. Don't treat chat platform identity as authentication -- require paired device and per-action confirmation for risky operations. Don't skip audit logging -- every message-to-action must be traceable with timestamps for incident review.

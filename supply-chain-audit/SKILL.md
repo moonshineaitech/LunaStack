@@ -33,3 +33,5 @@ INSPECTION
 VERDICT
   APPROVE / REJECT / NEEDS SANDBOX
 ```
+
+Gotchas: Don't skip reading postinstall scripts -- they execute with full system permissions and are the highest-risk attack vector. Don't approve packages with obfuscated code (eval, base64, hex strings) without deep inspection. Don't assume a package is safe because it's popular -- popular packages have been hijacked through maintainer account compromise.

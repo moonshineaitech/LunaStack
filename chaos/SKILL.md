@@ -13,3 +13,5 @@ Test these scenarios:
 - Rate limit exceeded
 
 For each: what happened? Was the error message useful? Did the system recover?
+
+Gotchas: Don't run fault injection against production without a kill switch -- chaos engineering should be controlled, not chaotic. Don't only test happy-path failures -- test simultaneous failures (DB down + cache miss + retry storm). Don't forget to test the error messages themselves -- a 500 page that says "something went wrong" is a failure of fault design.
