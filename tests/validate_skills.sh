@@ -100,7 +100,7 @@ done
 echo -e "${dim}4. Checking structural integrity...${reset}"
 skill_count=$(ls -d "$REPO_DIR"/*/SKILL.md 2>/dev/null | wc -l)
 if [ "$skill_count" -lt 240 ]; then
-  fail "repo" "Expected ~245 skills, found only $skill_count"
+  fail "repo" "Expected ~249 skills, found only $skill_count"
 fi
 
 # Check for unsafe directory names
