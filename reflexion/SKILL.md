@@ -20,8 +20,3 @@ Gotchas: Max 2 reflection passes. More is diminishing returns. Don't be paralyze
 
 
 ---
-
-
----
-
-# 🎯 BEST PRACTICES — From Production Teams (sourced from top repos + Anthropic docs)

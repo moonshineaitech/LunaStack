@@ -12,5 +12,3 @@ Walk through key user flows as if clicking in a real browser:
 4. Report: flows tested, steps passed/failed, screenshots
 
 ---
-
-# ◎ CRAFT — Design Quality

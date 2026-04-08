@@ -27,7 +27,3 @@ Why: SKILL.md stays small (<5K tokens). References, examples, and scripts load o
 This is the same pattern Anthropic's official skills use. It's the right way.
 
 ---
-
-# 🌐 MULTI-HOST — Cross-Platform Compatibility (Claude Code, Codex, Cursor, Gemini, Copilot, OpenCode, more)
-
-LunaStack should work across all major AI coding harnesses, not just Claude Code. These protocols make protocols portable.

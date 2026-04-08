@@ -24,5 +24,3 @@ Bottom-up validation: [does this math check out against comparables?]
 ```
 
 ---
-
-# 🔧 INFRASTRUCTURE — Systems and Operations

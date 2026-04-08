@@ -12,5 +12,3 @@ When given a design reference:
 4. Fix until ≥95% accuracy
 
 ---
-
-# ▸ DELIVERY — Ship Safely

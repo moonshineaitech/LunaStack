@@ -14,5 +14,3 @@ Review the session or project history for patterns:
 Produce recommendations for process improvement.
 
 ---
-
-# ◍ INQUIRY — Understand Before Building
