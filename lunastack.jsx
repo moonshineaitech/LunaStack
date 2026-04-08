@@ -38,8 +38,10 @@ export default function App(){
   useEffect(()=>{setTimeout(()=>setV(true),80)},[]);
   return(
   <div style={{fontFamily:"'DM Sans',system-ui,sans-serif",background:C.bg,color:C.sil,minHeight:"100vh",overflow:"auto"}}>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" crossOrigin="anonymous" />
   <style>{`
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
     *{box-sizing:border-box;margin:0;padding:0}
     ::selection{background:${C.a};color:${C.bg}}
     .row:hover{background:${C.h}!important}
