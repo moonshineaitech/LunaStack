@@ -1,0 +1,41 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# AI agent working directories
+.claude/
+.worktrees/
+.private-journal/
+
+# Node
+node_modules/
+.npmrc
+.yarnrc.yml
+
+# Environment and secrets
+.env
+.env.local
+*.pem
+*.key
+*.p12
+credentials.json
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup

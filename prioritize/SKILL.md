@@ -14,5 +14,3 @@ Given a list of tasks/features/bugs:
 4. For the top 3: specific next action, owner, deadline
 
 ---
-
-# 🔬 RESEARCH — Understand Users and Markets

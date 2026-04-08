@@ -17,7 +17,3 @@ Decision points:
 For non-CC users: the equivalent is "let me describe the layout in ASCII first, then we can iterate on the actual design after we agree on structure."
 
 ---
-
-# 🏗️ GSTACK TEAM — Production Sprint Pipeline (from garrytan/gstack v0.15.14.0)
-
-GStack (66K stars, 28 commands by April 2026) is Garry Tan's exact Claude Code setup. 600K lines in 60 days, 10K LOC/week, 100 PRs/week. Encodes "explicit gears" — planning is not review, review is not shipping.

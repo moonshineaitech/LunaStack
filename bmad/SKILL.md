@@ -18,10 +18,3 @@ BMAD (found in production use by ranthebuilder.cloud) is an AI SDLC framework th
 In LunaStack terms: /inquiry → /spec → /plan is the BMAD equivalent. The key insight is that the spec should be written to a FILE and then a FRESH session reads and executes it.
 
 ---
-
-
----
-
-# 🌀 SUPERPOWERS PIPELINE — Linear Discipline (from obra/superpowers v5.0.7)
-
-The Superpowers methodology (94K stars on superpowers-dev) eliminates the "improvisational" nature of AI coding. Linear pipeline. Mandatory checkpoints. No shortcuts.

@@ -26,5 +26,3 @@ Your context window is ~200K tokens. Here's how it gets eaten:
 Monitor: If Claude starts contradicting earlier instructions or forgetting decisions, you've hit context limits.
 
 ---
-
-# 🧰 WORKFLOW PATTERNS — From Top Production Teams

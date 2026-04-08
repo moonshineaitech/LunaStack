@@ -34,5 +34,3 @@ EXPLANATION (understanding-oriented):
 ```
 
 ---
-
-# 📊 GROWTH — Metrics, Experiments, Optimization

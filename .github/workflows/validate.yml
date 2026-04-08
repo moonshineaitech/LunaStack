@@ -1,0 +1,87 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Check all skill directories have SKILL.md
+        run: |
+          errors=0
+          for dir in */; do
+            # Skip hidden dirs and .github
+            [[ "$dir" == .* ]] && continue
+            # Security: skip directory names with unsafe characters
+            [[ "$(basename "$dir")" =~ ^[a-z0-9][a-z0-9-]*/?$ ]] || { printf 'WARNING: skipping unsafe dir name: %s\n' "$dir"; continue; }
+            if [ ! -f "$dir/SKILL.md" ]; then
+              printf 'ERROR: %s is missing SKILL.md\n' "$dir"
+              errors=$((errors + 1))
+            fi
+          done
+          if [ "$errors" -gt 0 ]; then
+            printf '%d directories missing SKILL.md\n' "$errors"
+            exit 1
+          fi
+          echo "All skill directories have SKILL.md"
+
+      - name: Check SKILL.md files have frontmatter with name and description
+        run: |
+          errors=0
+          for skill in */SKILL.md; do
+            if ! head -1 "$skill" | grep -q '^---'; then
+              printf 'ERROR: %s missing YAML frontmatter opener\n' "$skill"
+              errors=$((errors + 1))
+              continue
+            fi
+            # Check for name field
+            if ! sed -n '2,/^---$/p' "$skill" | grep -q '^name:'; then
+              printf 'ERROR: %s missing name in frontmatter\n' "$skill"
+              errors=$((errors + 1))
+            fi
+            # Check for description field
+            if ! sed -n '2,/^---$/p' "$skill" | grep -q '^description:'; then
+              printf 'ERROR: %s missing description in frontmatter\n' "$skill"
+              errors=$((errors + 1))
+            fi
+          done
+          if [ "$errors" -gt 0 ]; then
+            printf '%d frontmatter issues found\n' "$errors"
+            exit 1
+          fi
+          echo "All SKILL.md files have valid frontmatter"
+
+      - name: Check for content leakage (skills should be self-contained)
+        run: |
+          errors=0
+          for skill in */SKILL.md; do
+            lines=$(wc -l < "$skill")
+            if [ "$lines" -gt 200 ]; then
+              printf 'WARNING: %s is %d lines (may contain leaked content)\n' "$skill" "$lines"
+              errors=$((errors + 1))
+            fi
+          done
+          if [ "$errors" -gt 0 ]; then
+            printf '%d skills exceed 200 lines -- check for content leakage from LunaStack.md\n' "$errors"
+            exit 1
+          fi
+          echo "All SKILL.md files are reasonable length"
+
+      - name: Check skill count matches README
+        run: |
+          count=$(ls -d */SKILL.md 2>/dev/null | wc -l)
+          printf 'Found %d skills\n' "$count"
+          if [ "$count" -lt 230 ]; then
+            printf 'WARNING: Expected ~239 skills, found only %d\n' "$count"
+            exit 1
+          fi
+          echo "Skill count looks good: $count"

@@ -20,8 +20,3 @@ Top optimization: [what to change, est. savings]
 ```
 
 ---
-
-# ▭ SPECIFICATION — Define What to Build
-
-
-Gotchas: At $50/month, don't spend a week optimizing. At $5,000/month, do. Network egress and third-party API costs are usually the surprise, not compute.

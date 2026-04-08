@@ -11,6 +11,15 @@ Use when designing dashboards, defining metrics, or building reporting systems.
 
 Dashboard rules: every dashboard answers ONE question. Metrics have definitions (written, not assumed). Show trend + target + status (not just the number). Drill-down from summary to detail. Update frequency matches decision frequency (real-time for ops, daily for strategy). Eliminate any chart that nobody acts on.
 
----
-
-### PEOPLE ROLES
+Given a reporting need, metric definition, or dashboard review:
+```
+BI ASSESSMENT
+═════════════
+Core question answered: [the ONE question this dashboard serves]
+Metric definitions: [each metric, written precisely]
+Visualization: [trend + target + status for each KPI]
+Drill-down path: [summary -> detail navigation]
+Update frequency: [matches decision cadence?]
+Actionability audit: [charts that drive action vs charts to cut]
+Recommendation: [top 3 changes to improve decision-making]
+```

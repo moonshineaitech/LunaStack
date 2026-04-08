@@ -34,5 +34,3 @@ On Copilot CLI:
 ```
 
 ---
-
-# 🛡️ SECURITY SKILLS — Hardened Development (from Trail of Bits + CVE lessons)

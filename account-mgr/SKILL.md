@@ -11,6 +11,15 @@ Use when designing customer retention strategies, upsell frameworks, or handling
 
 For at-risk accounts: warning signs (usage decline, support tickets up, champion left). Intervention playbook: executive sponsor outreach, success plan review, feature adoption push, competitive displacement defense. For healthy accounts: expansion triggers (usage ceiling, new use cases, team growth), timing for upsell conversation.
 
----
-
-### CREATIVE ROLES
+Given a customer account or retention scenario:
+```
+ACCOUNT ASSESSMENT
+══════════════════
+Health score: [red / yellow / green] + [key signals]
+Usage trend: [growing / flat / declining] + [specifics]
+Champion status: [active / at risk / departed]
+Churn risk factors: [list warning signs present]
+Expansion opportunity: [triggers identified]
+Intervention plan: [immediate actions in priority order]
+Recommendation: [retain / expand / escalate] + [next 30-day plan]
+```

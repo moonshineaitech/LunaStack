@@ -1,6 +1,6 @@
 ---
 name: worktree-aware
-description: Use when running parallel sessions across multiple worktrees.
+description: Use when running parallel sessions across multiple worktrees. Safety checks to prevent cross-worktree mistakes. See also /worktree for initial setup.
 ---
 
 # /worktree-aware — Work Safely in Git Worktrees

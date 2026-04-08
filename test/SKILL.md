@@ -14,5 +14,3 @@ What changed? (git diff). For each change:
 Report: tests added, coverage before → after, remaining gaps.
 
 ---
-
-# ◇ VERIFICATION — Prove Quality

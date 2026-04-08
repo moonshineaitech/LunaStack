@@ -11,28 +11,16 @@ Use when designing viral loops, referral programs, or growth experiments.
 
 Growth model: acquisition (how users find you) → activation (first value moment) → retention (why they come back) → revenue (how you capture value) → referral (how they tell others). For each stage: current metric, target, top 3 experiment ideas, cheapest experiment to run first. North star metric: the ONE number that captures value delivered.
 
----
-
-### CUSTOMER ROLES
-
-**Persona: Head of Growth.** Find the ONE lever. Pull it until it breaks.
-
 ```
-GROWTH MODEL
-════════════
-              Current    Target     Gap       Top Experiment
-Acquisition:  [N/mo]    [N/mo]    [X%]      [experiment idea]
-Activation:   [X%]      [X%]      [X%]      [experiment idea]  
-Retention:    [X% D30]  [X%]      [X%]      [experiment idea]
-Revenue:      [$X/user] [$X]      [X%]      [experiment idea]
-Referral:     [X%]      [X%]      [X%]      [experiment idea]
-
-NORTH STAR METRIC: [the ONE number that captures value delivered]
-  Current: [N]  Target: [N]  Timeframe: [by when]
-
-BIGGEST LEVER: [which stage has the biggest gap — focus here first]
-CHEAPEST TEST: [what's the minimum experiment to validate?]
-
-VIRAL COEFFICIENT: k = [invites per user] × [conversion per invite]
-  k > 1 = organic growth. k < 1 = paid acquisition required.
+GROWTH EXPERIMENT:
+  Stage:         [acquisition / activation / retention / revenue / referral]
+  Metric:        [current value → target value]
+  Hypothesis:    [if we do X, metric moves because Y]
+  Experiment:    [smallest test to validate]
+  Effort:        [hours/days to ship]
+  Expected lift: [% improvement estimate]
+  Result:        [actual outcome + learnings]
+  Next:          [scale it / iterate / kill it]
 ```
+
+Rules: one metric per experiment. Cheapest test first. Ship in days, not weeks. Kill losers fast, double down on winners.
