@@ -17,4 +17,16 @@ Why this works: Claude works best when it can commit to a structured plan. Forci
 
 For non-CC users: Step 1: "Plan how you'd build this. List every file you'd change and why. Don't write code yet." Step 2: Review and approve the plan. Step 3: "Now execute the plan."
 
+```
+PLAN → EXECUTE
+═══════════════
+Phase:       [PLANNING / EXECUTING / REVIEWING]
+Plan steps:  [count]
+Step 1: [description]  [files]  [status: planned/done/reverted]
+Step 2: [description]  [files]  [status: planned/done/reverted]
+...
+Execution:   [auto-accept mode on/off]
+Diff review:  [pending / accepted / reverted]
+```
+
 Gotchas: If something goes sideways during execution, STOP and re-plan immediately. Don't try to patch a broken plan.

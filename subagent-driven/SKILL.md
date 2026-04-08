@@ -20,4 +20,18 @@ Pattern:
 
 Why: Each task gets fresh context. The reviewer has no implementation bias. Two-stage review catches different bug types than one-stage.
 
+```
+SUBAGENT EXECUTION
+═══════════════════
+Task 1: [description] → Subagent: [spawned/complete]
+  Stage 1 — Spec compliance: [pass/fail]
+  Stage 2 — Code quality:    [pass/fail]
+Task 2: [description] → Subagent: [spawned/complete]
+  Stage 1 — Spec compliance: [pass/fail]
+  Stage 2 — Code quality:    [pass/fail]
+...
+Critical issues: [count] ([resolved/blocking])
+Overall:         [count] tasks complete, [count] reviewed
+```
+
 Gotchas: Don't skip the spec compliance review (Stage 1) and jump to code quality -- a well-written function that doesn't match the spec is a well-written bug. Don't let the main agent continue past critical issues found by subagents -- unresolved critical issues compound. Don't use subagent-driven for fewer than 3 tasks -- the overhead of spawning exceeds the benefit for small plans.

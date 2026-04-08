@@ -13,3 +13,14 @@ Universal skill rules:
 3. **Don't require subagents** — provide a fallback for platforms without subagent support
 4. **Don't use !`shell` injection** — that's a Claude Code feature; use platform-neutral language
 5. **Test on at least 2 platforms** before publishing
+
+```
+UNIVERSAL SKILL CHECK
+══════════════════════
+Rule 1 — No tool names:     [pass/fail] [offending lines]
+Rule 2 — Platform notes:    [pass/fail] [platforms covered]
+Rule 3 — No subagent req:   [pass/fail] [fallback provided]
+Rule 4 — No shell injection: [pass/fail] [offending lines]
+Rule 5 — Multi-platform test: [pass/fail] [platforms tested]
+VERDICT: [UNIVERSAL / NEEDS FIXES — list]
+```

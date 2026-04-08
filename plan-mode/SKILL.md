@@ -18,4 +18,18 @@ Pattern:
 4. Approve → Claude executes with clean focus
 5. Review the output
 
+```
+PLAN MODE
+══════════
+Status:       [EXPLORING / QUESTIONING / PLAN READY / APPROVED]
+Files read:   [count]
+Questions:    [count asked / count resolved]
+Plan steps:   [count]
+  1. [step description]  [files affected]
+  2. [step description]  [files affected]
+  ...
+Confidence:   [high/medium/low]
+Approval:     [pending / approved / rejected]
+```
+
 Gotchas: Don't let Claude start coding before the plan is approved -- unguided attempts succeed only ~33% of the time. Don't skip the question-asking phase -- Claude reading code in silence misses requirements only you know. Don't approve a plan you don't understand -- if you can't explain the plan, it's not ready.
