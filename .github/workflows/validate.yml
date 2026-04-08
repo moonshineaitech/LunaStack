@@ -80,8 +80,8 @@ jobs:
         run: |
           count=$(ls -d */SKILL.md 2>/dev/null | wc -l)
           printf 'Found %d skills\n' "$count"
-          if [ "$count" -lt 230 ]; then
-            printf 'WARNING: Expected ~239 skills, found only %d\n' "$count"
+          if [ "$count" -lt 240 ]; then
+            printf 'WARNING: Expected ~245 skills, found only %d\n' "$count"
             exit 1
           fi
           echo "Skill count looks good: $count"
