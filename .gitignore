@@ -19,7 +19,23 @@ Desktop.ini
 
 # Node
 node_modules/
+.npmrc
+.yarnrc.yml
 
-# Environment
+# Environment and secrets
 .env
 .env.local
+*.pem
+*.key
+*.p12
+credentials.json
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
