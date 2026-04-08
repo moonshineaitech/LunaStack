@@ -12,6 +12,14 @@ Desktop.ini
 *.sublime-project
 *.sublime-workspace
 
+# AI agent working directories
+.claude/
+.worktrees/
+.private-journal/
+
+# Node
+node_modules/
+
 # Environment
 .env
 .env.local

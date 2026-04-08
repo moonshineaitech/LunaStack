@@ -29,17 +29,54 @@ jobs:
           fi
           echo "All skill directories have SKILL.md"
 
-      - name: Check SKILL.md files have frontmatter
+      - name: Check SKILL.md files have frontmatter with name and description
         run: |
           errors=0
           for skill in */SKILL.md; do
             if ! head -1 "$skill" | grep -q '^---'; then
-              echo "ERROR: $skill missing YAML frontmatter"
+              echo "ERROR: $skill missing YAML frontmatter opener"
+              errors=$((errors + 1))
+              continue
+            fi
+            # Check for name field
+            if ! sed -n '2,/^---$/p' "$skill" | grep -q '^name:'; then
+              echo "ERROR: $skill missing 'name' in frontmatter"
+              errors=$((errors + 1))
+            fi
+            # Check for description field
+            if ! sed -n '2,/^---$/p' "$skill" | grep -q '^description:'; then
+              echo "ERROR: $skill missing 'description' in frontmatter"
               errors=$((errors + 1))
             fi
           done
           if [ "$errors" -gt 0 ]; then
-            echo "$errors skills missing frontmatter"
+            echo "$errors frontmatter issues found"
             exit 1
           fi
-          echo "All SKILL.md files have frontmatter"
+          echo "All SKILL.md files have valid frontmatter"
+
+      - name: Check for content leakage (skills should be self-contained)
+        run: |
+          errors=0
+          for skill in */SKILL.md; do
+            lines=$(wc -l < "$skill")
+            if [ "$lines" -gt 200 ]; then
+              echo "WARNING: $skill is $lines lines (may contain leaked content)"
+              errors=$((errors + 1))
+            fi
+          done
+          if [ "$errors" -gt 0 ]; then
+            echo "$errors skills exceed 200 lines -- check for content leakage from LunaStack.md"
+            exit 1
+          fi
+          echo "All SKILL.md files are reasonable length"
+
+      - name: Check skill count matches README
+        run: |
+          count=$(ls -d */SKILL.md 2>/dev/null | wc -l)
+          echo "Found $count skills"
+          if [ "$count" -lt 230 ]; then
+            echo "WARNING: Expected ~239 skills, found only $count"
+            exit 1
+          fi
+          echo "Skill count looks good: $count"
