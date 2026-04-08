@@ -29,7 +29,7 @@
 **Method 2 — Claude Code CLI**
 
 ```bash
-git clone https://github.com/YOU/lunastack ~/lunastack
+git clone https://github.com/moonshineaitech/LunaStack ~/lunastack
 cd ~/lunastack && ./setup.sh --global    # symlinks 239 skills
 claude "/luna"                              # start
 ```
