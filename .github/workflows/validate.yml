@@ -1,0 +1,45 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check all skill directories have SKILL.md
+        run: |
+          errors=0
+          for dir in */; do
+            # Skip hidden dirs and .github
+            [[ "$dir" == .* ]] && continue
+            if [ ! -f "$dir/SKILL.md" ]; then
+              echo "ERROR: $dir is missing SKILL.md"
+              errors=$((errors + 1))
+            fi
+          done
+          if [ "$errors" -gt 0 ]; then
+            echo "$errors directories missing SKILL.md"
+            exit 1
+          fi
+          echo "All skill directories have SKILL.md"
+
+      - name: Check SKILL.md files have frontmatter
+        run: |
+          errors=0
+          for skill in */SKILL.md; do
+            if ! head -1 "$skill" | grep -q '^---'; then
+              echo "ERROR: $skill missing YAML frontmatter"
+              errors=$((errors + 1))
+            fi
+          done
+          if [ "$errors" -gt 0 ]; then
+            echo "$errors skills missing frontmatter"
+            exit 1
+          fi
+          echo "All SKILL.md files have frontmatter"
