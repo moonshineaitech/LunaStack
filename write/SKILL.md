@@ -15,3 +15,16 @@ Rules:
 5. **Lead with the conclusion.** Don't build up to the point. State it, then support it.
 
 When reviewing text: mark every word that can be removed, every passive construction, every vague claim.
+
+```
+WRITING REVIEW
+═══════════════
+Words cut:              [count] unnecessary words removed
+Passive → Active:       [count] constructions fixed
+Vague → Specific:       [count] claims sharpened
+Sentences split:        [count] compound sentences separated
+Conclusion moved up:    [yes/no]
+Original word count:    [count]
+Final word count:       [count]
+Clarity improvement:    [summary]
+```

@@ -16,5 +16,18 @@ description: Detailed Specification.
 7. **Out of scope** — explicitly what this does NOT include
 8. **Open questions** — decisions needed before implementation
 
+```
+SPECIFICATION
+══════════════
+Summary:            [1 paragraph]
+User stories:       [count] defined
+Acceptance criteria: [count] GIVEN/WHEN/THEN clauses
+Edge cases:         [count] identified
+Failure modes:      [count] documented
+Non-functional:     [performance / security / a11y requirements]
+Out of scope:       [list of exclusions]
+Open questions:     [count remaining]
+Status:             [READY / BLOCKED on [question]]
+```
 
 Gotchas: If the spec is >3 pages, the feature is too big — split it. Implementation details don't belong in specs (say WHAT, not HOW). If you can't define 'done,' the spec isn't ready.

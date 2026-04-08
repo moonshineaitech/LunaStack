@@ -19,4 +19,16 @@ The pattern: DON'T verify for Claude. Give Claude the TOOLS to verify itself. Th
 
 For non-CC users: after asking Claude to write code, always ask "Now write tests for this and tell me if they pass."
 
+```
+VERIFY LOOP
+════════════
+Verification type: [tests / browser / linter / simulator]
+Iteration 1: [change made] → [verify result: pass/fail] → [fix if needed]
+Iteration 2: [change made] → [verify result: pass/fail] → [fix if needed]
+...
+Total iterations: [count]
+Final status:     [all checks passing]
+Quality delta:    [issues caught and fixed by self-verification]
+```
+
 Gotchas: Don't verify FOR Claude -- give Claude the tools to verify itself, which creates a self-correcting feedback loop. Don't skip the browser testing step for UI work -- code that compiles doesn't mean it looks right. Don't assume passing tests mean the feature works -- tests only check what you thought to test.

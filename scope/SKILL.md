@@ -15,5 +15,15 @@ Evaluate the project against five modes and recommend one:
 
 For each mode: what it would look like, evidence, risk, effort. Recommend one.
 
+```
+SCOPE CALIBRATION
+══════════════════
+EXPAND:           [description] — risk: [X] effort: [X]
+SELECTIVE EXPAND: [description] — risk: [X] effort: [X]
+HOLD:             [description] — risk: [X] effort: [X]
+CONTRACT:         [description] — risk: [X] effort: [X]
+PIVOT:            [description] — risk: [X] effort: [X]
+RECOMMENDATION:   [mode] — [rationale]
+```
 
 Gotchas: Don't always recommend expand — smallest scope that tests the thesis. Don't contract out of fear. Pivot requires evidence, not vibes. This should take 10 minutes, not an hour.

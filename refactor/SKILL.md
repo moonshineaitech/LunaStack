@@ -12,5 +12,15 @@ description: Safe Restructuring.
 
 Never refactor and add features simultaneously.
 
+```
+REFACTOR REPORT
+════════════════
+Baseline:   [test count] tests, [pass count] passing, [coverage]% coverage
+Move 1: [extract/inline/rename/move] [target] → tests: [green/red]
+Move 2: [extract/inline/rename/move] [target] → tests: [green/red]
+...
+Final:      [test count] tests, [pass count] passing, [coverage]% coverage
+Behavioral change: [none — verified]
+```
 
 Gotchas: Never refactor and add features simultaneously. If coverage is low, write characterization tests BEFORE refactoring. Refactoring without a safety net is rewriting.

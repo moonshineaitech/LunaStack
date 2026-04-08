@@ -13,7 +13,18 @@ Pause. Review what you just produced: "What's wrong with this? What did I miss? 
 
 Fix the issues. Do ONE more pass. Ship the corrected version.
 
-
+```
+REFLEXION PASS
+═══════════════
+Pass 1 — Self-review:
+  Issue found: [description]  → Fix: [action taken]
+  Issue found: [description]  → Fix: [action taken]
+Pass 2 — Final check:
+  Issue found: [description]  → Fix: [action taken]
+  No further issues: [ship]
+Total issues caught: [count]
+Status: [SHIPPED — corrected]
+```
 
 Gotchas: Max 2 reflection passes. More is diminishing returns. Don't be paralyzed — reflect, fix, ship.
 

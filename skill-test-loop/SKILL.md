@@ -18,4 +18,19 @@ Process (RED → GREEN → REFACTOR for documentation):
 
 Core principle: If you didn't watch an agent fail without the skill, you don't know if the skill teaches the right thing.
 
+```
+SKILL TEST RESULTS
+═══════════════════
+Scenario 1: [description]
+  WITHOUT skill: [agent behavior — baseline failure]
+  WITH skill:    [agent behavior — pass/fail]
+Scenario 2: [description]
+  WITHOUT skill: [agent behavior — baseline failure]
+  WITH skill:    [agent behavior — pass/fail]
+...
+Pass rate:   [X/Y scenarios]
+Loopholes:   [list of gaps agents exploited]
+Status:      [RED / GREEN / REFACTOR]
+```
+
 Gotchas: Don't quiz subagents like a gameshow. Test their actual behavior on realistic scenarios. The first time you do this, your "perfect score" is probably the agents being polite, not the skill working.
