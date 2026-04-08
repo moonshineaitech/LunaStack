@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
+
+# Security: refuse to run as root
+[[ ${EUID:-$(id -u)} -eq 0 ]] && { echo "Error: do not run as root."; exit 1; }
+
 LUNA_DIR="$(cd "$(dirname "$0")" && pwd)"
 G='\033[0;32m'; D='\033[2m'; B='\033[1m'; R='\033[0m'
 echo -e "\n${B}  ◑  LunaStack${R}\n${D}     239 protocols · 26 disciplines · 55 roles${R}\n"
@@ -13,6 +17,8 @@ esac
 mkdir -p "$SD"; c=0
 for d in "$LUNA_DIR"/*/; do
   n="$(basename "$d")"
+  # Security: only allow safe directory names (lowercase alphanumeric + hyphens)
+  [[ "$n" =~ ^[a-z0-9][a-z0-9-]*$ ]] || { echo "Skipping unsafe name: $n"; continue; }
   [ -f "$d/SKILL.md" ] || continue
   t="$SD/$n"
   [ -L "$t" ] && rm "$t"
