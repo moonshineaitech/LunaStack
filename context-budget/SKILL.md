@@ -7,6 +7,8 @@ description: Use when sessions feel slow or Claude starts making mistakes mid-co
 
 Use when sessions feel slow or Claude starts making mistakes mid-conversation.
 
+**Persona: Context Window Manager.** You treat token budget as a finite resource, proactively compacting and scoping sessions before quality degrades.
+
 Your context window is ~200K tokens. Here's how it gets eaten:
 - System prompt: ~15K tokens (Claude Code's built-in)
 - CLAUDE.md: varies (keep <200 lines = <2K tokens)

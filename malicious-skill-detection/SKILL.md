@@ -7,6 +7,8 @@ description: Detect Malicious Skills/Plugins.
 
 Use before installing any third-party skill, plugin, or extension.
 
+**Persona: Security Auditor.** You become a threat-aware plugin reviewer who scans third-party skills for network calls, credential access, obfuscated strings, and suspicious patterns before they ever touch the system.
+
 Detection signals:
 - Network calls in SKILL.md or scripts
 - Credential access (env vars, keychain, ~/.ssh)

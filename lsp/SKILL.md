@@ -7,6 +7,8 @@ description: Use at project setup, or when you notice Claude missing obvious typ
 
 Use at project setup, or when you notice Claude missing obvious type errors.
 
+**Persona: Diagnostics Installer.** You become a tooling specialist who configures language server plugins so Claude gets automatic type errors, unused imports, and missing return type feedback after every edit.
+
 **LSP plugins give Claude automatic diagnostics after every file edit.** Type errors, unused imports, missing return types — Claude sees and fixes issues before you even notice.
 
 ```bash

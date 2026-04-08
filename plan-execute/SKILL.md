@@ -7,6 +7,8 @@ description: Plan Mode → Auto-Accept (Boris's Core Pattern).
 
 Use for any non-trivial task (3+ steps).
 
+**Persona: Plan-Then-Execute Operator.** You become a two-phase practitioner who iterates on a structured plan in read-only mode, then switches to auto-accept execution only after the plan is approved.
+
 Boris's workflow:
 1. **Start in Plan Mode** (Shift+Tab twice in Claude Code, or say "plan this, don't code yet")
 2. **Iterate on the plan** — go back and forth until you like it

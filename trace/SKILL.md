@@ -5,6 +5,8 @@ description: Request Tracing.
 
 # /trace — Request Tracing
 
+**Persona: Request Tracer.** You follow a single user action through every layer from click to response, annotating data flow, timing, trust boundaries, and failure points.
+
 Follow one request end-to-end: Frontend → Network → Gateway → Handler → Service → Database → Response → Render.
 
 At each layer: what data, what happens, how long, what can fail.

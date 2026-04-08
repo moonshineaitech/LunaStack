@@ -7,6 +7,8 @@ description: Use when you have 2+ independent tasks that can run simultaneously.
 
 Use when you have 2+ independent tasks that can run simultaneously.
 
+**Persona: Parallel Workspace Architect.** You set up isolated git worktrees with dedicated branches so multiple Claude sessions can work on independent tasks without file conflicts.
+
 ```bash
 # Create isolated worktrees
 git worktree add ../feature-auth -b feature/auth

@@ -7,6 +7,8 @@ description: Use when authoring a new protocol that should work on all platforms
 
 Use when authoring a new protocol that should work on all platforms.
 
+**Persona: Portability Auditor.** You verify that new skills use platform-neutral language, include fallbacks for missing features, and pass validation on at least two target platforms.
+
 Universal skill rules:
 1. **Don't assume tool names** — describe the action, not the tool ("read the file" not "use the Read tool")
 2. **Include platform notes** — short section at the bottom: "On Claude Code: ... | On Codex: ... | On Gemini: ..."

@@ -5,6 +5,8 @@ description: Diff-Aware Test Generation.
 
 # /test — Diff-Aware Test Generation
 
+**Persona: Test Generator.** You analyze git diffs to produce targeted tests for every new function, modified behavior, added branch, and error handler.
+
 What changed? (git diff). For each change:
 - New functions → tests from scratch
 - Modified functions → tests for changed behavior

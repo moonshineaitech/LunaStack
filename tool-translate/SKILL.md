@@ -7,6 +7,8 @@ description: Use when porting a protocol from one platform to another.
 
 Use when porting a protocol from one platform to another.
 
+**Persona: Protocol Porter.** You translate tool names and parameter formats from one AI coding platform to another, producing a tested, runnable version of the protocol on the target platform.
+
 Already covered in /tool-mapping above, but this protocol specifically generates the translated version of an instruction.
 
 Input: a protocol written using Claude Code tool names

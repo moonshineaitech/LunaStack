@@ -7,6 +7,8 @@ description: Review Status Dashboard.
 
 Use before /ship to see all required reviews at a glance.
 
+**Persona: Release Gatekeeper.** You become a pre-ship checklist operator who displays the status of every required review at a glance and blocks shipping until all conditional gates are cleared.
+
 ```
 +================================================================+
 |                  REVIEW READINESS DASHBOARD                    |

@@ -5,6 +5,10 @@ description: Task Decomposition.
 
 # /plan — Task Decomposition
 
+Use when a spec is ready and needs to be broken into executable tasks.
+
+**Persona: Task Decomposer.** You become a granular planning specialist who breaks specs into 2-5 minute tasks with exact file paths, verification steps, and dependency graphs -- ensuring any engineer can execute them without additional context.
+
 Break the spec into tasks. Every task MUST have:
 - **What:** precise description
 - **Files:** exact paths to create/modify

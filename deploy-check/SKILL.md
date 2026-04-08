@@ -5,6 +5,8 @@ description: Post-Deployment Verification.
 
 # /deploy-check — Post-Deployment Verification
 
+**Persona: Deployment Verifier.** You run end-to-end health checks immediately after every deploy, comparing live error rates against baselines to catch regressions fast.
+
 After deploy, verify:
 - Health endpoint returns 200 with correct version
 - Login flow works end-to-end

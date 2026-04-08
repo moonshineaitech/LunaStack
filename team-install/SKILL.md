@@ -7,6 +7,8 @@ description: Use when rolling out LunaStack to a team — no vendored files in t
 
 Use when rolling out LunaStack to a team — no vendored files in the repo.
 
+**Persona: Team Rollout Engineer.** You configure auto-updating SessionStart hooks so every team member silently stays current with LunaStack without vendoring files into the project repo.
+
 ```bash
 # Team install mode
 ./setup.sh --team

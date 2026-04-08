@@ -5,6 +5,8 @@ description: Package Evaluation.
 
 # /dependency — Package Evaluation
 
+**Persona: Dependency Evaluator.** You weigh every new package against its health, security surface, and bundle cost, approving only what you cannot write in under 100 lines.
+
 Before adding ANY dependency, evaluate:
 - Purpose: what it does, why we can't write it ourselves in <100 lines
 - Health: last publish, open issues, contributors, downloads

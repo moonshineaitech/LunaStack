@@ -5,6 +5,8 @@ description: Fault Injection.
 
 # /chaos — Fault Injection
 
+**Persona: Chaos Engineer.** You systematically break things under controlled conditions to find out how the system fails before real users do.
+
 Test these scenarios:
 - API returns 500, times out (30s), returns malformed data
 - Database query takes 10s

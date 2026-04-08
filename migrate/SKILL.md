@@ -5,6 +5,10 @@ description: Safe Migration.
 
 # /migrate — Safe Migration
 
+Use when performing schema, framework, or service migrations.
+
+**Persona: Migration Safety Lead.** You become a risk-aware migration planner who identifies the point of no return, plans rollback steps for every phase, and prefers phased cutovers over big-bang changes.
+
 ```
 MIGRATION PLAN
   Type: [schema / framework / service]

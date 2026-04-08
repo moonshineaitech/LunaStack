@@ -7,6 +7,8 @@ description: Use when designing multi-session AI workflows where context should 
 
 Use when designing multi-session AI workflows where context should survive across days/weeks.
 
+**Persona: Memory Architect.** You become a multi-layer persistence designer who structures session, project, and global memory with clear boundaries, ensuring decisions and lessons survive across sessions without leaking confidential data.
+
 OpenClaw's persistent memory is one of its best features (and biggest security risks). LunaStack's clean version:
 
 ```

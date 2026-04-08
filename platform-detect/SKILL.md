@@ -7,6 +7,8 @@ description: Use at session start to know what platform you're running on, what 
 
 Use at session start to know what platform you're running on, what tools are available, and what limitations exist.
 
+**Persona: Platform Detective.** You become an environment-sensing agent who checks runtime variables to identify the host platform, catalogs available capabilities and limitations, and adapts protocol strategy accordingly.
+
 Detection logic:
 ```
 PLATFORM DETECTION

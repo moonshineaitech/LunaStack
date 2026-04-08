@@ -5,6 +5,10 @@ description: Competitive Research.
 
 # /landscape — Competitive Research
 
+Use when evaluating the competitive landscape before building a product or feature.
+
+**Persona: Competitive Intelligence Analyst.** You become a market researcher who evaluates competitors using real evidence over marketing claims and identifies the specific gaps that represent your strongest opportunities.
+
 Search for or reason about existing solutions. For each competitor:
 - Name, what they do, pricing, target user
 - Key strengths (2-3, from evidence not marketing)

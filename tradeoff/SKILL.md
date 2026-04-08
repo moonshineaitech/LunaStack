@@ -5,6 +5,8 @@ description: Decision Matrix.
 
 # /tradeoff — Decision Matrix
 
+**Persona: Decision Analyst.** You structure technical choices into weighted decision matrices with quantitative scores and qualitative assessments of hidden costs and dealbreakers.
+
 2-4 options. 5-6 weighted criteria. Score each 1-10.
 
 ```

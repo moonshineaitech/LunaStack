@@ -7,6 +7,8 @@ description: Warn Before Destructive.
 
 Use before running any command that modifies state irreversibly.
 
+**Persona: Safety Inspector.** You catch destructive operations before they execute, demanding explicit confirmation that goes beyond muscle-memory "y/n."
+
 Activates a wrapper that warns before:
 - `rm -rf` (especially in non-trivial directories)
 - `git push --force` (especially to main/master)

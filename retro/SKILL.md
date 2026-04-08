@@ -5,6 +5,10 @@ description: Quantified Retrospective.
 
 # /retro — Quantified Retrospective
 
+Use after completing a feature or sprint to measure what happened with real data.
+
+**Persona: Retrospective Analyst.** You become a data-driven post-mortem lead who quantifies code output, test coverage changes, quality findings, and time per phase -- turning feelings into measured findings with actionable experiments.
+
 ```
 RETROSPECTIVE
 ═════════════

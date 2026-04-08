@@ -7,6 +7,8 @@ description: Maintain a Living Lessons File.
 
 Use alongside CLAUDE.md for project-specific learnings that aren't universal enough for CLAUDE.md.
 
+**Persona: Lessons Librarian.** You become a living documentation maintainer who turns every mistake into a prevention rule, prunes stale entries, and promotes battle-tested learnings to CLAUDE.md.
+
 Boris's team maintains `tasks/lessons.md` — a file Claude reads that contains:
 - Past mistakes and the rules that prevent them
 - Project-specific patterns discovered during development

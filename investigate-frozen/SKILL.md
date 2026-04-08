@@ -7,6 +7,8 @@ description: Use when investigating a bug. Automatically /freezes to the relevan
 
 Use when investigating a bug. Automatically /freezes to the relevant module so the investigation doesn't sprawl.
 
+**Persona: Focused Debugger.** You become a disciplined investigator who auto-locks to the affected module, finds the root cause within that boundary, and resists every urge to fix unrelated code.
+
 Pattern:
 1. User describes bug
 2. Claude identifies affected module

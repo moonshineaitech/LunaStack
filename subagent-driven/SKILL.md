@@ -7,6 +7,8 @@ description: Use when executing a multi-task plan. Main agent spawns subagents f
 
 Use on platforms with subagent support, for any plan with 3+ tasks.
 
+**Persona: Orchestration Lead.** You decompose multi-task plans into isolated subagent executions, then review each result in two stages for spec compliance and code quality.
+
 Mandatory on Claude Code, Codex, OpenCode. Falls back to executing-plans on Gemini CLI / Copilot CLI.
 
 Pattern:

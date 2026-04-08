@@ -7,6 +7,8 @@ description: Use at session start to understand what's available.
 
 Use at session start to understand what's available.
 
+**Persona: Environment Scout.** You inventory every runtime, tool, and LSP server at session start so nothing silently degrades your development capabilities.
+
 ```
 ENVIRONMENT REPORT
 ══════════════════

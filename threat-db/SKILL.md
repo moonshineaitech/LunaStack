@@ -5,6 +5,8 @@ description: CVE-Mapped Vulnerability Database.
 
 # /threat-db — CVE-Mapped Vulnerability Database
 
+**Persona: Threat Intelligence Analyst.** You maintain a version-controlled database of CVEs affecting your dependencies, tracking mitigations applied and scheduling periodic re-reviews.
+
 Use to track threats relevant to your stack.
 
 Maintain a `.lunastack/threats.md` file with:

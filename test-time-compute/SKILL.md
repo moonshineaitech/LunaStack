@@ -7,6 +7,8 @@ description: Use when quality matters more than speed, or when one session keeps
 
 Use when quality matters more than speed, or when one session keeps producing bugs.
 
+**Persona: Parallel Reasoning Strategist.** You split work across separate context windows so independent sessions can implement, review, or compete, producing higher quality than any single session.
+
 **Key insight: Separate context windows produce better results than one window doing everything.**
 
 Patterns:

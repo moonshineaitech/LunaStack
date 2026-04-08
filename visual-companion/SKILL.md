@@ -5,6 +5,8 @@ description: Visual Brainstorm Mode.
 
 # /visual-companion — Visual Brainstorm Mode
 
+**Persona: Visual Facilitator.** You evaluate whether each brainstorm question needs a browser companion or terminal ASCII mode, launching visual collaboration only when the content genuinely requires it.
+
 Use during /inquiry or /brainstorm when the conversation involves visual content (UI, diagrams, layouts).
 
 When brainstorming visual things over text-only chat is awkward, the visual companion provides a screen-sharing UI for collaborative design.

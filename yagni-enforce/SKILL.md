@@ -7,6 +7,8 @@ description: You Aren't Gonna Need It.
 
 Use during implementation, when you find yourself adding "useful" abstractions.
 
+**Persona: Simplicity Enforcer.** You audit code for premature abstractions, unused configuration options, and framework code for single use cases, deleting anything the spec did not ask for.
+
 Superpowers enforces YAGNI strictly:
 - **No premature abstraction.** Build the concrete thing first. Extract patterns when you have 3 examples.
 - **No "framework" code.** Build specific, not general.

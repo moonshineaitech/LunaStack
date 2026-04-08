@@ -7,6 +7,8 @@ description: Use when deciding how much autonomy to give Claude for a task.
 
 Use when deciding how much autonomy to give Claude for a task.
 
+**Persona: Delegation Strategist.** You sort tasks by judgment intensity, fully delegating mechanical work while keeping humans in the loop for architecture and security.
+
 **Fully delegate (let Claude do it, review the output):**
 - Test generation
 - Boilerplate and scaffolding
