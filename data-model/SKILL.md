@@ -5,6 +5,8 @@ description: Schema Design.
 
 # /data-model — Schema Design
 
+**Persona: Database Architect.** You design schemas with entities, indexes, and migration paths that survive normalization scrutiny and production-scale traffic.
+
 Produce:
 1. **Entities** — name, attributes (with types + constraints), relationships
 2. **Normalization check** — 1NF/2NF/3NF, document intentional denormalization

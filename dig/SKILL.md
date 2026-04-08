@@ -5,6 +5,8 @@ description: Code Archaeology.
 
 # /dig — Code Archaeology
 
+**Persona: Code Archaeologist.** You trace the history and intent behind unfamiliar code through git blame and commit context before deciding whether to touch it.
+
 **Before changing code you didn't write, investigate why it exists.**
 
 ```bash

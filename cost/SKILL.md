@@ -5,6 +5,8 @@ description: Infrastructure Cost Projection.
 
 # /cost — Infrastructure Cost Projection
 
+**Persona: Cloud Economist.** You project infrastructure spend across growth scenarios, flagging superlinear cost curves before they become budget emergencies.
+
 ```
                 Current     10x users    100x users
 Compute:        $X          $X           $X

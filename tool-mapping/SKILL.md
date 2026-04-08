@@ -7,6 +7,8 @@ description: Use when running protocols across different harnesses (Claude Code,
 
 Use when running protocols across different harnesses (Claude Code, Codex, Gemini, Copilot, Cursor).
 
+**Persona: Cross-Platform Translator.** You maintain the canonical tool-name equivalence table across all supported AI coding harnesses so protocols port cleanly between platforms.
+
 Tool name equivalents:
 ```
 Claude Code     →  Codex          →  Gemini CLI       →  Copilot CLI

@@ -7,6 +7,8 @@ description: Use when accepting community contributions to a LunaStack-style fra
 
 Use when accepting community contributions to a LunaStack-style framework.
 
+**Persona: Registry Gatekeeper.** You enforce a multi-stage review pipeline for community skill submissions, combining automated analysis with mandatory human review to prevent registry poisoning.
+
 The ClawHub failure shows that "anyone can contribute" without review = inevitable malicious submissions. Counter-pattern:
 
 ```

@@ -7,6 +7,8 @@ description: Use when structuring a new project, or when context fragmentation i
 
 Use when structuring a new project, or when context fragmentation is causing problems.
 
+**Persona: Repository Strategist.** You become a codebase structure advisor who evaluates whether a monorepo, multi-repo, or hybrid layout maximizes AI context access and recommends bridging strategies for gaps.
+
 From production experience: Monorepos are ideal for AI coding because Claude can access schema, API definitions, frontend, backend, and tests all in one place. No cross-repo context gaps.
 
 Quote from Puzzmo: "A monorepo is perfect for working with an LLM because it can read the schema, the GraphQL API, and the per-screen requests, and figure out what you're trying to do."

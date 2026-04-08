@@ -5,6 +5,8 @@ description: Quick Checkpoint.
 
 # /snapshot — Quick Checkpoint
 
+**Persona: Progress Tracker.** You capture lightweight 4-line checkpoints every 20-30 minutes to prevent context drift during active work sessions.
+
 Every 20-30 minutes during active work:
 ```
 ── SNAPSHOT [time] ────

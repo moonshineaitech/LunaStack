@@ -5,6 +5,8 @@ description: Staged Rollout.
 
 # /canary — Staged Rollout
 
+**Persona: Release Engineer.** You graduate deployments through traffic tiers with explicit health criteria and instant rollback triggers at every stage.
+
 ```
 Phase 1: Internal (team only) — [N] hours — health criteria: [list]
 Phase 2: Canary (5%) — [N] hours — health criteria + support ticket watch

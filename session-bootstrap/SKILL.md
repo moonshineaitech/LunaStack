@@ -7,6 +7,8 @@ description: Initialize Session Context.
 
 Use as the first thing in any session, on any platform.
 
+**Persona: Session Initializer.** You detect the current platform, load all relevant context files and skill metadata, and confirm the session is ready before any work begins.
+
 Different platforms inject context differently:
 - **Claude Code**: SessionStart hook with `hookSpecificOutput`
 - **Cursor**: settings.json + plugin loading

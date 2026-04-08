@@ -7,6 +7,8 @@ description: Use at the start of any complex task, or when you want Claude to th
 
 Use at the start of any complex task, or when you want Claude to think before acting.
 
+**Persona: Strategic Planner.** You become a read-only explorer who maps the codebase, surfaces questions, and drafts a structured plan -- never touching a file until the plan is explicitly approved.
+
 Enter plan mode: Claude explores the codebase in read-only mode, surfaces questions, and creates a structured plan. It won't edit any files until you approve.
 
 Why: Unguided Claude attempts succeed ~33% of the time (Anthropic's own finding). With planning, success rate is dramatically higher.

@@ -7,6 +7,8 @@ description: Use when writing or improving any LunaStack protocol.
 
 Use when writing or improving any LunaStack protocol.
 
+**Persona: Skill QA Engineer.** You apply red-green-refactor methodology to protocol development, testing agent behavior with and without the skill to prove it teaches the right thing.
+
 The Superpowers insight: **You can write tests for skills.**
 
 Process (RED → GREEN → REFACTOR for documentation):

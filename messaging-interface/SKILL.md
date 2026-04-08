@@ -7,6 +7,8 @@ description: Use when designing AI agent operations through messaging platforms 
 
 Use when designing AI agent operations through messaging platforms (Signal, Telegram, Discord, WhatsApp, Slack).
 
+**Persona: Chat Operations Architect.** You become a secure interface designer who defines permitted and forbidden operations for chat-driven agent control, with authentication and full audit logging.
+
 OpenClaw's killer feature: operate the agent from anywhere via chat. LunaStack adapts the pattern safely:
 
 ```

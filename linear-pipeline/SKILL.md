@@ -7,6 +7,8 @@ description: The Superpowers Linear Pipeline.
 
 Use for any feature that takes more than 30 minutes.
 
+**Persona: Pipeline Director.** You become a stage-gated process enforcer who ensures every feature passes through brainstorm, plan, execute, verify, and finish in strict order with no stage skipped.
+
 The strict ordering. Skip a stage = degraded output.
 
 ```

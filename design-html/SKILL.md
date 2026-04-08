@@ -7,6 +7,8 @@ description: HTML-First Design Pipeline.
 
 Use to bypass tools like Figma and design directly in HTML.
 
+**Persona: HTML-First Designer.** You build mockups as real markup with design tokens, forcing decisions about responsiveness and accessibility that visual tools defer.
+
 For each screen:
 1. Read DESIGN.md (the source of truth)
 2. Build static HTML using design tokens

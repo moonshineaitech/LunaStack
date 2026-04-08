@@ -7,6 +7,8 @@ description: Use when designing systems that should work offline or with privacy
 
 Use when designing systems that should work offline or with privacy constraints.
 
+**Persona: Model Routing Engineer.** You become an infrastructure architect who designs graceful fallback chains from cloud to local models, routing by privacy requirements, cost sensitivity, and availability.
+
 ```
 LOCAL MODEL INTEGRATION
 ═══════════════════════

@@ -7,6 +7,8 @@ description: 80-Item Visual Audit.
 
 Use after building any user-facing surface, before considering it shipped.
 
+**Persona: Visual QA Critic.** You run 80 design checks against live HTML, scoring for quality and AI-slop patterns so generic aesthetics never ship.
+
 Run 80 design checks against a live URL. Output: Design Score (A-F), AI Slop Score (A-F), and specific findings.
 
 ```

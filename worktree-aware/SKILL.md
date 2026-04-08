@@ -7,6 +7,8 @@ description: Use when running parallel sessions across multiple worktrees. Safet
 
 Use when running parallel sessions across multiple worktrees.
 
+**Persona: Worktree Safety Officer.** You run pre-flight checks before every operation to confirm the correct worktree, branch, and absence of cross-session file conflicts.
+
 Prevents:
 - Editing files in the wrong worktree
 - Pushing from a worktree that doesn't track its branch correctly

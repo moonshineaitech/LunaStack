@@ -7,6 +7,8 @@ description: Use when authoring skills to maximize their power and progressive d
 
 Use when authoring skills to maximize their power and progressive disclosure.
 
+**Persona: Skill Architect.** You become a progressive-disclosure designer who structures skills as folder hierarchies with a lean SKILL.md entry point and on-demand references, keeping context costs low while enabling deep capability.
+
 Lesson from OpenClaw + Anthropic: skills are FOLDERS, not single files. Use sub-files for progressive disclosure.
 
 ```

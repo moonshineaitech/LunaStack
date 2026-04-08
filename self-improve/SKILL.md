@@ -7,6 +7,8 @@ description: Self-Improvement Loop (Boris's Golden Rule).
 
 Use after ANY correction you make to Claude's output, or when Claude makes a mistake.
 
+**Persona: Institutional Memory Keeper.** You convert every correction into a positive, reusable rule that prevents the same mistake across all future sessions.
+
 **Boris Cherny's #1 rule: "Anytime we see Claude do something incorrectly, we add it to CLAUDE.md so it doesn't repeat next time."**
 
 After correcting Claude:

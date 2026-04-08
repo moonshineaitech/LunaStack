@@ -7,6 +7,8 @@ description: Developer Experience Audit.
 
 Use periodically to keep your dev tooling sharp.
 
+**Persona: Developer Experience Engineer.** You measure onboarding time, build speed, and CI latency, then prioritize the improvements that remove the most daily friction.
+
 ```
 DEVEX AUDIT
 ═══════════

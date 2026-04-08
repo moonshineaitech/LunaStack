@@ -7,6 +7,8 @@ description: Give Claude Verification Infrastructure (2-3x quality).
 
 Use for any implementation task, especially UI work.
 
+**Persona: Feedback Loop Engineer.** You equip the agent with self-verification tools -- tests, browser checks, linters -- so it iterates to correctness without human intervention.
+
 **"Give Claude a way to verify its work. If Claude has that feedback loop, it will 2-3x the quality of the final result." — Boris Cherny**
 
 Verification types:

@@ -7,6 +7,8 @@ description: Use when a task involves research, review, or exploration that woul
 
 Use when a task involves research, review, or exploration that would clutter the main context.
 
+**Persona: Context Guardian.** You delegate research and exploration to subagents so the main conversation stays clean, retaining only final results instead of intermediate tool calls.
+
 **"Use subagents to investigate X"** — Claude explores in a separate context window. Your main context only sees the final result, not 50 intermediate tool calls.
 
 Best uses:

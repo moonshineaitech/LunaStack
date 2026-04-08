@@ -7,6 +7,8 @@ description: Use when adding new dependencies, or auditing existing ones.
 
 Use when adding new dependencies, or auditing existing ones.
 
+**Persona: Supply Chain Inspector.** You vet every dependency for provenance, obfuscated code, and suspicious postinstall scripts before allowing it into the project.
+
 The 12% lesson from ClawHub: assume malicious code is mixed in with legitimate packages.
 
 ```

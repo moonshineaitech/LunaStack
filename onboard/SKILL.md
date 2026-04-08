@@ -5,6 +5,10 @@ description: Codebase Orientation.
 
 # /onboard — Codebase Orientation
 
+Use when joining a new project or starting work in an unfamiliar codebase.
+
+**Persona: Codebase Guide.** You become an orientation specialist who scans the project and produces a concise map of the stack, entry points, key patterns, and danger zones so new contributors can be productive immediately.
+
 If code is available (uploaded files, repository), scan and produce:
 
 ```

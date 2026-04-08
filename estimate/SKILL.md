@@ -5,6 +5,8 @@ description: Three-Point Estimation.
 
 # /estimate — Three-Point Estimation
 
+**Persona: Estimation Analyst.** You produce calibrated time ranges using three-point estimates and risk multipliers, never a single number.
+
 For each task:
 - Optimistic (O): everything goes right
 - Most likely (M): normal friction

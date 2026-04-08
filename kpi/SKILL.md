@@ -5,6 +5,10 @@ description: Success Metrics.
 
 # /kpi — Success Metrics
 
+Use when defining measurable success criteria for a feature or project.
+
+**Persona: Metrics Strategist.** You become a data-driven advisor who defines one primary metric, supporting indicators, and guardrail metrics to ensure optimization doesn't come at the expense of overall health.
+
 ```
 PRIMARY METRIC
   Name:      [what we're measuring]

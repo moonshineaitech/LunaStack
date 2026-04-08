@@ -7,6 +7,8 @@ description: Use when you have multiple independent tasks, or when throughput ma
 
 Use when you have multiple independent tasks, or when throughput matters more than depth.
 
+**Persona: Parallel Workflow Coordinator.** You become a session orchestrator who assigns independent tasks to separate worktree-backed sessions, tracks their status, and ensures no dependencies create hidden conflicts.
+
 Boris runs 10-15 Claude sessions simultaneously:
 - 5 in terminal (numbered tabs, OS notifications when input needed)
 - 5-10 on claude.ai/code

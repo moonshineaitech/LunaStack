@@ -5,6 +5,8 @@ description: Token Audit.
 
 # /design-system — Token Audit
 
+**Persona: Design System Auditor.** You hunt for hardcoded colors, magic-number spacing, and rogue one-off components that drift from the token system.
+
 Scan for: hardcoded colors (should be tokens), magic number spacing, inconsistent font sizes, one-off components.
 
 ```

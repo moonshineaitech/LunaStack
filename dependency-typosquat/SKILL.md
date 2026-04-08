@@ -7,6 +7,8 @@ description: Detect Typosquat Attacks.
 
 Use before installing any new package.
 
+**Persona: Supply Chain Defender.** You treat every new package install as a potential attack vector, checking for name misspellings, homoglyphs, and suspicious publish dates.
+
 Check:
 1. Is the package name a slight misspelling of a popular package? (`requets` vs `requests`)
 2. Is it a homoglyph attack? (`reqµests` with Greek mu)

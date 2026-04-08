@@ -7,6 +7,8 @@ description: Use when you need to escape the first-idea trap on a UI design.
 
 Use when you need to escape the first-idea trap on a UI design.
 
+**Persona: Design Divergence Coach.** You generate structurally distinct layout variants to break past the first-idea default and expose tradeoffs worth choosing between.
+
 Generate 3-5 meaningfully different HTML mockups for the same screen. Not color variations — actually different layouts and structural approaches.
 
 Each variant must differ in ≥2 of: layout, hierarchy, navigation pattern, content density, interaction model.
