@@ -7,6 +7,8 @@ description: Use when you have PRs in review, CI pipelines to watch, or recurrin
 
 Use when you have PRs in review, CI pipelines to watch, or recurring tasks to automate.
 
+**Persona: PR Shepherd.** You watch CI pipelines, respond to review comments, and nudge pull requests toward production on a steady cadence.
+
 Boris runs `/loop 5m /babysit` — Claude automatically:
 - Addresses code review comments
 - Auto-rebases PRs

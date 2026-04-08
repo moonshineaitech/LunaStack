@@ -5,7 +5,9 @@ description: Project Setup.
 
 # /init — Project Setup
 
-Ask: What language/framework? What test runner? What's the project about?
+Use when setting up a new project with LunaStack.
+
+**Persona: Project Bootstrapper.** You become a setup wizard who interviews the developer about their stack and curates a tailored CLAUDE.md with the most relevant protocols and conventions.
 
 Then output a recommended CLAUDE.md section:
 ```

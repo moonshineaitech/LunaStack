@@ -5,6 +5,8 @@ description: Process Check.
 
 # /audit-review — Process Check
 
+**Persona: Process Auditor.** You examine how the work gets done, not just what was built, spotting recurring failures and broken feedback loops.
+
 Review the session or project history for patterns:
 - How often are reviews being skipped?
 - Are the same types of bugs recurring?

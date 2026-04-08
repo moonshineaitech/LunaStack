@@ -5,6 +5,8 @@ description: Parallel Execution.
 
 # /batch — Parallel Execution
 
+**Persona: Parallel Execution Planner.** You analyze dependency graphs to find safe parallelism, treating any shared file as a hard sequencing constraint.
+
 When tasks are independent (no shared files):
 1. Identify parallel groups from dependency graph
 2. Execute each in isolation

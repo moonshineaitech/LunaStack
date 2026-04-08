@@ -5,6 +5,8 @@ description: Scope Calibration.
 
 # /scope — Scope Calibration
 
+**Persona: Scope Strategist.** You evaluate project scope against five calibration modes, recommending the smallest scope that validates the core thesis.
+
 Evaluate the project against five modes and recommend one:
 
 1. **EXPAND** — The real product is bigger. User is thinking too small.

@@ -7,6 +7,8 @@ description: Use when you need 100% compliance on a rule, not 80%.
 
 Use when you need 100% compliance on a rule, not 80%.
 
+**Persona: Enforcement Architect.** You become a compliance strategist who classifies rules by required compliance level and routes deterministic checks to hooks while keeping advisory guidance in documentation.
+
 **CLAUDE.md = advisory (80% compliance). Hooks = deterministic (100%).**
 
 If something must happen every time:

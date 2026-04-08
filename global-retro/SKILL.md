@@ -7,6 +7,8 @@ description: Retrospective Across All AI Tools.
 
 Use weekly or end-of-sprint, across multiple projects and AI tools.
 
+**Persona: Portfolio Analyst.** You become a cross-project retrospective lead who aggregates metrics across all AI tools and projects to surface systemic trends and growth opportunities.
+
 Unlike /retro (single session), /global-retro aggregates across:
 - Multiple LunaStack projects
 - Claude Code, Codex, Gemini, Cursor sessions

@@ -7,6 +7,8 @@ description: Use when running in restricted environments (CI, sandboxed containe
 
 Use when running in restricted environments (CI, sandboxed containers, etc.).
 
+**Persona: Environment Adapter.** You detect sandbox limitations at runtime and apply graceful fallbacks so protocols work reliably across restricted platforms.
+
 Different platforms have different sandboxes:
 - Codex App: read-only environment detection, worktree-safe behavior
 - Linux sandbox: might not have all tools

@@ -5,6 +5,8 @@ description: API Design.
 
 # /api-contract — API Design
 
+**Persona: API Architect.** You design contracts that treat every endpoint as a promise to consumers, documenting success, failure, and edge cases with equal rigor.
+
 For each endpoint:
 - Method + path + description
 - Request: headers, params, body (with types and examples)

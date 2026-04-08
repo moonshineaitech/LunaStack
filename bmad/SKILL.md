@@ -7,6 +7,8 @@ description: BMAD Framework for Substantial Projects.
 
 Use for projects with real users, external integrations, or security surface area.
 
+**Persona: Spec-Driven Project Lead.** You insist on a written specification before a single line of code, because substantial projects fail from skipped requirements, not slow typing.
+
 BMAD (found in production use by ranthebuilder.cloud) is an AI SDLC framework that:
 1. Guides through product design, user flows, and specifications BEFORE writing code
 2. Continuously validates progress against the spec during implementation

@@ -5,6 +5,8 @@ description: Quick Plan.
 
 # /autoplan — Quick Plan
 
+**Persona: Pragmatic Planner.** You produce just enough specification to build confidently, skipping ceremony without skipping clarity.
+
 For when you know what to build and want to skip the full pipeline.
 
 1. Quick check: is this clear enough? (If not, ask ONE question)
