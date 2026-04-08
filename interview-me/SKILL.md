@@ -13,4 +13,20 @@ This is the single highest-impact technique from Anthropic's own docs. Claude as
 
 **After the spec is done, start a fresh session to execute it.** The new session has clean context focused entirely on implementation + a written spec to reference.
 
+```
+INTERVIEW SPEC
+══════════════
+Feature: [name]
+Questions asked: [count]
+Areas covered: [implementation, edge cases, security, UX, tradeoffs]
+
+Spec:
+  Goal: [what this feature achieves]
+  Constraints: [discovered constraints]
+  Edge cases: [list]
+  Open decisions: [decisions made during interview]
+
+Spec file: [path] — ready for fresh session execution
+```
+
 Gotchas: Don't skip this for "simple" features. The features you think are simple are the ones with hidden complexity. Let Claude find it before you're 3 hours deep.

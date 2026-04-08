@@ -17,4 +17,19 @@ For each screen:
 
 Why: HTML mockups are testable, reusable as production code, and force decisions about real constraints (responsive, accessibility, real text lengths) that Figma hides.
 
+```
+DESIGN-HTML OUTPUT
+══════════════════
+Screen: [name]
+DESIGN.md: [read / not found — creating defaults]
+Tokens applied: [colors, spacing, typography]
+
+Files:
+  [path/to/screen.html] — [status: built / updated]
+
+Design review score: [N/80]
+Issues found: [count] — [list of fixes applied]
+Iteration: [N] | Status: [passing / needs revision]
+```
+
 Gotchas: Don't build HTML without reading DESIGN.md first -- designing without tokens produces inconsistent output. Don't skip the /design-review audit -- AI-generated HTML has predictable aesthetic failures that need explicit correction. Don't use placeholder text ("Lorem ipsum") -- real content lengths reveal layout problems that fake text hides.

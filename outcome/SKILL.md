@@ -16,4 +16,21 @@ Emerging framework from Cory Ondrejka (CTO Onebrief, ex-Google/Meta):
 
 Combine with /interview-me for best results: define the outcome you want, have Claude interview you about constraints, then let Claude design the solution.
 
+```
+OUTCOME DEFINITION
+══════════════════
+Original request: [what was asked for]
+Reframed outcome: [user impact statement, technology-agnostic]
+
+Constraints:
+  [NOT acceptable: constraint]
+  [NOT acceptable: constraint]
+
+Success criteria:
+  [measurable outcome 1]
+  [measurable outcome 2]
+
+Proposed approach: [architecture/solution that achieves the outcome]
+```
+
 Gotchas: Don't define outcomes in terms of features ("build a notification system") -- define them in terms of user impact ("users never miss time-sensitive updates"). Don't skip constraint discovery -- the best outcome definition includes what's NOT acceptable. Don't let implementation details creep into the outcome definition -- outcomes should be technology-agnostic.
