@@ -1,0 +1,47 @@
+# GEMINI.md — LunaStack for Gemini CLI
+
+LunaStack is a collection of 239 AI development protocols covering 26 disciplines and 55 specialist roles. Each protocol lives in its own directory as a `SKILL.md` file in this repository.
+
+When the user types a `/command`, find the matching skill directory (e.g., `/luna` maps to `luna/SKILL.md`) and follow the protocol precisely. Read the full SKILL.md before responding.
+
+## Start Here
+
+These 7 commands are the recommended starting point:
+
+| Command | What it does |
+|:---|:---|
+| `/office-hours` | YC partner interrogation -- make sure you're building the right thing |
+| `/interview-me` | Have AI interview the user to surface edge cases |
+| `/no-placeholders` | Validate any plan before execution, zero tolerance for TBD |
+| `/verify-completion` | Never mark anything done without proof |
+| `/codex-review` | Independent review from a different model perspective |
+| `/self-improve` | After every correction, write a prevention rule |
+| `/global-retro` | Weekly aggregation across all projects |
+
+## Workflow Pipelines
+
+**NEW FEATURE** (full pipeline):
+`/office-hours` -> `/interview-me` -> `/inquiry` -> `/spec` -> `/plan` -> `/no-placeholders` -> `/linear-pipeline` -> `/tdd` -> `/verify-completion` -> `/codex-review` -> `/cso-audit` -> `/readiness-dashboard` -> `/ship` -> `/global-retro` -> `/compound`
+
+**QUICK SHIP:**
+`/spec` -> `/plan` -> `/tdd` -> `/build` -> `/verify` -> `/ship`
+
+**EMERGENCY FIX:**
+`/investigate-frozen` -> `/debug` -> `/tdd` -> `/verify-completion` -> `/ship`
+
+**DESIGN SPRINT:**
+`/office-hours` -> `/design-consultation` -> `/design-shotgun` -> `/design-html` -> `/design-review` -> `/implement-design`
+
+**SECURITY RELEASE:**
+`/threat-model` -> `/cso-audit` -> `/supply-chain-audit` -> `/codeql-semgrep` -> `/codex-review` -> `/readiness-dashboard` -> `/ship`
+
+**POST-INCIDENT:**
+`/incident` -> `/learn` -> `/compound` -> `/threat-db` -> `/guard`
+
+## How Skills Work
+
+- Skill directories use kebab-case names matching the `/command` name
+- Each directory contains exactly one `SKILL.md` file with YAML frontmatter
+- When a `/command` is invoked, read the entire SKILL.md and follow it step by step
+- Do NOT paraphrase or summarize the protocol -- execute it as written
+- Start with `/luna` to begin a session
