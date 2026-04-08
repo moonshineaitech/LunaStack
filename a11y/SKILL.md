@@ -15,4 +15,21 @@ For every dynamic change (modal, toast, content load): announced? Focus moved co
 
 Verdict: Usable / Usable with friction / Partially blocked / Unusable.
 
+```
+ACCESSIBILITY AUDIT
+═══════════════════
+Flow: [flow name]
+Tab stops tested: [count]
+
+[BLOCKER/MAJOR/MINOR/NONE] [element] — [issue description]
+  Focus visible: [yes/no/faint]
+  Screen reader: [what is announced]
+  Keyboard: [Enter/Space/Arrow behavior]
+
+Dynamic content:
+  [modal/toast/load] — Announced: [yes/no] | Focus moved: [yes/no]
+
+VERDICT: [Usable / Usable with friction / Partially blocked / Unusable]
+```
+
 Gotchas: Don't only test with a mouse -- keyboard-only and screen reader testing catch different issues. Don't assume ARIA fixes structural HTML problems -- use semantic elements first. Don't skip testing dynamic content (modals, toasts) -- they're the most common accessibility failures.

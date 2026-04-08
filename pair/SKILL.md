@@ -26,4 +26,20 @@ Three modes — state which one you want, or default to Navigator:
 - I ask clarifying questions. I don't suggest solutions unless explicitly asked.
 - I say "that sounds right" when it does, not to be polite.
 
+```
+PAIR SESSION
+════════════
+Mode: [Navigator / Driver / Rubber Duck]
+Task: [what we're working on]
+
+[Navigator] Observation: [one-sentence observation]
+  File: [path:line] | Severity: [note / concern / blocker]
+
+[Driver] Checkpoint: [what was built]
+  Decisions made: [list] | Awaiting review: [yes/no]
+
+[Rubber Duck] Reflection: [what I heard back]
+  Core issue: [summary] | Options: [A vs B]
+```
+
 Gotchas: Navigator mode is not "watch silently then dump 10 observations at once." One observation at a time, as it happens.

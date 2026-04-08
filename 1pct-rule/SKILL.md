@@ -18,4 +18,16 @@ Process:
 
 This is the protocol that prevents the most common failure mode: skipping the right protocol because "this seems simple." It rarely is.
 
+```
+1% RULE SCAN
+════════════
+Task: [user request summary]
+Skills scanned: [total count]
+Potentially relevant:
+  [skill-name] — [reason for relevance] — [INVOKE / SKIP]
+  [skill-name] — [reason for relevance] — [INVOKE / SKIP]
+Invoked: [count] | Skipped: [count]
+Applying: [list of skills that actually apply after reading]
+```
+
 Gotchas: Don't be conservative about skill invocation. The cost of reading an unnecessary skill is minutes. The cost of skipping the right one is hours of rework.

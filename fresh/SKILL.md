@@ -17,3 +17,15 @@ Rules:
 - Delegate research to subagents (they explore in separate context)
 - Scope each task narrowly
 - When compacting, tell Claude what to preserve: "When compacting, always preserve: the full list of modified files, test commands and results, the current implementation plan, and unresolved errors."
+
+```
+FRESH SESSION CHECK
+═══════════════════
+Context health: [clean / degraded / cluttered]
+Corrections on same issue: [count]
+Context usage: [percentage]
+
+Decision: [continue / /clear / /compact / new session]
+Reason: [why this decision]
+Preserve on compact: [list of critical context to keep]
+```

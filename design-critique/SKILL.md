@@ -15,5 +15,17 @@ Flag these AI tells:
 
 For each flag: what's wrong, why it matters, specific fix with concrete alternatives.
 
+```
+DESIGN CRITIQUE
+═══════════════
+Page/Component: [name]
+AI-slop signals: [count]
+
+[LAYOUT/TYPOGRAPHY/COLOR/COMPONENT] [what's wrong]
+  Why it matters: [impact on perception/usability]
+  Fix: [specific concrete alternative]
+
+Overall: [Intentional / Generic — needs N fixes]
+```
 
 Gotchas: Don't impose one aesthetic. Flag lack of INTENTIONALITY, not deviation from your taste. Every flag needs a specific fix — 'bad color' is not helpful, 'replace cool gray with stone, swap blue for amber' is.

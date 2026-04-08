@@ -24,4 +24,18 @@ When asked "did you fix it?" the only valid answers are:
 
 Never "yes, it should be fixed."
 
+```
+EVIDENCE CHECK
+══════════════
+Claim: [what was about to be asserted]
+Status: [VERIFIED / UNVERIFIED / DISPROVEN]
+
+Evidence:
+  Command: [exact command run]
+  Output: [exact result]
+  File: [path:line] — [exact error or confirmation]
+
+Verdict: [claim supported by evidence / claim NOT supported — needs verification]
+```
+
 Gotchas: Don't accept "this should work" as verification -- demand the exact command run and its output. Don't let "I think" or "probably" slip into bug diagnosis -- trace to the exact line and error message. Don't claim a fix works without running the specific test that reproduces the original failure.
