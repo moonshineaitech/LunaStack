@@ -33,3 +33,5 @@ ENFORCEMENT
   □ Lighthouse scores tracked over time
   □ Real User Monitoring (RUM) for production data
 ```
+
+Gotchas: Don't set budgets after building -- set them before, so they constrain decisions during development. Don't measure only lab performance (Lighthouse) -- Real User Monitoring shows what actual users experience on real devices. Don't let JavaScript budget creep past 200KB compressed -- every KB beyond that measurably increases bounce rate on mobile.

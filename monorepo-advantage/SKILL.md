@@ -12,3 +12,5 @@ From production experience: Monorepos are ideal for AI coding because Claude can
 Quote from Puzzmo: "A monorepo is perfect for working with an LLM because it can read the schema, the GraphQL API, and the per-screen requests, and figure out what you're trying to do."
 
 If you're multi-repo: use MCP servers or CLI tools to bridge the gaps.
+
+Gotchas: Don't split into multiple repos just because "microservices" -- you lose the AI context advantage that makes monorepos powerful. Don't let the monorepo grow without CI that runs only affected tests -- a 30-minute CI on every PR kills developer velocity. Don't assume multi-repo with MCP bridges is equivalent -- there's always a context gap at the repo boundary.

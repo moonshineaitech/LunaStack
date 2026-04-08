@@ -21,3 +21,5 @@ Similar packages: [list with edit distance]
 Risk score: [LOW/MEDIUM/HIGH/CRITICAL]
 Recommendation: [verify carefully / install confidently / DO NOT INSTALL]
 ```
+
+Gotchas: Don't install packages directly from a chat message without verifying the exact name on the registry. Don't trust download counts alone -- typosquat packages can accumulate thousands of accidental installs. Don't skip checking the GitHub link on the npm/PyPI page -- the repo URL can differ from the package author.

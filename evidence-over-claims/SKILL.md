@@ -23,3 +23,5 @@ When asked "did you fix it?" the only valid answers are:
 2. "No, here's what I tried and what's still broken"
 
 Never "yes, it should be fixed."
+
+Gotchas: Don't accept "this should work" as verification -- demand the exact command run and its output. Don't let "I think" or "probably" slip into bug diagnosis -- trace to the exact line and error message. Don't claim a fix works without running the specific test that reproduces the original failure.

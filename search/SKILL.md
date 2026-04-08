@@ -28,3 +28,5 @@ INDEXED FIELDS: [what's searchable, with weights/boosting]
 LATENCY TARGET: [p95 < Xms]
 INDEX UPDATE: [real-time | batch | on-write | periodic]
 ```
+
+Gotchas: Don't use Elasticsearch for under 10K records -- PostgreSQL full-text search is simpler and sufficient. Don't skip typo tolerance -- users misspell queries constantly and empty results kill conversion. Don't index everything -- index only fields users actually search, with appropriate weights and boosting for relevance.

@@ -23,3 +23,5 @@ Compound loop:  [last /retro: date | learnings pending: N]
 Biggest risk:   [one sentence]
 Recommended:    [single most impactful next action]
 ```
+
+Gotchas: Don't report status without checking when the last /retro was -- stale retros mean the compound learning loop has stalled. Don't list open issues without prioritizing -- an unprioritized list is just noise. Don't recommend multiple next actions -- the whole point is identifying the single most impactful thing to do.

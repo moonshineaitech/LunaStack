@@ -34,3 +34,5 @@ Questions (15-20 min):
   Close: [anything we didn't ask about?]
 Red flags in answers: [signals they're telling you what you want to hear]
 ```
+
+Gotchas: Don't ask hypothetical questions ("would you use...") -- they produce hypothetical answers that don't predict behavior. Don't ask leading questions that suggest the "right" answer -- users will agree to be polite. Don't interview fewer than 5 people -- patterns don't emerge from 1-2 conversations.

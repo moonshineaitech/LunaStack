@@ -19,4 +19,6 @@ Scaling type: [Linear / Sublinear (good) / Superlinear (danger)]
 Top optimization: [what to change, est. savings]
 ```
 
+Gotchas: Don't assume linear scaling -- most cloud costs scale superlinearly without optimization at 10-100x. Don't forget third-party API costs in projections -- they often dominate at scale. Don't project costs without per-user metrics -- total cost is meaningless without knowing cost-to-serve per unit.
+
 ---

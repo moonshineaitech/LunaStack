@@ -33,3 +33,5 @@ ANTI-PATTERNS
   □ Tutorial that explains features (show value, not features)
   □ No way to replay onboarding later
 ```
+
+Gotchas: Don't start onboarding with profile setup -- show value before asking for effort. Don't build a 10-step wizard -- each step is a chance to lose the user, keep it under 4. Don't measure onboarding success by completion rate alone -- measure whether users who complete onboarding actually retain.

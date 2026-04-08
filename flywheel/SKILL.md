@@ -16,3 +16,5 @@ Process:
 4. Repeat
 
 Advanced (from production teams): If using CI/CD, review Claude's GHA logs for common errors. Then: `query-claude-logs --since 5d | claude "see what the other claudes were getting stuck on and fix it"`
+
+Gotchas: Don't add low-confidence learnings to CLAUDE.md -- only promote patterns you've verified across multiple sessions. Don't skip the test step after adding a gotcha -- verify the agent actually avoids the mistake in the next session. Don't let the flywheel stall -- review mistakes weekly, not quarterly.

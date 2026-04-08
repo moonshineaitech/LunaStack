@@ -34,3 +34,5 @@ The strict ordering. Skip a stage = degraded output.
 ```
 
 Each stage has a verification gate. You don't proceed without clearing it.
+
+Gotchas: Don't skip a stage to save time -- the pipeline exists because each stage catches different issues. Don't let the plan reviewer be the same context as the plan writer -- fresh eyes catch assumption gaps. Don't proceed past a failing verification gate -- fixing issues later is always more expensive than fixing them at the gate.

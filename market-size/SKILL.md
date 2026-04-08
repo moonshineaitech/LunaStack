@@ -23,4 +23,6 @@ SOM (Serviceable Obtainable Market):
 Bottom-up validation: [does this math check out against comparables?]
 ```
 
+Gotchas: Don't use top-down TAM numbers without bottom-up validation -- "$50B market" is meaningless without knowing who specifically pays you. Don't conflate TAM with SOM -- your obtainable market in year 1 is typically 0.1-1% of TAM. Don't assume willingness to pay without evidence -- survey data on hypothetical spending is notoriously unreliable.
+
 ---

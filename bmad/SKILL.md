@@ -17,4 +17,6 @@ BMAD (found in production use by ranthebuilder.cloud) is an AI SDLC framework th
 
 In LunaStack terms: /inquiry → /spec → /plan is the BMAD equivalent. The key insight is that the spec should be written to a FILE and then a FRESH session reads and executes it.
 
+Gotchas: Don't run the spec and execution in the same session -- accumulated context degrades implementation quality. Don't skip writing the spec to a file -- verbal specs get lost when context is compacted. Don't use BMAD for sub-30-minute features -- the overhead exceeds the benefit.
+
 ---

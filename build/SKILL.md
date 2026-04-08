@@ -18,3 +18,5 @@ Execute tasks from /plan. For each:
 [ ] Task 4: Add API endpoint
 Progress: 2/6 | Tests: 12 pass | Time: 7 min
 ```
+
+Gotchas: Don't skip verifying each task against its acceptance criteria before moving on -- catching issues early is 10x cheaper. Don't build tasks out of order unless dependencies explicitly allow it -- the plan order exists for a reason. Don't spend more than 2x the estimated time on a task without pausing to reassess -- you may be solving the wrong problem.

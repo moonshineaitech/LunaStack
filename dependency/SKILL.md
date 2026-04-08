@@ -39,3 +39,5 @@ IMPACT
 
 VERDICT: [APPROVE / CAUTION (with conditions) / REJECT (with reason) / BUILD INSTEAD]
 ```
+
+Gotchas: Don't add a dependency for something you could write in under 100 lines -- the maintenance cost of a dependency always exceeds a small inline implementation. Don't ignore the transitive dependency count -- each one is an attack surface you didn't audit. Don't use GPL-licensed packages in proprietary code without legal review -- GPL is viral.

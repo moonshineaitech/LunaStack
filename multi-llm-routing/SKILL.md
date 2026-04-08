@@ -25,3 +25,5 @@ Embeddings                 → text-embedding-3-large / voyage-large
 ```
 
 Rule: don't use the most expensive model for tasks where a cheaper model would do equally well. Save the heavy models for tasks where intelligence actually matters.
+
+Gotchas: Don't route security-critical code review to cheap/fast models -- use the strongest model for auth, payments, and data handling. Don't assume routing tables stay current -- model capabilities change with updates, re-evaluate quarterly. Don't send proprietary code to models without checking their data retention and training policies.

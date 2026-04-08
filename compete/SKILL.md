@@ -24,3 +24,5 @@ Response options:
 Recommendation: [option + rationale]
 Timeline: [how quickly to act]
 ```
+
+Gotchas: Don't react emotionally to competitor launches -- assess factually before deciding. Don't default to "match" -- differentiation usually beats feature parity. Don't let competitor moves derail your roadmap unless the threat level is genuinely high.

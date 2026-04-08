@@ -16,4 +16,6 @@ Risk factors: unfamiliar tech (+50-100%), external dependencies (+30-50%), uncle
 
 Produce: total range, confidence level, biggest risk, recommendation (timebox? spike first? ship in phases?).
 
+Gotchas: Don't give a single number -- always give a range with confidence level. Don't estimate without adding risk multipliers for unfamiliar tech (1.5-2x) and unclear requirements (1.5-3x). Don't skip the "spike first" option for high-uncertainty tasks -- 2 hours of investigation saves days of wrong-direction building.
+
 ---

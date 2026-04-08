@@ -18,3 +18,5 @@ If something is guidance:
 - Put it in CLAUDE.md or a skill
 
 Never send an LLM to do a linter's job. Use deterministic tools for deterministic tasks.
+
+Gotchas: Don't put critical rules only in CLAUDE.md -- if non-compliance is unacceptable, enforce it with a hook. Don't make hooks too noisy -- a hook that fires on every edit with false positives will be disabled. Don't use LLM judgment for checks that have deterministic answers -- linters, formatters, and type checkers are always more reliable.

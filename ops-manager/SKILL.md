@@ -23,3 +23,5 @@ Documentation gaps: [missing runbooks or SOPs]
 Cycle time: [current vs target, request to delivery]
 Recommendation: [top 3 process fixes by cycle-time reduction]
 ```
+
+Gotchas: Don't automate a broken process -- fix the process first, then automate what remains. Don't skip documenting manual processes in runbooks -- undocumented processes are single points of failure. Don't measure efficiency by hours worked -- measure cycle time from request to delivery.

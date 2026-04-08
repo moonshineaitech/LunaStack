@@ -36,3 +36,5 @@ WRITE PATTERN
   → /handoff writes to Layer 2
   → /compound writes to Layer 3 (only high-confidence patterns)
 ```
+
+Gotchas: Don't write client-confidential data to global memory (Layer 3) -- it persists forever and crosses project boundaries. Don't skip the opt-in requirement for global memory -- default-on global persistence is a privacy risk. Don't store session-specific state in persistent memory -- it pollutes future sessions with stale context.

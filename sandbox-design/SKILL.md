@@ -28,3 +28,5 @@ ENFORCEMENT
 ```
 
 Default-deny architecture. The skill declares what it needs. The sandbox enforces it. Anything outside the declaration is blocked.
+
+Gotchas: Don't default to allow-all permissions -- start with deny-all and whitelist only what the skill genuinely needs. Don't trust skill-declared permissions without review -- a malicious skill will declare exactly the permissions it needs to exfiltrate data. Don't skip the audit log -- without logging, you can't detect when a skill oversteps its declared boundaries.

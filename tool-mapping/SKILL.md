@@ -23,3 +23,5 @@ Glob            →  find_files     →  glob             →  glob
 ```
 
 When porting: don't use the Read tool on skill files in any platform. Use the platform's native skill loading mechanism.
+
+Gotchas: Don't assume tool names are consistent across platforms -- Read on Claude Code is read_file on Codex. Don't port skills without testing on the target platform -- translated tool names may have different parameter formats. Don't use the Read tool to load skill files on any platform -- always use the platform's native skill loading mechanism.

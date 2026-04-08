@@ -23,3 +23,5 @@ Minimum viable test: [smallest campaign to validate]
 Success metrics: [leading indicators, not vanity]
 Recommendation: [top 3 moves ranked by expected ROI]
 ```
+
+Gotchas: Don't measure success with vanity metrics like impressions -- track leading indicators tied to revenue. Don't spread budget across 5 channels at once -- go deep on one before expanding. Don't skip the minimum viable test -- a $500 experiment prevents a $50K mistake.

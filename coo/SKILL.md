@@ -22,3 +22,5 @@ Single points of failure: [people and system dependencies]
 Scale-readiness (2x team): [what breaks first]
 Recommendation: [top 3 process improvements by impact]
 ```
+
+Gotchas: Don't optimize processes that shouldn't exist -- eliminate first, then automate what remains. Don't ignore single points of failure in people -- if one person leaving breaks a process, document and cross-train immediately. Don't confuse busyness with throughput -- measure cycle time from request to delivery, not hours worked.

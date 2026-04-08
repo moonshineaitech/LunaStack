@@ -29,3 +29,5 @@ Format:
   status: patched (upgraded 2026-04-08)
   verification: npm audit shows clean
 ```
+
+Gotchas: Don't mark a CVE as "not_affected" without verifying your actual dependency tree -- transitive dependencies can pull in vulnerable versions. Don't skip next_review dates -- unreviewed threats silently become unpatched vulnerabilities. Don't maintain the threat DB in a spreadsheet -- keep it in version control (threats.md) so changes are auditable.

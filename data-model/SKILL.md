@@ -42,3 +42,5 @@ MIGRATION PLAN (if modifying existing)
   Step 2: ...
   Rollback: [specific steps]
 ```
+
+Gotchas: Don't add a foreign key without an index on it -- every JOIN and CASCADE will do a sequential scan. Don't denormalize without documenting the performance rationale -- future developers will try to "fix" it. Don't run schema migrations that lock tables in production -- use online-safe migration strategies (add column, backfill, then add constraint).

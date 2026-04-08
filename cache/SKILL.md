@@ -31,3 +31,5 @@ Common pitfalls:
   □ Cache key doesn't include all variants → wrong data served
   □ No monitoring on cache hit rate → invisible performance regression
 ```
+
+Gotchas: Don't cache user-specific data with a key that omits the user ID -- you'll serve one user's data to another. Don't set TTLs without monitoring cache hit rates -- a 0% hit rate means your cache is doing nothing but wasting memory. Don't forget thundering herd protection -- when a popular cache key expires, hundreds of requests will hit your database simultaneously.

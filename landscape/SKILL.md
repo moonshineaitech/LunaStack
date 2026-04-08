@@ -31,3 +31,5 @@ GAP ANALYSIS
   Our wedge:        [one specific advantage we can own]
   Positioning:      [we are X for Y who need Z, unlike competitors who ___]
 ```
+
+Gotchas: Don't use competitor marketing copy as evidence of their strengths -- find user reviews and forum complaints for real signal. Don't list more than 5 competitors -- focus depth on the top 3-5 that your users actually consider. Don't skip the gap analysis -- finding what nobody does well is more valuable than cataloging what everyone does.

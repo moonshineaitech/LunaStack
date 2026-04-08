@@ -28,3 +28,5 @@ Fallback:           [what happens when model fails or confidence is low]
 Cost:               [inference cost per request at scale]
 Retraining:         [frequency, automated pipeline, data freshness requirements]
 ```
+
+Gotchas: Don't deploy a model without a fallback for when it fails or returns low confidence -- silent failures corrupt downstream decisions. Don't skip the cost-per-inference calculation at scale -- a model that costs $0.01 per request at 1M requests/day is $10K/day. Don't train on production data without checking for label quality and bias -- garbage in, garbage out applies doubly to ML.

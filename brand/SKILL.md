@@ -21,3 +21,5 @@ Promise:     [The one thing we always deliver]
 Proof:       [How we demonstrate the promise]
 Enemy:       [What we stand against — not a competitor, an idea or status quo]
 ```
+
+Gotchas: Don't define your audience as "everyone" -- a brand for everyone resonates with no one. Don't pick more than 3 personality adjectives -- constraints create identity. Don't confuse voice guidelines with a tagline -- voice governs every word you write, not just the slogan.

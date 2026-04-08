@@ -25,4 +25,6 @@ Your context window is ~200K tokens. Here's how it gets eaten:
 
 Monitor: If Claude starts contradicting earlier instructions or forgetting decisions, you've hit context limits.
 
+Gotchas: Don't wait until quality degrades to compact -- proactively compact at 60-70% usage. Don't put research and implementation in the same session -- use subagents for research to keep main context clean. Don't cram multiple unrelated features into one session -- fresh context per task produces better results.
+
 ---

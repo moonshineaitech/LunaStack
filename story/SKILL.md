@@ -37,3 +37,5 @@ PRIORITIZATION (RICE):
 
 Recommended MVP: [US-1, US-2, US-3] — delivers core value in [N weeks]
 ```
+
+Gotchas: Don't write stories without acceptance criteria -- a story without Given/When/Then is untestable. Don't put everything in Must Have -- if more than 40% of stories are Must Have, you haven't prioritized. Don't skip the RICE scoring -- intuition about priority is unreliable, quantified scoring forces honest trade-offs.

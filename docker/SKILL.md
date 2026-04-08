@@ -21,3 +21,5 @@ DOCKERFILE REVIEW
 □ One process per container
 □ Graceful shutdown (handle SIGTERM)
 ```
+
+Gotchas: Don't use :latest as your base image tag -- builds become non-reproducible when the upstream image changes. Don't run containers as root -- use a non-root USER directive. Don't put secrets in the Docker image -- use environment variables or a secrets manager at runtime.

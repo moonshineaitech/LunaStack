@@ -22,3 +22,5 @@ Resource constraint analysis: [half-time plan vs double-resource plan]
 10-year implications: [where this path leads]
 Recommendation: [top 3 actions ranked by leverage]
 ```
+
+Gotchas: Don't confuse activity with leverage -- being busy on low-impact work is the most common CEO failure. Don't avoid hard decisions by gathering more data -- most strategic decisions are made with 60-70% information. Don't let the 10-year vision excuse not shipping this quarter -- vision without execution is hallucination.

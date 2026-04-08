@@ -42,3 +42,5 @@ SIGNATURE INTERACTIONS
 ```
 
 This becomes the source of truth for /design-html and /design-review.
+
+Gotchas: Don't start with 5 colors -- start with a base and one accent, add more only when justified. Don't pick "safe" defaults -- if your design system looks like every SaaS template, you've failed the creative risk step. Don't skip the "we are NOT" adjectives -- constraints define identity more than aspirations.

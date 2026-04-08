@@ -17,3 +17,5 @@ Pattern:
 3. You refine the plan together
 4. Approve → Claude executes with clean focus
 5. Review the output
+
+Gotchas: Don't let Claude start coding before the plan is approved -- unguided attempts succeed only ~33% of the time. Don't skip the question-asking phase -- Claude reading code in silence misses requirements only you know. Don't approve a plan you don't understand -- if you can't explain the plan, it's not ready.

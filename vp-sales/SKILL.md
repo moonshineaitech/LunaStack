@@ -19,3 +19,5 @@ Average deal size: [$X]  Sales cycle: [N days]  Win rate: [X%]
 Bottleneck: [which stage has the biggest drop-off, and why]
 Playbook: [discovery questions, demo flow, objection handling, close process]
 ```
+
+Gotchas: Don't start with enterprise sales motion if you don't have product-market fit -- self-serve first to validate demand. Don't ignore the biggest pipeline drop-off to optimize an easier stage. Don't set quotas without a tested playbook -- quotas without process are just targets without a path.

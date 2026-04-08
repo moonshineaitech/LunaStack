@@ -38,3 +38,5 @@ CRITICAL FINDINGS
 
 VERDICT: SHIP / FIX FIRST / DO NOT SHIP
 ```
+
+Gotchas: Don't mark items N/A without justification -- lazy N/A is how vulnerabilities slip through. Don't run the audit only at launch -- re-audit after every feature that changes auth, data handling, or external input. Don't treat STRIDE as a checklist exercise -- think like an attacker at each trust boundary.

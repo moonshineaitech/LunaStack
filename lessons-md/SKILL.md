@@ -15,3 +15,5 @@ Boris's team maintains `tasks/lessons.md` — a file Claude reads that contains:
 **Every time Claude makes a mistake → correct it → have Claude write a prevention rule → add to lessons.md.**
 
 The file grows over time and makes each session smarter. Unlike CLAUDE.md (which should stay <200 lines and universal), lessons.md can be longer and more specific.
+
+Gotchas: Don't let lessons.md grow unbounded -- prune stale or superseded lessons quarterly. Don't put universal rules in lessons.md -- those belong in CLAUDE.md where every session sees them. Don't write vague lessons ("be more careful") -- each entry should include the specific mistake, the prevention rule, and evidence.

@@ -26,3 +26,5 @@ TDD:          optional          enforced           enforced + coverage gates
 /ship gates:  tests only        tests+review+sec    all + approval + audit trail
 /threat-model: skip             before auth/payments  every feature
 ```
+
+Gotchas: Don't use solo/prototype mode for features that touch real user data -- even prototypes with real data need security review. Don't calibrate once and forget -- re-calibrate when the project crosses from prototype to production. Don't let enterprise mode slow you to a crawl -- the goal is appropriate rigor, not maximum bureaucracy.

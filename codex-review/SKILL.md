@@ -36,3 +36,5 @@ Always run cross-model on auth, payments, and data integrity changes.
 ```
 
 Why this matters: different models have different blind spots. The bugs Claude misses are often the bugs another model catches.
+
+Gotchas: Don't trust agreement between models as proof of correctness -- both can share the same blind spot. Don't send proprietary code to models without checking data retention policies. Don't skip cross-model review on auth, payments, and data integrity changes -- these are where single-model blind spots are most dangerous.

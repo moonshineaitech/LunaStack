@@ -15,3 +15,5 @@ Pattern:
 5. /unfreeze when done
 
 Prevents the "I'll just refactor this while I'm here" failure mode that turns 10-line bug fixes into 500-line PRs.
+
+Gotchas: Don't freeze to the wrong module -- spend 2 minutes identifying the right boundary before locking in. Don't expand the freeze mid-investigation to "just fix one more thing" -- that's the exact failure mode this prevents. Don't forget to /unfreeze when the bug is fixed -- a stale freeze blocks the next task.

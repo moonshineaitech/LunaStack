@@ -25,3 +25,5 @@ Use before /ship to see all required reviews at a glance.
 ```
 
 Eng Review is the only universally required gate. Others are conditional based on what changed (UI changes need Design Review, security-touching changes need CSO Audit, etc.).
+
+Gotchas: Don't ship with unrun required reviews -- a dashboard showing gaps is only useful if you act on them. Don't make every review required for every change -- conditional gates prevent review fatigue. Don't let "CLEARED" mean "perfect" -- it means minimum quality bar met, not that there are zero issues.

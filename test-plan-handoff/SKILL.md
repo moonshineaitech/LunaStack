@@ -31,3 +31,5 @@ Edge Cases:
 Browser Coverage:
   Chrome (latest), Firefox (latest), Safari (latest)
 ```
+
+Gotchas: Don't write test plans without edge cases -- happy path coverage alone misses the bugs that actually ship. Don't skip the browser coverage section for web features -- cross-browser issues are the most common post-launch surprise. Don't lose the artifact between handoff stages -- write it to a known file path so QA can find it automatically.

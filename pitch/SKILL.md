@@ -17,3 +17,5 @@ Build or critique a pitch using this structure:
 7. **Ask** (1 slide): how much, what for, milestones it unlocks
 
 For each slide: what to say, what NOT to say, common mistakes.
+
+Gotchas: Don't include more than 7 slides -- investors lose attention after that. Don't lead with the product -- lead with the problem and the pain. Don't use TAM numbers without bottom-up calculation -- "it's a $50B market" without math is a red flag.
