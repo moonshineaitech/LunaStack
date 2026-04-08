@@ -4,6 +4,12 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/moonshineaitech/LunaStack/actions/workflows/validate.yml"><img src="https://github.com/moonshineaitech/LunaStack/actions/workflows/validate.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
+  <a href="https://github.com/moonshineaitech/LunaStack/releases"><img src="https://img.shields.io/github/v/release/moonshineaitech/LunaStack" alt="Release"></a>
+</p>
+
+<p align="center">
   The most comprehensive AI development methodology open-sourced.<br>
   Sourced from Superpowers (94K★), GStack (66K★), Boris Cherny (Claude Code creator),<br>
   Anthropic official docs, HumanLayer research, and OpenClaw lessons.

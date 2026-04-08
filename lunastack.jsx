@@ -22,6 +22,12 @@ const D = [
   { n:"Performance", i:"⚡", s:["/perf-budget — FCP/LCP/CLS/INP + JS/CSS budgets","/load-test — smoke/load/stress/spike/soak profiles","/query — EXPLAIN ANALYZE → index → measure"]},
   { n:"Best Practices", i:"🎯", s:["/interview-me — Claude interviews YOU before building","/fresh — start clean sessions per task","/two-sessions — spec session + execution session","/competing — parallel branches, compare approaches","/claude-md-audit — keep CLAUDE.md <200 lines","/subagent-pattern — delegate research to subagents","/redo — scrap and rebuild with full knowledge","/grill — challenge-driven: prove it works","/flywheel — bugs → improved rules → better agent","/hooks-over-md — 100% enforcement via hooks","/context-budget — manage your 200K token window"]},
   { n:"Workflows", i:"🧰", s:["/plan-mode — read-only exploration first","/worktree — parallel git worktrees","/test-time-compute — multiple contexts for quality","/delegate-patterns — fully delegate vs guide closely","/monorepo-advantage — one repo = full AI context"]},
+  { n:"Latest (Boris)", i:"🔥", s:["/self-improve — self-improvement loop after every correction","/babysit — automated PR shepherding via /loop","/verify-loop — give Claude verification infra (2-3x quality)","/plan-execute — plan mode then auto-accept","/lessons-md — maintain a living lessons file","/lsp — install LSP plugins (highest-impact)","/outcome — outcome engineering (o16g manifesto)","/parallel-sessions — multi-session setup","/bmad — BMAD framework for substantial projects"]},
+  { n:"Superpowers Pipeline", i:"🌀", s:["/1pct-rule — invoke skill if even 1% chance it applies","/no-placeholders — zero tolerance plan validation","/subagent-driven — subagent-driven development","/skill-priority — instruction priority order","/tool-mapping — cross-platform tool translation","/find-duplicates — semantic code duplication detection","/verify-completion — verification before done","/yagni-enforce — you aren't gonna need it","/evidence-over-claims — show, don't tell","/linear-pipeline — the superpowers linear pipeline","/skill-test-loop — TDD for skills","/visual-companion — visual brainstorm mode"]},
+  { n:"GStack Team", i:"🏗️", s:["/office-hours — YC partner office hours","/design-consultation — build design system from scratch","/design-shotgun — multiple HTML variants","/design-html — HTML-first design pipeline","/design-review — 80-item visual audit","/codex-review — cross-model independent review","/cso-audit — CSO security audit (OWASP + STRIDE)","/careful-mode — warn before destructive","/freeze — lock edits to one directory","/unfreeze — release directory lock","/investigate-frozen — debug with auto-freeze","/team-install — auto-updating team setup","/readiness-dashboard — review status dashboard","/test-plan-handoff — eng review to QA pipeline","/global-retro — retrospective across all AI tools","/devex-review — developer experience audit"]},
+  { n:"OpenClaw Patterns", i:"🔬", s:["/skill-security-audit — vet community skills before installing","/sandbox-design — permission whitelists for skills","/memory-isolation — per-project memory boundaries","/skill-review-system — community skill vetting","/multi-llm-routing — use the right model for the job","/persistent-memory — cross-session memory architecture","/messaging-interface — chat-driven agent operation","/vibe-coding-warnings — when NOT to ship unread code","/local-model-fallback — graceful local model use","/platform-skills-architecture — skills as folders, not files"]},
+  { n:"Multi-Host", i:"🌐", s:["/platform-detect — identify the current host","/tool-translate — translate tool names across platforms","/session-bootstrap — initialize session context","/worktree-aware — work safely in git worktrees","/sandbox-fallback — detect and adapt to sandbox limitations","/env-detection — detect all environment capabilities","/universal-skill — write skills that work everywhere","/host-config — per-platform configuration"]},
+  { n:"Security Skills", i:"🛡️", s:["/cve-scan — scan for known vulnerabilities","/supply-chain-audit — verify dependency integrity","/codeql-semgrep — static analysis integration","/threat-db — CVE-mapped vulnerability database","/malicious-skill-detection — detect malicious skills/plugins","/sbom — software bill of materials","/dependency-typosquat — detect typosquat attacks","/secret-rotation-plan — credential rotation strategy"]},
   { n:"Specialist Roles", i:"🎭", s:["Engineering: /frontend-lead /backend-lead /dba /sre /mobile-lead /ml-engineer /devrel /data-engineer /qa-lead /platform-lead","Business: /ceo /coo /cmo /vp-sales /bd /investor /pm-lead /account-mgr","Creative: /copywriter /brand /content-strategist /ux-writer /creative-director","Data: /data-analyst /data-scientist /bi-analyst","People: /recruiter /hr-lead /coach /facilitator /l-and-d","Marketing: /paid-ads /social-media /email-marketing /pr /growth-hacker","Customer: /support-lead /cs-lead /community-mgr","Legal: /ip-lawyer /employment-lawyer /compliance-officer","Domain: /saas-advisor /marketplace-advisor /fintech-advisor /ecommerce-advisor /healthcare-advisor /ai-product","Operations: /scrum-master /ops-manager /procurement"]},
 ];
 const total = D.reduce((a,d)=>a+d.s.length,0);
@@ -54,13 +60,13 @@ export default function App(){
     </h1>
     <div style={{width:36,height:1.5,background:C.a,margin:"20px 0"}}/>
     <p style={{fontSize:13,lineHeight:1.7,color:C.sil,maxWidth:440}}>
-      239 protocols. 55 specialist roles. 20 disciplines. Every session feeds the next. One Markdown file.
+      239 protocols. 55 specialist roles. 26 disciplines. Every session feeds the next. One Markdown file.
     </p>
   </header>
 
   <div style={{maxWidth:720,margin:"0 auto",padding:"32px 24px 0",opacity:v?1:0,transition:"opacity 0.7s ease 0.2s"}}>
     <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",borderTop:`1px solid ${C.b}`,borderBottom:`1px solid ${C.b}`}}>
-      {[{v:"239",l:"Protocols"},{v:"20",l:"Disciplines"},{v:"55",l:"Roles"},{v:"197KB",l:"Package"}].map((s,i)=>(
+      {[{v:"239",l:"Protocols"},{v:"26",l:"Disciplines"},{v:"55",l:"Roles"},{v:"197KB",l:"Package"}].map((s,i)=>(
         <div key={i} style={{padding:"16px 0",textAlign:"center",borderRight:i<3?`1px solid ${C.b}`:"none"}}>
           <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:26,fontWeight:600,color:C.w}}>{s.v}</div>
           <div style={{fontFamily:"'IBM Plex Mono',monospace",fontSize:8,letterSpacing:2,textTransform:"uppercase",color:C.ad,marginTop:3}}>{s.l}</div>
@@ -70,7 +76,7 @@ export default function App(){
   </div>
 
   <section style={{maxWidth:720,margin:"0 auto",padding:"40px 24px 0"}}>
-    <div style={{fontFamily:"'IBM Plex Mono',monospace",fontSize:9,letterSpacing:3,textTransform:"uppercase",color:C.a,marginBottom:16}}>All 20 Disciplines</div>
+    <div style={{fontFamily:"'IBM Plex Mono',monospace",fontSize:9,letterSpacing:3,textTransform:"uppercase",color:C.a,marginBottom:16}}>All 26 Disciplines</div>
     <div style={{display:"flex",flexDirection:"column",gap:1}}>
       {D.map((d,i)=>{
         const isOpen=open===i;
@@ -111,7 +117,7 @@ export default function App(){
     </p>
     <div style={{background:C.s1,border:`1px solid ${C.b}`,borderRadius:4,padding:"14px 16px",fontFamily:"'IBM Plex Mono',monospace",fontSize:11,lineHeight:2,color:C.moon}}>
       <span style={{color:C.ad+"88"}}>  # Claude Code</span><br/>
-      <span style={{color:C.ad}}>$</span> git clone https://github.com/you/lunastack ~/lunastack<br/>
+      <span style={{color:C.ad}}>$</span> git clone https://github.com/moonshineaitech/LunaStack ~/lunastack<br/>
       <span style={{color:C.ad}}>$</span> cd ~/lunastack && ./setup.sh --global<br/>
       <span style={{color:C.ad}}>$</span> claude <span style={{color:C.moon}}>"/luna"</span>
     </div>

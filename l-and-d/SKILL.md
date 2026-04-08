@@ -12,5 +12,3 @@ Use when designing training programs, onboarding curricula, or skill development
 For any training need: what behavior should change? (not "learn about X" but "be able to DO X"). What's the current skill gap (assess before training)? Blended approach: self-paced (reading, video) + practice (exercises, projects) + feedback (coaching, peer review). Spaced repetition > one-time workshops. Measure: can they do the thing? Not: did they attend?
 
 ---
-
-### MARKETING ROLES
