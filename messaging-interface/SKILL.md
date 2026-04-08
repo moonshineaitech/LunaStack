@@ -1,0 +1,35 @@
+---
+name: messaging-interface
+description: Use when designing AI agent operations through messaging platforms (Signal, Telegram, Discord, WhatsApp, Slack).
+---
+
+# /messaging-interface — Chat-Driven Agent Operation
+
+Use when designing AI agent operations through messaging platforms (Signal, Telegram, Discord, WhatsApp, Slack).
+
+OpenClaw's killer feature: operate the agent from anywhere via chat. LunaStack adapts the pattern safely:
+
+```
+MESSAGING INTERFACE DESIGN
+══════════════════════════
+
+PERMITTED OPERATIONS (over chat)
+  ✓ Read status, get progress updates
+  ✓ Trigger predefined workflows (e.g., /loop /babysit)
+  ✓ Approve/reject suggestions
+  ✓ Cancel running tasks
+
+FORBIDDEN OVER CHAT
+  ✗ Free-form code execution
+  ✗ Credential operations
+  ✗ Production deploys
+  ✗ Anything that can't be reversed
+
+AUTHENTICATION
+  Chat platform identity is NOT sufficient
+  Require: paired device + per-action confirmation for risky ops
+
+AUDIT
+  Every message → action logged with timestamp
+  Anomaly detection: unusual command patterns alert immediately
+```
