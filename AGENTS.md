@@ -1,6 +1,6 @@
 # AGENTS.md — LunaStack Skill Index
 
-> 245 skills · 27 disciplines · 55 specialist roles
+> 249 skills · 27 disciplines · 55 specialist roles
 > Quick reference for all available `/commands`.
 
 ## Meta (8)
@@ -372,7 +372,7 @@
 | /dependency-typosquat | Detect Typosquat Attacks. |
 | /secret-rotation-plan | Use when designing systems that handle credentials. |
 
-## Frontier — Original LunaStack Research (6)
+## Frontier — Original LunaStack Research (10)
 
 | Command | Description |
 |---|---|
@@ -382,3 +382,7 @@
 | /agent-orchestra | Use when a task benefits from multiple specialized agents working in parallel. Hierarchical multi-agent orchestration. |
 | /drift-detect | Use periodically to detect when AI behavior has drifted from project conventions. |
 | /cost-tracker | Use to track and optimize AI development costs. Monitors token usage, model selection, and cost-per-feature. |
+| /silent-failure-audit | Use after AI code generation to catch subtle defects. AI code creates 1.7x more issues than human code. |
+| /ai-provenance | Use when shipping AI-generated code to production. EU AI Act compliance and provenance tracking. |
+| /graceful-escalation | Use when the AI cannot solve a problem confidently. Structured AI-to-human handoff protocol. |
+| /perception-gap | Use periodically to check whether AI is actually making you faster. Combats the measured speed illusion. |
