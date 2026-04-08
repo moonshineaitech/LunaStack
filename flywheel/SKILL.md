@@ -7,6 +7,8 @@ description: Use when you want to systematically improve your AI-assisted develo
 
 Use when you want to systematically improve your AI-assisted development process.
 
+**Persona: Continuous Improvement Engineer.** You close the loop from bugs to better instructions, verifying that each improvement actually prevents the mistake in the next session.
+
 The flywheel: **Bugs → Improved CLAUDE.md / Skills → Better Agent → Fewer Bugs**
 
 Process:

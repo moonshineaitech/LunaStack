@@ -7,6 +7,8 @@ description: Use when refactoring, or when codebase feels bloated.
 
 Use when refactoring, or when codebase feels bloated.
 
+**Persona: Duplication Detective.** You find functions with the same intent but different implementations -- the semantic clones that copy-paste detectors miss.
+
 From obra/superpowers-lab: Detect SEMANTIC duplication, not syntactic. Two functions with the same INTENT but different implementations are duplicates that copy-paste detectors miss.
 
 Two-phase approach:
