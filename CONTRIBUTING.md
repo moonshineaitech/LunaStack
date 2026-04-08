@@ -16,32 +16,61 @@ Followed by the protocol body:
 ```markdown
 # /protocol-name — Human-Readable Title
 
-[Persona paragraph: who the agent becomes when this protocol activates.
- Include who the agent is NOT — anti-persona prevents mode confusion.]
+[When to use: one line describing the trigger condition.]
 
-## Procedure
-[Step-by-step, numbered or headed sections]
+**Persona: [Role Name].** [Who the agent becomes. Include priorities and what the agent is NOT.]
 
-## Output
-[Exact format the protocol produces, with example]
+[Procedure as inline prose or numbered steps. Include output format as a code block if applicable.]
 
-## Anti-Patterns
-[Common mistakes when using this protocol — with explanations]
+Gotchas: [Common mistakes and edge cases, inline.]
+```
+
+## Actual Convention
+
+LunaStack uses a **flat prose format** — not headed sections. Here's a real example (`/inquiry`):
+
+```markdown
+---
+name: inquiry
+description: Use when the user has a vague idea but hasn't defined the problem clearly yet.
+---
+
+# /inquiry — Problem Discovery
+
+**Role: Product Strategist.** You understand problems before solving them.
+
+Ask four questions, one at a time. Wait for each answer.
+
+**Q1: Problem** — "What problem are we solving, and who specifically has this problem?"
+**Q2: Alternative** — "What do they do today instead? Why do they tolerate it?"
+**Q3: Switch** — "What would make someone switch?"
+**Q4: Evidence** — "What evidence do we have? What would prove us wrong?"
+
+Then produce:
+\```
+INQUIRY BRIEF
+═════════════
+Problem:         [1 sentence]
+User:            [specific person]
+...
+\```
+
+Gotchas: Don't accept vague answers. Don't solution during discovery.
 ```
 
 ## Rules for Writing Protocols
 
 1. **Description is discovery.** The frontmatter description is all the agent reads when scanning for relevant protocols. It must answer: what does this do? When should it activate? Keep it under 100 words.
 
-2. **Persona + Anti-Persona.** Every protocol starts with who the agent IS and who it IS NOT. This prevents behavioral bleeding between protocols.
+2. **Persona is required.** Start with a bold **Persona** line stating who the agent IS. This prevents behavioral bleeding between protocols.
 
-3. **Concrete output format.** Every protocol defines its exact output structure with a real example. The agent should never have to guess what "done" looks like.
+3. **Concrete output format.** Include at least one code block showing the exact output structure. The agent should never have to guess what "done" looks like.
 
-4. **Anti-patterns are mandatory.** List 3-5 common mistakes with explanations. Anti-patterns teach the agent what NOT to do, which is often more important than what to do.
+4. **Gotchas line.** End with a `Gotchas:` line listing common mistakes. Brief and inline — not a headed section.
 
-5. **Escape hatches.** Include when NOT to use this protocol. No protocol is universal.
+5. **Self-contained.** Each SKILL.md contains ONLY that skill's content. No content from other protocols, sections, or the monolithic LunaStack.md.
 
-6. **Progressive disclosure.** If the protocol has reference material (checklists, templates), put it in the procedure section — not in the frontmatter. Only load what's needed when it's needed.
+6. **Progressive disclosure.** Keep skills concise. Reference material (checklists, templates) goes in the procedure body, not in the frontmatter.
 
 ## Discipline Assignment
 
@@ -61,10 +90,9 @@ Protocols belong to the discipline that matches their cognitive mode:
 
 ## Naming Conventions
 
-- Protocol files: `kebab-case.md` (e.g., `dependency-review.md`)
+- Protocol files: `kebab-case` directory with `SKILL.md` inside (e.g., `dependency-review/SKILL.md`)
 - Protocol commands: `/kebab-case` (e.g., `/dependency-review`)
-- Discipline SKILL.md: The main entry point for each discipline. Contains the primary protocol for that discipline.
-- Additional protocols: Separate files in the discipline directory.
+- Directory names must match the `name:` field in frontmatter exactly
 
 ## Testing Your Protocol
 
@@ -73,11 +101,10 @@ Protocols belong to the discipline that matches their cognitive mode:
 3. Check: Does the output match the documented format?
 4. Check: Does the agent stay in persona throughout?
 5. Check: Does the agent correctly identify when NOT to use the protocol?
-6. Check: Is the token cost reasonable? (Measure with `/lunastack-status`)
 
 ## Pull Request Process
 
-1. Create your protocol file in the correct discipline directory
-2. Update `SKILL.md` (root) to include your protocol in the discipline table
-3. Test with at least one realistic scenario
-4. Submit PR with: protocol file, updated SKILL.md, and a brief description of what problem the protocol solves
+1. Create your protocol directory with `SKILL.md` in the correct discipline
+2. Test with at least one realistic scenario
+3. Submit PR with: protocol file, example invocation output, and a brief description of what problem the protocol solves
+4. Ensure CI passes (frontmatter validation, content leakage check)

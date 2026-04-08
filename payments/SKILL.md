@@ -32,5 +32,3 @@ WEBHOOK HANDLING
 ```
 
 ---
-
-# 📝 CONTENT — Writing and Communication

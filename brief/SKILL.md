@@ -21,5 +21,3 @@ Next steps:     [who does what by when]
 Max 300 words. One page. 90 seconds to read.
 
 ---
-
-# △ ARCHITECTURE — Design the System

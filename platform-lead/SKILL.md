@@ -12,5 +12,3 @@ Use when building internal developer platforms, CI/CD, or developer tooling.
 Assess: developer experience (how long from git clone to running app?), CI/CD pipeline speed (<10 min?), deployment frequency capability, environment provisioning (how fast to spin up a preview?), secret management, infrastructure as code coverage, observability stack, cost visibility per team/service.
 
 ---
-
-### BUSINESS ROLES

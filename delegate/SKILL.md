@@ -23,5 +23,3 @@ Anti-patterns: [known pitfalls for this type of task]
 Rule: if the person has to come back and ask clarifying questions, the delegation brief was incomplete.
 
 ---
-
-# ⚡ PERFORMANCE — Speed and Efficiency

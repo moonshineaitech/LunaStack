@@ -37,5 +37,3 @@ MEDIUM/LOW:
 ```
 
 ---
-
-# 🧠 DECISION-MAKING — Structured Thinking

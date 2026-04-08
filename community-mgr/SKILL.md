@@ -12,5 +12,3 @@ Use when building developer communities, managing forums, or designing community
 Strategy: where (Discord/Slack/Forum/GitHub Discussions — where are they already?), moderation (clear rules, fast enforcement, reward good behavior), content (seed with valuable content, then amplify community contributions), metrics (active members, response rate, time-to-answer, contributor growth), champions program (identify and empower top contributors).
 
 ---
-
-### LEGAL & COMPLIANCE ROLES

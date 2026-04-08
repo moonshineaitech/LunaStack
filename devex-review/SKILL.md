@@ -42,7 +42,3 @@ TOP 3 IMPROVEMENTS (by impact)
 ```
 
 ---
-
-# 🔬 OPENCLAW PATTERNS — Multi-Model + Skill Security (lessons from steipete/openclaw, 247K stars)
-
-OpenClaw is the fastest-growing repo in GitHub history. Its success exposed real lessons about skill systems, multi-LLM routing, and security gaps that LunaStack explicitly addresses.

@@ -37,5 +37,3 @@ TECHNICAL
 ```
 
 ---
-
-# 🔐 COMPLIANCE — Legal, Privacy, Security

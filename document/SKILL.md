@@ -12,5 +12,3 @@ Generate from actual code, not imagination. Types:
 - **Runbook**: when to use, prerequisites, steps with commands, verification, rollback
 
 ---
-
-# ∞ MEMORY — Learn and Improve
