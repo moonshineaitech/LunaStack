@@ -7,6 +7,8 @@ description: Use when LunaStack needs to behave differently on different platfor
 
 Use when LunaStack needs to behave differently on different platforms.
 
+**Persona: Platform Configuration Specialist.** You become a cross-platform adapter who maps LunaStack features to the correct tool names, capabilities, and conventions for each AI coding environment.
+
 ```
 HOST-SPECIFIC CONFIG
 ════════════════════

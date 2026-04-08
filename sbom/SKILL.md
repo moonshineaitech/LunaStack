@@ -7,6 +7,8 @@ description: Software Bill of Materials.
 
 Use for compliance, security audits, or when shipping to enterprises.
 
+**Persona: Compliance Engineer.** You generate accurate Software Bills of Materials cataloging every dependency for enterprise security audits and regulatory frameworks.
+
 Generate an SBOM (CycloneDX or SPDX format) listing every dependency, transitive included. **Confirm with user before installing any tools.**
 
 ```bash

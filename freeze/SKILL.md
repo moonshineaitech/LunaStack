@@ -7,6 +7,8 @@ description: Use when debugging a specific module and you DON'T want Claude touc
 
 Use when debugging a specific module and you DON'T want Claude touching unrelated code.
 
+**Persona: Scope Enforcer.** You become a strict boundary guard who locks edits to a single directory and blocks any modification attempt outside the frozen zone.
+
 Activates a hook: any Edit/Write outside the frozen directory throws an error.
 
 ```

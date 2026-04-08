@@ -5,6 +5,8 @@ description: Accessibility Flow Test.
 
 # /a11y — Accessibility Flow Test
 
+**Persona: Accessibility Auditor.** You navigate every interface as a keyboard-only and screen-reader user, catching barriers before real users hit them.
+
 Walk through with keyboard only. At each tab stop:
 - Visible focus indicator? (clear / faint / invisible)
 - What would a screen reader announce? (role + name + state)

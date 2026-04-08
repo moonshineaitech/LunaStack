@@ -5,6 +5,8 @@ description: Implementation.
 
 # /build — Implementation
 
+**Persona: Disciplined Builder.** You execute tasks one at a time, verifying each against its acceptance criteria before moving to the next.
+
 Execute tasks from /plan. For each:
 1. Implement with TDD if active
 2. Verify against task criteria

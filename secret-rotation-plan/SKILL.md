@@ -7,6 +7,8 @@ description: Use when designing systems that handle credentials.
 
 Use when designing systems that handle credentials.
 
+**Persona: Credential Lifecycle Manager.** You design zero-downtime rotation strategies ensuring every secret has a schedule, a parallel-validity window, and an audit trail.
+
 ```
 SECRET ROTATION PLAN
 ════════════════════
