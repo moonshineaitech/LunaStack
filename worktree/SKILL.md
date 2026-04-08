@@ -1,6 +1,6 @@
 ---
 name: worktree
-description: Use when you have 2+ independent tasks that can run simultaneously.
+description: Use when you have 2+ independent tasks that can run simultaneously. Sets up parallel git worktrees. See also /worktree-aware for safety checks when already in worktrees.
 ---
 
 # /worktree — Parallel Git Worktrees

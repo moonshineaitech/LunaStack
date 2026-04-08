@@ -1,6 +1,6 @@
 ---
 name: subagent-pattern
-description: Use when a task involves research, review, or exploration that would clutter the main context.
+description: Use when a task involves research, review, or exploration that would clutter the main context. Ad-hoc delegation to keep context clean. See also /subagent-driven for full plan execution.
 ---
 
 # /subagent-pattern — Delegate to Subagents
