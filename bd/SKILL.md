@@ -22,3 +22,5 @@ Risk factors: [dependency, competition, brand alignment]
 Exit terms: [what happens if it doesn't work]
 Verdict: [partnership vs dependency] + [pursue / negotiate / walk away]
 ```
+
+Gotchas: Don't confuse a partnership with a dependency -- if you can't walk away without losing core functionality, you're dependent. Don't skip the exit clause -- every partnership ends eventually. Don't let integration cost estimates ignore ongoing maintenance -- the initial build is 30% of the total cost.

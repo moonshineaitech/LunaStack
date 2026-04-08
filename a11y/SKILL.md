@@ -14,3 +14,5 @@ Walk through with keyboard only. At each tab stop:
 For every dynamic change (modal, toast, content load): announced? Focus moved correctly?
 
 Verdict: Usable / Usable with friction / Partially blocked / Unusable.
+
+Gotchas: Don't only test with a mouse -- keyboard-only and screen reader testing catch different issues. Don't assume ARIA fixes structural HTML problems -- use semantic elements first. Don't skip testing dynamic content (modals, toasts) -- they're the most common accessibility failures.

@@ -21,3 +21,5 @@ More of his loops:
 
 For Claude Code: combine `/loop` with any skill for autonomous background operation.
 For non-CC users: run /babysit manually between tasks as a checkpoint.
+
+Gotchas: Don't let babysit auto-merge without human review on critical paths -- autonomous is not unsupervised. Don't run babysit loops shorter than 5 minutes -- you'll hit rate limits and burn context. Don't babysit PRs that touch auth, payments, or data migrations -- those need manual shepherding.
