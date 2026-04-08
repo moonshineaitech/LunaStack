@@ -21,6 +21,8 @@ jobs:
           for dir in */; do
             # Skip hidden dirs and .github
             [[ "$dir" == .* ]] && continue
+            # Skip non-skill directories
+            [[ "$dir" == "tests/" ]] && continue
             # Security: skip directory names with unsafe characters
             [[ "$(basename "$dir")" =~ ^[a-z0-9][a-z0-9-]*/?$ ]] || { printf 'WARNING: skipping unsafe dir name: %s\n' "$dir"; continue; }
             if [ ! -f "$dir/SKILL.md" ]; then

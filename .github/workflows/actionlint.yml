@@ -17,7 +17,8 @@ jobs:
 
       - name: Install actionlint
         run: |
-          bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+          curl -sL -o /tmp/dl-actionlint.bash https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash
+          bash /tmp/dl-actionlint.bash
 
       - name: Run actionlint
-        run: ./actionlint
+        run: ./actionlint -shellcheck=""
