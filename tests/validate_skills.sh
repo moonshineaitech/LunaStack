@@ -99,8 +99,8 @@ done
 # --- Test 4: Structural integrity ---
 echo -e "${dim}4. Checking structural integrity...${reset}"
 skill_count=$(ls -d "$REPO_DIR"/*/SKILL.md 2>/dev/null | wc -l)
-if [ "$skill_count" -lt 230 ]; then
-  fail "repo" "Expected ~239 skills, found only $skill_count"
+if [ "$skill_count" -lt 240 ]; then
+  fail "repo" "Expected ~245 skills, found only $skill_count"
 fi
 
 # Check for unsafe directory names

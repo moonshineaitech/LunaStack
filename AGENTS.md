@@ -1,6 +1,6 @@
 # AGENTS.md — LunaStack Skill Index
 
-> 239 skills · 26 disciplines · 55 specialist roles
+> 245 skills · 27 disciplines · 55 specialist roles
 > Quick reference for all available `/commands`.
 
 ## Meta (8)
@@ -371,3 +371,14 @@
 | /sbom | Software Bill of Materials. |
 | /dependency-typosquat | Detect Typosquat Attacks. |
 | /secret-rotation-plan | Use when designing systems that handle credentials. |
+
+## Frontier — Original LunaStack Research (6)
+
+| Command | Description |
+|---|---|
+| /ralph-loop | Use for large tasks that will exhaust the context window. Decomposes work into atomic units, commits after each, resets context between units. |
+| /context-budget-check | Use when a session is getting long, quality is dropping, or before starting a complex task. Estimates remaining context capacity. |
+| /security-review | Use before merging any PR or deploying any feature. Systematic security review informed by 2026 AI vulnerability research. |
+| /agent-orchestra | Use when a task benefits from multiple specialized agents working in parallel. Hierarchical multi-agent orchestration. |
+| /drift-detect | Use periodically to detect when AI behavior has drifted from project conventions. |
+| /cost-tracker | Use to track and optimize AI development costs. Monitors token usage, model selection, and cost-per-feature. |
