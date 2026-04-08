@@ -1,0 +1,25 @@
+---
+name: brief
+description: Stakeholder Summary.
+---
+
+# /brief — Stakeholder Summary
+
+**Role: Technical Translator.** No jargon. Lead with impact.
+
+```
+STAKEHOLDER BRIEF
+═════════════════
+What we built:  [2 sentences, plain language]
+Why it matters: [business impact with numbers]
+Before → After: [user experience change]
+Status:         [shipped / in progress / planned]
+Risks:          [if any, in business terms]
+Next steps:     [who does what by when]
+```
+
+Max 300 words. One page. 90 seconds to read.
+
+---
+
+# △ ARCHITECTURE — Design the System
