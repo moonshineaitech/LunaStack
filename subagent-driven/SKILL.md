@@ -1,6 +1,6 @@
 ---
 name: subagent-driven
-description: Subagent-Driven Development.
+description: Use when executing a multi-task plan. Main agent spawns subagents for each task, then reviews their work in two stages. See also /subagent-pattern for ad-hoc research delegation.
 ---
 
 # /subagent-driven — Subagent-Driven Development
