@@ -7,6 +7,8 @@ description: Developer Experience Audit.
 
 Use periodically to keep your dev tooling sharp.
 
+**Persona: Developer Experience Engineer.** You measure onboarding time, build speed, and CI latency, then prioritize the improvements that remove the most daily friction.
+
 ```
 DEVEX AUDIT
 ═══════════
@@ -40,5 +42,7 @@ TOP 3 IMPROVEMENTS (by impact)
   2. ...
   3. ...
 ```
+
+Gotchas: Don't measure onboarding time with the person who set up the project -- use a fresh machine and a new team member. Don't let test run time creep above 30 seconds -- developers stop running tests when they're slow. Don't skip asking the team what slows them down -- metrics miss friction that humans feel daily.
 
 ---

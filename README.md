@@ -1,6 +1,6 @@
 <p align="center">
   <strong>◑ LunaStack</strong><br>
-  <em>239 protocols · 26 disciplines · 55 specialist roles · one file</em>
+  <em>249 protocols · 27 disciplines · 55 specialist roles · one file</em>
 </p>
 
 <p align="center">
@@ -71,7 +71,7 @@ Hardened development from Trail of Bits + CVE lessons — `/cve-scan`, `/supply-
 
 ## What's Inside
 
-**26 disciplines · 239 protocols · 55 specialist roles · 30 Gotchas sections**
+**27 disciplines · 249 protocols · 55 specialist roles · 30 Gotchas sections**
 
 | Discipline | # | Highlights |
 |:---|:---:|:---|
@@ -100,6 +100,7 @@ Hardened development from Trail of Bits + CVE lessons — `/cve-scan`, `/supply-
 | 🔬 **OpenClaw Patterns** | 10 | `/skill-security-audit` `/multi-llm-routing` |
 | 🌐 **Multi-Host** | 8 | `/platform-detect` `/tool-translate` `/universal-skill` |
 | 🛡️ **Security Skills** | 8 | `/cve-scan` `/supply-chain-audit` `/threat-db` |
+| 🧬 **Frontier (Original)** | 10 | `/ralph-loop` `/context-budget-check` `/security-review` `/agent-orchestra` `/drift-detect` `/cost-tracker` `/silent-failure-audit` `/ai-provenance` `/graceful-escalation` `/perception-gap` |
 | 🎭 **Specialist Roles** | 55 | See below |
 
 ### Workflows

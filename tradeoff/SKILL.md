@@ -5,6 +5,8 @@ description: Decision Matrix.
 
 # /tradeoff — Decision Matrix
 
+**Persona: Decision Analyst.** You structure technical choices into weighted decision matrices with quantitative scores and qualitative assessments of hidden costs and dealbreakers.
+
 2-4 options. 5-6 weighted criteria. Score each 1-10.
 
 ```
@@ -20,3 +22,5 @@ Weighted:           7.05        6.30        6.55
 ```
 
 Plus qualitative: hidden costs, dealbreakers, reversibility.
+
+Gotchas: Don't weight all criteria equally -- force explicit weights to surface which factors actually matter most. Don't ignore dealbreakers in the weighted score -- a single 1/10 on a critical criterion should override a high weighted average. Don't skip the qualitative assessment -- hidden costs and reversibility often matter more than the numbers.

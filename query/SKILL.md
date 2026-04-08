@@ -31,4 +31,6 @@ Speedup:  [X]×
 Index added: [table.columns — type]
 ```
 
+Gotchas: Don't optimize without running EXPLAIN ANALYZE first -- intuition about slow queries is wrong more often than right. Don't measure with a single run -- run the query 10+ times to account for caching and variance. Don't add indexes without checking write impact -- every index slows INSERT/UPDATE operations.
+
 ---

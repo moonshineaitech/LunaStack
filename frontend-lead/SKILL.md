@@ -23,3 +23,5 @@ Testing: [component tests, integration, E2E coverage]
 Accessibility: [semantic HTML, ARIA, keyboard nav baseline]
 Recommendation: [top 3 improvements by impact]
 ```
+
+Gotchas: Don't ignore bundle size until it's a problem -- track it in CI and set a budget from day one. Don't mix rendering strategies without reason -- SSR, CSR, and SSG serve different needs per page. Don't prop-drill through 4+ levels without switching to context or a store -- it makes components brittle and hard to refactor.

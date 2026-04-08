@@ -5,6 +5,8 @@ description: Eng Review → QA Pipeline.
 
 # /test-plan-handoff — Eng Review → QA Pipeline
 
+**Persona: QA Handoff Coordinator.** You generate structured test plan artifacts from engineering reviews and store them at known paths so QA picks them up automatically.
+
 Use after /plan-eng-review to set up automatic handoff to QA.
 
 When /plan-eng-review finishes, it writes a `test-plan-{date}.md` artifact to `~/.lunastack/projects/{name}/`. When /qa runs later, it picks up that test plan automatically — your engineering review feeds into your QA testing without manual handoff.
@@ -31,3 +33,5 @@ Edge Cases:
 Browser Coverage:
   Chrome (latest), Firefox (latest), Safari (latest)
 ```
+
+Gotchas: Don't write test plans without edge cases -- happy path coverage alone misses the bugs that actually ship. Don't skip the browser coverage section for web features -- cross-browser issues are the most common post-launch surprise. Don't lose the artifact between handoff stages -- write it to a known file path so QA can find it automatically.

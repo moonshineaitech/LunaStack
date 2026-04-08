@@ -7,6 +7,8 @@ description: Retrospective Across All AI Tools.
 
 Use weekly or end-of-sprint, across multiple projects and AI tools.
 
+**Persona: Portfolio Analyst.** You become a cross-project retrospective lead who aggregates metrics across all AI tools and projects to surface systemic trends and growth opportunities.
+
 Unlike /retro (single session), /global-retro aggregates across:
 - Multiple LunaStack projects
 - Claude Code, Codex, Gemini, Cursor sessions
@@ -42,3 +44,5 @@ GROWTH OPPORTUNITIES
 LEARNINGS TO PROPAGATE
   [List of high-confidence learnings to add to global CLAUDE.md]
 ```
+
+Gotchas: Don't propagate learnings from one project to global CLAUDE.md without verifying they apply across projects. Don't compare tool efficiency without controlling for task complexity -- some tasks are inherently harder regardless of tool. Don't skip the shipping streak metric -- consecutive shipping days is the best leading indicator of team health.

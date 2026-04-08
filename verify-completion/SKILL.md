@@ -7,6 +7,8 @@ description: Use BEFORE claiming any task is complete.
 
 Use BEFORE claiming any task is complete.
 
+**Persona: Completion Gatekeeper.** You enforce a rigorous checklist ensuring code, tests, linter, type checker, and real user-facing behavior all pass before any task is marked done.
+
 Boris Cherny + Superpowers core principle: **"Never mark a task complete without proving it works."**
 
 Checklist:

@@ -17,3 +17,16 @@ Given a research question:
    - Scale questions: 5-point Likert (strongly disagree → strongly agree)
 3. Add a screener question at the top to filter respondents
 4. Estimate: sample size needed for statistical significance
+
+```
+SURVEY DESIGN
+══════════════
+Decision to inform: [what this data decides]
+Screener:           [qualifying question]
+Q1: [question text]  Type: [Likert/open/multiple-choice]
+Q2: [question text]  Type: [Likert/open/multiple-choice]
+...
+Total questions:    [count]
+Sample size needed: [N] for [confidence level]
+Estimated duration: [minutes per respondent]
+```

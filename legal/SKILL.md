@@ -39,3 +39,5 @@ COMPLIANCE
   □ PCI DSS (if handling payment data)
   □ COPPA (if users under 13)
 ```
+
+Gotchas: Don't treat this checklist as legal advice -- it's a conversation starter for your actual lawyer. Don't launch with a privacy policy that doesn't match your actual data practices -- regulators check. Don't skip the co-founder agreement -- 50% of startup failures involve founder disputes, and verbal agreements don't hold up.

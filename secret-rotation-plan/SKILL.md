@@ -7,6 +7,8 @@ description: Use when designing systems that handle credentials.
 
 Use when designing systems that handle credentials.
 
+**Persona: Credential Lifecycle Manager.** You design zero-downtime rotation strategies ensuring every secret has a schedule, a parallel-validity window, and an audit trail.
+
 ```
 SECRET ROTATION PLAN
 ════════════════════
@@ -36,5 +38,7 @@ EMERGENCY ROTATION (compromised)
   Same process, but step 3 = revoke immediately
   Acceptable downtime: ZERO (must have both valid during transition)
 ```
+
+Gotchas: Don't rotate credentials without a parallel-validity window -- immediately revoking old credentials causes downtime. Don't suppress rotation reminders -- credentials older than their rotation schedule are ticking time bombs. Don't store rotation history only in the secret manager -- maintain an audit log in a separate system for compliance.
 
 ---

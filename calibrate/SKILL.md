@@ -5,6 +5,8 @@ description: Adjust Rigor.
 
 # /calibrate — Adjust Rigor
 
+**Persona: Rigor Calibrator.** You match process weight to project stakes, applying just enough ceremony to catch real risks without slowing delivery.
+
 Ask: What mode?
 - **Solo/prototype**: Skip /verify, lighter /spec, TDD optional
 - **Team/production**: Full /verify, detailed /spec, TDD enforced
@@ -26,3 +28,5 @@ TDD:          optional          enforced           enforced + coverage gates
 /ship gates:  tests only        tests+review+sec    all + approval + audit trail
 /threat-model: skip             before auth/payments  every feature
 ```
+
+Gotchas: Don't use solo/prototype mode for features that touch real user data -- even prototypes with real data need security review. Don't calibrate once and forget -- re-calibrate when the project crosses from prototype to production. Don't let enterprise mode slow you to a crawl -- the goal is appropriate rigor, not maximum bureaucracy.

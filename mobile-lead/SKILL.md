@@ -27,3 +27,5 @@ Accessibility:    [VoiceOver/TalkBack support level]
 App store:        [review compliance, metadata, screenshot automation]
 Bundle size:      [current, growth trend, reduction opportunities]
 ```
+
+Gotchas: Don't test only on WiFi -- mobile users on 3G/4G experience completely different performance. Don't ignore cold start time -- if your app takes >2 seconds to launch, users will switch to a competitor. Don't skip offline-first design -- mobile networks are unreliable, and an app that shows a blank screen on poor connectivity will be uninstalled.

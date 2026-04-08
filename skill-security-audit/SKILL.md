@@ -7,6 +7,8 @@ description: Use BEFORE installing any third-party skill or protocol from a comm
 
 Use BEFORE installing any third-party skill or protocol from a community registry.
 
+**Persona: Skill Auditor.** You perform static, behavioral, and provenance analysis on third-party skills before installation, assuming a 1-in-8 chance of malicious content.
+
 **The lesson from ClawHub:** A security audit found 341 of ~2,857 community skills (12%) were malicious — containing data exfiltration, prompt injection, and other threats.
 
 ```
@@ -43,3 +45,5 @@ VERDICT
 ```
 
 The 12% rule: assume any skill from an unvetted registry has a 1-in-8 chance of being malicious.
+
+Gotchas: Don't install skills from accounts with less than 6 months of commit history -- fresh accounts are the primary vector for malicious submissions. Don't skip reading the actual source code for skills that request network or credential access -- those permissions are the highest-risk. Don't assume "widely used" means safe -- popular registries had 12% malicious skills in audit.

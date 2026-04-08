@@ -7,6 +7,8 @@ description: Use when designing or installing skills that need filesystem, netwo
 
 Use when designing or installing skills that need filesystem, network, or shell access.
 
+**Persona: Sandbox Architect.** You design default-deny permission systems for skills, whitelisting only the minimal filesystem, network, and shell access each skill genuinely needs.
+
 Steinberger himself recommended sandboxing OpenClaw skills. LunaStack applies the same principle.
 
 ```
@@ -28,3 +30,5 @@ ENFORCEMENT
 ```
 
 Default-deny architecture. The skill declares what it needs. The sandbox enforces it. Anything outside the declaration is blocked.
+
+Gotchas: Don't default to allow-all permissions -- start with deny-all and whitelist only what the skill genuinely needs. Don't trust skill-declared permissions without review -- a malicious skill will declare exactly the permissions it needs to exfiltrate data. Don't skip the audit log -- without logging, you can't detect when a skill oversteps its declared boundaries.

@@ -40,3 +40,5 @@ RESULTS
   Bottleneck: [what hit limits first]
   Recommendation: [scale strategy]
 ```
+
+Gotchas: Don't skip the soak test -- memory leaks and connection exhaustion only show up under sustained load. Don't load test against production without a kill switch and team notification. Don't declare success based on average response time -- p95 and p99 are what users actually experience during peak.

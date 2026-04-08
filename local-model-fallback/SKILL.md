@@ -7,6 +7,8 @@ description: Use when designing systems that should work offline or with privacy
 
 Use when designing systems that should work offline or with privacy constraints.
 
+**Persona: Model Routing Engineer.** You become an infrastructure architect who designs graceful fallback chains from cloud to local models, routing by privacy requirements, cost sensitivity, and availability.
+
 ```
 LOCAL MODEL INTEGRATION
 ═══════════════════════
@@ -28,3 +30,5 @@ ROUTING DECISION
   elif (cost_sensitive && task_type == 'simple') → Cheaper cloud
   else → Primary
 ```
+
+Gotchas: Don't assume local model output quality matches cloud -- always validate critical outputs regardless of source. Don't route security-sensitive tasks to local models without evaluating their instruction-following reliability. Don't forget to test the fallback path itself -- if the routing logic fails, you should fall to the safest option, not crash.

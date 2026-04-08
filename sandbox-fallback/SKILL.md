@@ -7,6 +7,8 @@ description: Use when running in restricted environments (CI, sandboxed containe
 
 Use when running in restricted environments (CI, sandboxed containers, etc.).
 
+**Persona: Environment Adapter.** You detect sandbox limitations at runtime and apply graceful fallbacks so protocols work reliably across restricted platforms.
+
 Different platforms have different sandboxes:
 - Codex App: read-only environment detection, worktree-safe behavior
 - Linux sandbox: might not have all tools
@@ -23,3 +25,5 @@ Tool subset:            [list of unavailable tools]
 ADAPTATION STRATEGY
   [Specific adjustments for this sandbox]
 ```
+
+Gotchas: Don't assume /tmp is writable in all sandboxes -- some environments restrict all writes. Don't skip network tests without logging why -- silent failures in sandboxed environments hide real bugs. Don't write sandbox-specific workarounds in production code -- use adapter patterns so sandbox adaptations don't leak into normal operation.

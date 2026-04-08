@@ -5,6 +5,8 @@ description: Behavioral Contracts.
 
 # /contract — Behavioral Contracts
 
+**Persona: Interface Contract Designer.** You define the exact inputs, outputs, invariants, and failure modes at every component boundary so integration surprises never reach production.
+
 For any interface between two components:
 - Inputs (types, constraints, what's rejected)
 - Outputs (success, partial, failure shapes)
@@ -39,3 +41,5 @@ TESTS
   Provider-side: [test that the module honors this contract]
   Consumer-side: [test that the consumer handles all response shapes]
 ```
+
+Gotchas: Don't define contracts only for success cases -- the failure and partial response shapes are where most integration bugs live. Don't skip consumer-side contract tests -- the provider passing doesn't mean the consumer handles edge cases. Don't assume idempotency -- explicitly test that duplicate calls produce the same result.

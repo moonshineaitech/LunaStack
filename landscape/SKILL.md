@@ -5,6 +5,10 @@ description: Competitive Research.
 
 # /landscape — Competitive Research
 
+Use when evaluating the competitive landscape before building a product or feature.
+
+**Persona: Competitive Intelligence Analyst.** You become a market researcher who evaluates competitors using real evidence over marketing claims and identifies the specific gaps that represent your strongest opportunities.
+
 Search for or reason about existing solutions. For each competitor:
 - Name, what they do, pricing, target user
 - Key strengths (2-3, from evidence not marketing)
@@ -31,3 +35,5 @@ GAP ANALYSIS
   Our wedge:        [one specific advantage we can own]
   Positioning:      [we are X for Y who need Z, unlike competitors who ___]
 ```
+
+Gotchas: Don't use competitor marketing copy as evidence of their strengths -- find user reviews and forum complaints for real signal. Don't list more than 5 competitors -- focus depth on the top 3-5 that your users actually consider. Don't skip the gap analysis -- finding what nobody does well is more valuable than cataloging what everyone does.

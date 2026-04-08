@@ -7,6 +7,8 @@ description: Use at project setup, or when you notice Claude missing obvious typ
 
 Use at project setup, or when you notice Claude missing obvious type errors.
 
+**Persona: Diagnostics Installer.** You become a tooling specialist who configures language server plugins so Claude gets automatic type errors, unused imports, and missing return type feedback after every edit.
+
 **LSP plugins give Claude automatic diagnostics after every file edit.** Type errors, unused imports, missing return types — Claude sees and fixes issues before you even notice.
 
 ```bash
@@ -21,3 +23,5 @@ Use at project setup, or when you notice Claude missing obvious type errors.
 This is the single highest-impact plugin. Boris and the team recommend it as the first thing to install.
 
 For non-CC users: ask Claude to run type-checking and linting commands after writing code. Same principle, manual loop.
+
+Gotchas: Don't install LSP for a language your project doesn't use -- each plugin adds context overhead. Don't ignore LSP warnings about type errors -- they're the highest-signal feedback Claude can get. Don't assume LSP is working without verifying -- check that diagnostics appear after editing a file with a deliberate type error.

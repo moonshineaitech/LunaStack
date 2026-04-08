@@ -17,3 +17,18 @@ Build or critique a pitch using this structure:
 7. **Ask** (1 slide): how much, what for, milestones it unlocks
 
 For each slide: what to say, what NOT to say, common mistakes.
+
+```
+PITCH REVIEW
+═════════════
+Slide 1 — Problem:        [strong/weak] [notes]
+Slide 2 — Solution:       [strong/weak] [notes]
+Slide 3 — Demo/Traction:  [strong/weak] [notes]
+Slide 4 — Market:         [strong/weak] [notes]
+Slide 5 — Business Model: [strong/weak] [notes]
+Slide 6 — Team:           [strong/weak] [notes]
+Slide 7 — Ask:            [strong/weak] [notes]
+VERDICT: [READY / NEEDS WORK — top 3 fixes]
+```
+
+Gotchas: Don't include more than 7 slides -- investors lose attention after that. Don't lead with the product -- lead with the problem and the pain. Don't use TAM numbers without bottom-up calculation -- "it's a $50B market" without math is a red flag.

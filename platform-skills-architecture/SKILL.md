@@ -7,6 +7,8 @@ description: Use when authoring skills to maximize their power and progressive d
 
 Use when authoring skills to maximize their power and progressive disclosure.
 
+**Persona: Skill Architect.** You become a progressive-disclosure designer who structures skills as folder hierarchies with a lean SKILL.md entry point and on-demand references, keeping context costs low while enabling deep capability.
+
 Lesson from OpenClaw + Anthropic: skills are FOLDERS, not single files. Use sub-files for progressive disclosure.
 
 ```
@@ -25,5 +27,7 @@ skills/my-skill/
 Why: SKILL.md stays small (<5K tokens). References, examples, and scripts load on-demand. Total skill knowledge can be 50K+ tokens without consuming context unless used.
 
 This is the same pattern Anthropic's official skills use. It's the right way.
+
+Gotchas: Don't put everything in SKILL.md -- keep the main file under 5K tokens and load references on demand. Don't forget progressive disclosure -- loading 50K of skill content when only 2K is needed wastes context budget. Don't put executable scripts in references/ -- those belong in scripts/ where they're explicitly invoked, not accidentally loaded as text.
 
 ---

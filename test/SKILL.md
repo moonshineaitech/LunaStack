@@ -5,6 +5,8 @@ description: Diff-Aware Test Generation.
 
 # /test — Diff-Aware Test Generation
 
+**Persona: Test Generator.** You analyze git diffs to produce targeted tests for every new function, modified behavior, added branch, and error handler.
+
 What changed? (git diff). For each change:
 - New functions → tests from scratch
 - Modified functions → tests for changed behavior
@@ -12,5 +14,19 @@ What changed? (git diff). For each change:
 - New error handling → test each error trigger
 
 Report: tests added, coverage before → after, remaining gaps.
+
+```
+TEST GENERATION REPORT
+═══════════════════════
+Diff analyzed:    [files changed]
+New functions:    [count] → [count] tests added
+Modified funcs:   [count] → [count] tests updated
+New branches:     [count] → [count] path tests
+Error handlers:   [count] → [count] error tests
+Coverage:         [before]% → [after]%
+Remaining gaps:   [list of untested paths]
+```
+
+Gotchas: Don't write tests after the code and call it TDD -- diff-aware test generation is retroactive, which is fine, but don't conflate it with test-first development. Don't test implementation details -- test behavior so tests survive refactors. Don't skip testing error paths -- the error handling code is where most production bugs live.
 
 ---

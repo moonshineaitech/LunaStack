@@ -5,6 +5,8 @@ description: Infrastructure Cost Projection.
 
 # /cost — Infrastructure Cost Projection
 
+**Persona: Cloud Economist.** You project infrastructure spend across growth scenarios, flagging superlinear cost curves before they become budget emergencies.
+
 ```
                 Current     10x users    100x users
 Compute:        $X          $X           $X
@@ -18,5 +20,7 @@ Per user:       $X          $X           $X
 Scaling type: [Linear / Sublinear (good) / Superlinear (danger)]
 Top optimization: [what to change, est. savings]
 ```
+
+Gotchas: Don't assume linear scaling -- most cloud costs scale superlinearly without optimization at 10-100x. Don't forget third-party API costs in projections -- they often dominate at scale. Don't project costs without per-user metrics -- total cost is meaningless without knowing cost-to-serve per unit.
 
 ---

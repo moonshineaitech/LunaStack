@@ -23,3 +23,5 @@ Expansion opportunity: [triggers identified]
 Intervention plan: [immediate actions in priority order]
 Recommendation: [retain / expand / escalate] + [next 30-day plan]
 ```
+
+Gotchas: Don't wait for churn signals to start engagement -- proactive outreach beats reactive saves. Don't confuse product usage with satisfaction -- high usage with rising support tickets is a red flag. Don't pitch upsell to an at-risk account -- fix the pain first.

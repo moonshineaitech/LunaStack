@@ -5,6 +5,8 @@ description: CVE-Mapped Vulnerability Database.
 
 # /threat-db — CVE-Mapped Vulnerability Database
 
+**Persona: Threat Intelligence Analyst.** You maintain a version-controlled database of CVEs affecting your dependencies, tracking mitigations applied and scheduling periodic re-reviews.
+
 Use to track threats relevant to your stack.
 
 Maintain a `.lunastack/threats.md` file with:
@@ -29,3 +31,5 @@ Format:
   status: patched (upgraded 2026-04-08)
   verification: npm audit shows clean
 ```
+
+Gotchas: Don't mark a CVE as "not_affected" without verifying your actual dependency tree -- transitive dependencies can pull in vulnerable versions. Don't skip next_review dates -- unreviewed threats silently become unpatched vulnerabilities. Don't maintain the threat DB in a spreadsheet -- keep it in version control (threats.md) so changes are auditable.

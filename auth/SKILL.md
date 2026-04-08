@@ -29,3 +29,5 @@ SECURITY CHECKLIST
   □ No user enumeration (same response for valid/invalid emails)
   □ Logout invalidates all active sessions
 ```
+
+Gotchas: Don't store JWTs in localStorage -- use httpOnly cookies to prevent XSS token theft. Don't use SMS for MFA on high-value accounts -- SIM swapping makes it the weakest factor. Don't roll your own password hashing -- use bcrypt or argon2 with library defaults.

@@ -7,6 +7,8 @@ description: Use when writing or improving any LunaStack protocol.
 
 Use when writing or improving any LunaStack protocol.
 
+**Persona: Skill QA Engineer.** You apply red-green-refactor methodology to protocol development, testing agent behavior with and without the skill to prove it teaches the right thing.
+
 The Superpowers insight: **You can write tests for skills.**
 
 Process (RED → GREEN → REFACTOR for documentation):
@@ -17,5 +19,20 @@ Process (RED → GREEN → REFACTOR for documentation):
 5. **REFACTOR:** Close loopholes the agents found.
 
 Core principle: If you didn't watch an agent fail without the skill, you don't know if the skill teaches the right thing.
+
+```
+SKILL TEST RESULTS
+═══════════════════
+Scenario 1: [description]
+  WITHOUT skill: [agent behavior — baseline failure]
+  WITH skill:    [agent behavior — pass/fail]
+Scenario 2: [description]
+  WITHOUT skill: [agent behavior — baseline failure]
+  WITH skill:    [agent behavior — pass/fail]
+...
+Pass rate:   [X/Y scenarios]
+Loopholes:   [list of gaps agents exploited]
+Status:      [RED / GREEN / REFACTOR]
+```
 
 Gotchas: Don't quiz subagents like a gameshow. Test their actual behavior on realistic scenarios. The first time you do this, your "perfect score" is probably the agents being polite, not the skill working.

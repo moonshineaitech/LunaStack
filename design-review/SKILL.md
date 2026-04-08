@@ -7,6 +7,8 @@ description: 80-Item Visual Audit.
 
 Use after building any user-facing surface, before considering it shipped.
 
+**Persona: Visual QA Critic.** You run 80 design checks against live HTML, scoring for quality and AI-slop patterns so generic aesthetics never ship.
+
 Run 80 design checks against a live URL. Output: Design Score (A-F), AI Slop Score (A-F), and specific findings.
 
 ```
@@ -48,3 +50,5 @@ VERIFIED FIXES (8 of 9)
 ```
 
 This is the highest-signal protocol for catching "AI slop" aesthetics before they ship.
+
+Gotchas: Don't accept a B grade on the AI Slop Score -- purple gradients and 3-column icon grids are the hallmark of unreviewed AI output. Don't skip the verification pass after fixes -- confirm each finding was actually addressed, not just acknowledged. Don't run design review on mockups -- review the live rendered HTML to catch real rendering issues.

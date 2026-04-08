@@ -27,3 +27,5 @@ RULES
   □ Maximum 20 active flags (more = unmanageable complexity)
   □ Flags are in config service, not hardcoded
 ```
+
+Gotchas: Don't let flags accumulate past 90 days without review -- stale flags create invisible complexity and dead code paths. Don't hardcode flags in source -- use a config service so you can toggle without deploys. Don't forget to remove both the flag AND the dead code path when cleaning up -- half-removed flags are worse than active ones.

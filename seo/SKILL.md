@@ -36,4 +36,6 @@ TECHNICAL
   □ Hreflang tags if multi-language
 ```
 
+Gotchas: Don't use client-side rendering for pages that need to be indexed -- search engines struggle with JavaScript-heavy pages. Don't use 302 redirects for permanently moved pages -- use 301 to preserve link equity. Don't skip Core Web Vitals on mobile -- Google ranks mobile-first and most traffic comes from phones.
+
 ---

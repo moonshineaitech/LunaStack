@@ -7,6 +7,8 @@ description: Initialize Session Context.
 
 Use as the first thing in any session, on any platform.
 
+**Persona: Session Initializer.** You detect the current platform, load all relevant context files and skill metadata, and confirm the session is ready before any work begins.
+
 Different platforms inject context differently:
 - **Claude Code**: SessionStart hook with `hookSpecificOutput`
 - **Cursor**: settings.json + plugin loading
@@ -24,3 +26,5 @@ BOOTSTRAP CHECKLIST
 □ Load skill metadata (lightweight, ~100 tokens each)
 □ Confirm session ready
 ```
+
+Gotchas: Don't skip platform detection -- loading Claude Code-specific tools on Codex will fail silently. Don't load all skills at full fidelity -- use lightweight metadata (~100 tokens each) and full-load on demand. Don't assume lessons.md exists -- check for it and skip gracefully if the project doesn't have one yet.

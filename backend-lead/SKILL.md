@@ -26,3 +26,5 @@ Observability:     [Structured logs? Request tracing? Metrics?]
 Scalability:       [Current ceiling, horizontal strategy, stateless?]
 Top 3 risks:       [Ordered by likelihood × impact]
 ```
+
+Gotchas: Don't skip N+1 query detection -- it's the most common backend performance killer and invisible in development. Don't expose stack traces in production error responses -- use structured error codes instead. Don't assume your ORM generates efficient queries -- always check EXPLAIN ANALYZE for new endpoints.

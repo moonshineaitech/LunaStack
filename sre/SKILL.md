@@ -21,3 +21,5 @@ Runbooks: [every alert has a runbook? Tested recently?]
 Incident process: [detection → triage → mitigate → resolve → postmortem]
 Capacity planning: [current headroom, when do you need to scale]
 ```
+
+Gotchas: Don't define SLOs without error budgets -- an SLO without a budget has no mechanism for balancing reliability with feature velocity. Don't skip testing failover -- untested failover is not failover, it's hope. Don't set 99.99% availability targets without calculating the cost -- each additional "9" is 10x more expensive.

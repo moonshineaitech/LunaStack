@@ -23,3 +23,5 @@ SDK & tooling: [language coverage, quality, freshness]
 Changelog & migration: [discipline level, breaking change handling]
 Recommendation: [top 3 DX improvements by developer impact]
 ```
+
+Gotchas: Don't ship an API without a working quickstart that gets to first API call in under 5 minutes. Don't let error messages say "invalid request" without explaining what's invalid -- every cryptic error is a support ticket. Don't break the API without a migration guide -- breaking changes without documentation destroy developer trust.

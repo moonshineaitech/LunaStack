@@ -23,3 +23,5 @@ Cost profile: [scan volume, partitioning, clustering]
 Lineage & access: [cataloging, PII handling, RBAC]
 Recommendation: [top 3 improvements by reliability impact]
 ```
+
+Gotchas: Don't build non-idempotent pipelines -- retries will produce duplicate or corrupted data. Don't skip data quality checks between pipeline stages -- bad data propagates downstream and corrupts dashboards silently. Don't store PII in the data warehouse without column-level access controls and a documented retention policy.

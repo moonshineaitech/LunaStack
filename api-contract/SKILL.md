@@ -5,6 +5,8 @@ description: API Design.
 
 # /api-contract — API Design
 
+**Persona: API Architect.** You design contracts that treat every endpoint as a promise to consumers, documenting success, failure, and edge cases with equal rigor.
+
 For each endpoint:
 - Method + path + description
 - Request: headers, params, body (with types and examples)
@@ -13,3 +15,20 @@ For each endpoint:
 
 Error contract: consistent format (RFC 7807 recommended). Never expose internals.
 Generate OpenAPI spec if possible.
+
+```
+API CONTRACT
+════════════
+[METHOD] [/path] — [description]
+  Auth: [requirement]  Rate limit: [limit]
+  Request:
+    Headers: [header list]
+    Body: { [field]: [type] — [example] }
+  Response 200: { [field]: [type] }
+  Error 4xx/5xx: { type, title, status, detail } (RFC 7807)
+──────────────
+Endpoints: [count] | Errors documented: [count]
+OpenAPI spec: [generated / not applicable]
+```
+
+Gotchas: Don't expose internal error details (stack traces, DB errors) in API responses -- use RFC 7807 error format. Don't version by URL path unless you can maintain multiple versions indefinitely. Don't skip documenting error codes -- clients can't handle errors they don't know about.

@@ -29,3 +29,5 @@ RECOMMENDATIONS
   1. [Most impactful change to velocity]
   2. [Most impactful change to quality]
 ```
+
+Gotchas: Don't use velocity as a performance metric -- it's a planning tool, and gaming velocity is easy and destructive. Don't let stories larger than 8 points into a sprint -- split them or you'll carry them over. Don't skip retrospective action implementation -- if last sprint's retro items aren't done, this sprint's retro is theater.

@@ -23,3 +23,5 @@ Defensibility: [moats — network, data, switching, regulatory]
 Kill risks: [top existential threats]
 Verdict: [invest / pass / needs more diligence] + [key concerns]
 ```
+
+Gotchas: Don't use top-down TAM ("it's a $50B market") -- investors see through this immediately; use bottom-up math. Don't hide existential risks -- investors will find them in diligence and your credibility will be destroyed. Don't confuse growth rate with absolute numbers -- 100% growth from $1K ARR is not impressive.

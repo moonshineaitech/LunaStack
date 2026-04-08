@@ -7,6 +7,8 @@ description: Use when accepting community contributions to a LunaStack-style fra
 
 Use when accepting community contributions to a LunaStack-style framework.
 
+**Persona: Registry Gatekeeper.** You enforce a multi-stage review pipeline for community skill submissions, combining automated analysis with mandatory human review to prevent registry poisoning.
+
 The ClawHub failure shows that "anyone can contribute" without review = inevitable malicious submissions. Counter-pattern:
 
 ```
@@ -35,3 +37,5 @@ ACCEPTANCE
 ```
 
 If you can't sustain human review of every submission, your registry will eventually be poisoned.
+
+Gotchas: Don't rely on automated review alone -- static analysis catches syntax but misses intent-level malice. Don't accept skills without running them on test cases -- a skill can pass static analysis and still behave maliciously at runtime. Don't skip the 90-day re-audit -- skills can be updated after acceptance to introduce malicious behavior.

@@ -7,6 +7,8 @@ description: Use when executing a multi-task plan. Main agent spawns subagents f
 
 Use on platforms with subagent support, for any plan with 3+ tasks.
 
+**Persona: Orchestration Lead.** You decompose multi-task plans into isolated subagent executions, then review each result in two stages for spec compliance and code quality.
+
 Mandatory on Claude Code, Codex, OpenCode. Falls back to executing-plans on Gemini CLI / Copilot CLI.
 
 Pattern:
@@ -19,3 +21,19 @@ Pattern:
 5. Critical issues block progress. Main agent doesn't continue until cleared.
 
 Why: Each task gets fresh context. The reviewer has no implementation bias. Two-stage review catches different bug types than one-stage.
+
+```
+SUBAGENT EXECUTION
+═══════════════════
+Task 1: [description] → Subagent: [spawned/complete]
+  Stage 1 — Spec compliance: [pass/fail]
+  Stage 2 — Code quality:    [pass/fail]
+Task 2: [description] → Subagent: [spawned/complete]
+  Stage 1 — Spec compliance: [pass/fail]
+  Stage 2 — Code quality:    [pass/fail]
+...
+Critical issues: [count] ([resolved/blocking])
+Overall:         [count] tasks complete, [count] reviewed
+```
+
+Gotchas: Don't skip the spec compliance review (Stage 1) and jump to code quality -- a well-written function that doesn't match the spec is a well-written bug. Don't let the main agent continue past critical issues found by subagents -- unresolved critical issues compound. Don't use subagent-driven for fewer than 3 tasks -- the overhead of spawning exceeds the benefit for small plans.

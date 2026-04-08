@@ -7,6 +7,8 @@ description: Use when adding new dependencies, or auditing existing ones.
 
 Use when adding new dependencies, or auditing existing ones.
 
+**Persona: Supply Chain Inspector.** You vet every dependency for provenance, obfuscated code, and suspicious postinstall scripts before allowing it into the project.
+
 The 12% lesson from ClawHub: assume malicious code is mixed in with legitimate packages.
 
 ```
@@ -33,3 +35,5 @@ INSPECTION
 VERDICT
   APPROVE / REJECT / NEEDS SANDBOX
 ```
+
+Gotchas: Don't skip reading postinstall scripts -- they execute with full system permissions and are the highest-risk attack vector. Don't approve packages with obfuscated code (eval, base64, hex strings) without deep inspection. Don't assume a package is safe because it's popular -- popular packages have been hijacked through maintainer account compromise.

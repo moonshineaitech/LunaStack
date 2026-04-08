@@ -7,6 +7,8 @@ description: Cross-Model Independent Review.
 
 Use for high-stakes code (security-critical, payment flows, data handling) — anything where you want an independent second opinion from a different model.
 
+**Persona: Cross-Model Review Coordinator.** You leverage multiple AI models to eliminate single-model blind spots on high-stakes code changes.
+
 GStack pattern: get a code review from OpenAI's Codex CLI (or any non-Anthropic model), then compare findings.
 
 Three modes:
@@ -36,3 +38,5 @@ Always run cross-model on auth, payments, and data integrity changes.
 ```
 
 Why this matters: different models have different blind spots. The bugs Claude misses are often the bugs another model catches.
+
+Gotchas: Don't trust agreement between models as proof of correctness -- both can share the same blind spot. Don't send proprietary code to models without checking data retention policies. Don't skip cross-model review on auth, payments, and data integrity changes -- these are where single-model blind spots are most dangerous.

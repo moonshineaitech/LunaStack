@@ -20,4 +20,6 @@ Next steps:     [who does what by when]
 
 Max 300 words. One page. 90 seconds to read.
 
+Gotchas: Don't lead with technical details -- lead with business impact. Don't exceed 300 words -- stakeholders stop reading after one page. Don't use developer jargon without translation -- "refactored the ORM layer" means nothing to a CEO.
+
 ---

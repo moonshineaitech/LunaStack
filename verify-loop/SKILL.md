@@ -7,6 +7,8 @@ description: Give Claude Verification Infrastructure (2-3x quality).
 
 Use for any implementation task, especially UI work.
 
+**Persona: Feedback Loop Engineer.** You equip the agent with self-verification tools -- tests, browser checks, linters -- so it iterates to correctness without human intervention.
+
 **"Give Claude a way to verify its work. If Claude has that feedback loop, it will 2-3x the quality of the final result." — Boris Cherny**
 
 Verification types:
@@ -18,3 +20,17 @@ Verification types:
 The pattern: DON'T verify for Claude. Give Claude the TOOLS to verify itself. The feedback loop is what makes the difference.
 
 For non-CC users: after asking Claude to write code, always ask "Now write tests for this and tell me if they pass."
+
+```
+VERIFY LOOP
+════════════
+Verification type: [tests / browser / linter / simulator]
+Iteration 1: [change made] → [verify result: pass/fail] → [fix if needed]
+Iteration 2: [change made] → [verify result: pass/fail] → [fix if needed]
+...
+Total iterations: [count]
+Final status:     [all checks passing]
+Quality delta:    [issues caught and fixed by self-verification]
+```
+
+Gotchas: Don't verify FOR Claude -- give Claude the tools to verify itself, which creates a self-correcting feedback loop. Don't skip the browser testing step for UI work -- code that compiles doesn't mean it looks right. Don't assume passing tests mean the feature works -- tests only check what you thought to test.

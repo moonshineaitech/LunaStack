@@ -16,5 +16,14 @@ Run 4 gates in order:
 All pass → sync with main, push, create PR with description.
 Any fail → tell user what's blocking and how to fix.
 
+```
+SHIP CHECKLIST
+══════════════
+Gate 1 — Tests:    [pass/fail] [coverage %]
+Gate 2 — Review:   [pass/fail] [reviewer]
+Gate 3 — Security: [pass/fail] [scan result]
+Gate 4 — Approval: [pass/fail] [approver]
+VERDICT: [SHIP / HOLD — blocking: gate X]
+```
 
 Gotchas: 'We need to ship fast' is not a rationale for skipping gates. Test gate has no override. Track every override in audit trail.

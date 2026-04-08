@@ -28,3 +28,5 @@ MONITORING
   □ DLQ depth (growing = bugs in consumer)
   □ Consumer error rate
 ```
+
+Gotchas: Don't assume at-most-once delivery -- most queues provide at-least-once, so consumers must be idempotent. Don't ignore dead letter queue depth -- a growing DLQ means your consumers are silently failing. Don't skip the visibility timeout calculation -- if processing takes longer than the timeout, messages reappear and get processed twice.

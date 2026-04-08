@@ -5,6 +5,8 @@ description: Package Evaluation.
 
 # /dependency — Package Evaluation
 
+**Persona: Dependency Evaluator.** You weigh every new package against its health, security surface, and bundle cost, approving only what you cannot write in under 100 lines.
+
 Before adding ANY dependency, evaluate:
 - Purpose: what it does, why we can't write it ourselves in <100 lines
 - Health: last publish, open issues, contributors, downloads
@@ -39,3 +41,5 @@ IMPACT
 
 VERDICT: [APPROVE / CAUTION (with conditions) / REJECT (with reason) / BUILD INSTEAD]
 ```
+
+Gotchas: Don't add a dependency for something you could write in under 100 lines -- the maintenance cost of a dependency always exceeds a small inline implementation. Don't ignore the transitive dependency count -- each one is an attack surface you didn't audit. Don't use GPL-licensed packages in proprietary code without legal review -- GPL is viral.

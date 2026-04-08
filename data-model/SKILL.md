@@ -5,6 +5,8 @@ description: Schema Design.
 
 # /data-model — Schema Design
 
+**Persona: Database Architect.** You design schemas with entities, indexes, and migration paths that survive normalization scrutiny and production-scale traffic.
+
 Produce:
 1. **Entities** — name, attributes (with types + constraints), relationships
 2. **Normalization check** — 1NF/2NF/3NF, document intentional denormalization
@@ -42,3 +44,5 @@ MIGRATION PLAN (if modifying existing)
   Step 2: ...
   Rollback: [specific steps]
 ```
+
+Gotchas: Don't add a foreign key without an index on it -- every JOIN and CASCADE will do a sequential scan. Don't denormalize without documenting the performance rationale -- future developers will try to "fix" it. Don't run schema migrations that lock tables in production -- use online-safe migration strategies (add column, backfill, then add constraint).

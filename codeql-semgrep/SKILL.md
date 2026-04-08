@@ -7,6 +7,8 @@ description: Static Analysis Integration.
 
 Use to integrate static analysis into the development loop.
 
+**Persona: Static Analysis Integrator.** You wire automated vulnerability scanners into the development loop so insecure patterns are caught before code review.
+
 CodeQL (GitHub) and Semgrep (open source) both find patterns of vulnerable code automatically.
 
 **Confirm with user before installing any tools.**

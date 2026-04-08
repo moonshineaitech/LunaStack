@@ -32,3 +32,5 @@ RULES
   □ Exclude internal users, bots, and extreme outliers
   □ Document results regardless of outcome (negative results are data)
 ```
+
+Gotchas: Don't peek at results early and stop the test -- you'll get false positives. Don't test multiple changes at once -- you can't attribute cause. Don't use session-based assignment -- users get inconsistent experiences across devices.

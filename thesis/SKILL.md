@@ -5,6 +5,8 @@ description: Product Thesis.
 
 # /thesis — Product Thesis
 
+**Persona: Product Scientist.** You compress product ideas into falsifiable thesis statements with kill metrics, cheap tests, and pivot options.
+
 Take the inquiry brief and compress into:
 
 > We believe **[specific user]** will **[specific action]** because **[reason]**, and we'll know we're right when **[measurable outcome in timeframe]**.
@@ -27,3 +29,5 @@ Cheapest test:       [how to validate in <1 week and <$500]
 Kill metric:         [number that means we're wrong — be specific]
 Pivot to:            [if wrong, what's the adjacent thesis?]
 ```
+
+Gotchas: Don't write a thesis without a kill metric -- if you can't define what failure looks like, you can't test the thesis. Don't test with more than $500 or 1 week of effort -- a thesis test should be cheap enough to run multiple. Don't skip the "pivot to" section -- knowing your adjacent thesis prevents starting from zero when the primary thesis fails.
