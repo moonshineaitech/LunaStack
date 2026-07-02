@@ -105,6 +105,8 @@ Protocols belong to the discipline that matches their cognitive mode:
 ## Pull Request Process
 
 1. Create your protocol directory with `SKILL.md` in the correct discipline
-2. Test with at least one realistic scenario
-3. Submit PR with: protocol file, example invocation output, and a brief description of what problem the protocol solves
-4. Ensure CI passes (frontmatter validation, content leakage check)
+2. Add your protocol's row to `AGENTS.md` under the right discipline section (this drives its position in the single-file build)
+3. Run `./build.sh` to regenerate `LunaStack.md` — it is a build artifact, never hand-edited
+4. Test with at least one realistic scenario
+5. Run the test suite locally: `bash tests/validate_skills.sh && bash tests/validate_integrity.sh && bash build.sh --check`
+6. Submit PR with: protocol file, updated AGENTS.md, regenerated LunaStack.md, example invocation output, and a brief description of what problem the protocol solves
