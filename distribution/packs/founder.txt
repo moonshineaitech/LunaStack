@@ -1,0 +1,33 @@
+# LunaStack Founder Pack — build the right thing, fund it, grow it.
+# Installed by `./setup.sh --pack founder`.
+
+# Am I building the right thing?
+office-hours
+inquiry
+thesis
+landscape
+premortem
+user-interview
+persona
+jobs-to-be-done
+market-size
+
+# Money + strategy
+cfo
+pitch
+investor
+compete
+prioritize
+kpi
+hiring
+
+# Growth
+ab-test
+funnel
+retention
+onboard-users
+seo
+
+# Don't get sued
+legal
+privacy

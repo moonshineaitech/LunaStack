@@ -39,7 +39,7 @@
 | /tradeoff | Decision Matrix. |
 | /dependency | Package Evaluation. |
 | /debt-audit | Scan a codebase for tech debt, quantify severity and cost, and produce a prioritized remediation plan. |
-| /cost | Infrastructure Cost Projection. |
+| /cost | Infrastructure cost projection at 1x/10x/100x scale. For AI/LLM API spend, see /cost-tracker. |
 
 ## Specification (6)
 
@@ -112,7 +112,7 @@
 | /learn | Extract Learnings. |
 | /compound | Feed Forward. |
 | /search-memory | Search conversation history, uploaded files, and project knowledge for prior decisions and context. |
-| /handoff | Session State Capture. |
+| /handoff | Capture session state so the next AI session resumes seamlessly. For handing off to a human, see /graceful-escalation. |
 | /snapshot | Quick Checkpoint. |
 | /evolve | Detect repeated workflow patterns and propose new slash-command protocols to automate them. |
 
@@ -211,7 +211,7 @@
 | /grill | Adversarially review your own changes — find weak points, question assumptions, and block merge until satisfied. |
 | /flywheel | Use when you want to systematically improve your AI-assisted development process. |
 | /hooks-over-md | Use when you need 100% compliance on a rule, not 80%. |
-| /context-budget | Use when sessions feel slow or Claude starts making mistakes mid-conversation. |
+| /context-budget | Strategies for spending the token window wisely. For a point-in-time capacity estimate, see /context-budget-check. |
 
 ## Workflows (5)
 
@@ -320,7 +320,7 @@
 | /design-html | HTML-First Design Pipeline. |
 | /design-review | 80-Item Visual Audit. |
 | /codex-review | Cross-Model Independent Review. |
-| /cso-audit | CSO Security Audit (OWASP + STRIDE). |
+| /cso-audit | Full application security audit — OWASP Top 10 + STRIDE. For per-PR review of AI-generated changes, see /security-review. |
 | /careful-mode | Warn Before Destructive. |
 | /freeze | Use when debugging a specific module and you DON'T want Claude touching unrelated code. |
 | /unfreeze | Release a directory lock previously set by /freeze, restoring normal file-edit permissions. |
@@ -377,12 +377,12 @@
 | Command | Description |
 |---|---|
 | /ralph-loop | Use for large tasks that will exhaust the context window. Decomposes work into atomic units, commits after each, resets context between units. |
-| /context-budget-check | Use when a session is getting long, quality is dropping, or before starting a complex task. Estimates remaining context capacity. |
-| /security-review | Use before merging any PR or deploying any feature. Systematic security review informed by 2026 AI vulnerability research. |
+| /context-budget-check | Point-in-time context capacity estimate — continue/compact/fresh. For ongoing budget strategy, see /context-budget. |
+| /security-review | Code-level review targeting AI-generated vulnerability patterns. For a full application audit, see /cso-audit. |
 | /agent-orchestra | Use when a task benefits from multiple specialized agents working in parallel. Hierarchical multi-agent orchestration. |
 | /drift-detect | Use periodically to detect when AI behavior has drifted from project conventions. |
-| /cost-tracker | Use to track and optimize AI development costs. Monitors token usage, model selection, and cost-per-feature. |
+| /cost-tracker | Track and optimize AI development spend — tokens, model tiers, cost-per-feature. For infra cost, see /cost. |
 | /silent-failure-audit | Use after AI code generation to catch subtle defects. AI code creates 1.7x more issues than human code. |
 | /ai-provenance | Use when shipping AI-generated code to production. EU AI Act compliance and provenance tracking. |
-| /graceful-escalation | Use when the AI cannot solve a problem confidently. Structured AI-to-human handoff protocol. |
+| /graceful-escalation | Stop and hand back to a HUMAN with packaged context when confidence is low. For AI-to-AI continuity, see /handoff. |
 | /perception-gap | Use periodically to check whether AI is actually making you faster. Combats the measured speed illusion. |

@@ -1,6 +1,6 @@
 ---
 name: context-budget-check
-description: Use when a session is getting long, quality is dropping, or before starting a complex task. Estimates remaining context capacity and recommends action.
+description: Use when a session is getting long, quality is dropping, or before starting a complex task. Estimates remaining context capacity and recommends continue/compact/fresh. For ongoing budget strategy, see /context-budget.
 ---
 
 # /context-budget-check — Context Window Health Check

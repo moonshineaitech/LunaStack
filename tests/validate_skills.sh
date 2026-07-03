@@ -21,7 +21,7 @@ echo -e "\n${bold}LunaStack Skill Validation — Tier 1${reset}\n"
 echo -e "${dim}1. Checking SKILL.md presence...${reset}"
 for dir in "$REPO_DIR"/*/; do
   [[ "$(basename "$dir")" == .* ]] && continue
-  [[ "$(basename "$dir")" == tests ]] && continue
+  [[ "$(basename "$dir")" == tests || "$(basename "$dir")" == distribution ]] && continue
   [ -f "$dir/SKILL.md" ] || fail "$(basename "$dir")" "Missing SKILL.md"
 done
 
@@ -106,7 +106,7 @@ fi
 # Check for unsafe directory names
 for dir in "$REPO_DIR"/*/; do
   [[ "$(basename "$dir")" == .* ]] && continue
-  [[ "$(basename "$dir")" == tests ]] && continue
+  [[ "$(basename "$dir")" == tests || "$(basename "$dir")" == distribution ]] && continue
   dname="$(basename "$dir")"
   if ! [[ "$dname" =~ ^[a-z0-9][a-z0-9-]*$ ]]; then
     fail "$dname" "Directory name contains unsafe characters"

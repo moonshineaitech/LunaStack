@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Verify tag matches VERSION file
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          version="$(cat VERSION | tr -d ' \n')"
+          if [ "$tag" != "$version" ]; then
+            printf 'ERROR: tag v%s does not match VERSION file (%s)\n' "$tag" "$version"
+            exit 1
+          fi
+
+      - name: Verify distribution is in sync
+        run: bash build.sh --check
+
+      - name: Extract release notes from CHANGELOG
+        run: |
+          version="$(cat VERSION | tr -d ' \n')"
+          awk -v ver="$version" '
+            $0 ~ "^## \\[" ver "\\]" { found=1; next }
+            found && /^## \[/ { exit }
+            found { print }
+          ' CHANGELOG.md > /tmp/release-notes.md
+          if [ ! -s /tmp/release-notes.md ]; then
+            printf 'No CHANGELOG entry for %s\n' "$version" > /tmp/release-notes.md
+          fi
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --title "LunaStack $GITHUB_REF_NAME" \
+            --notes-file /tmp/release-notes.md \
+            LunaStack.md

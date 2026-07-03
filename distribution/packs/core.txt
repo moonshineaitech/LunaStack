@@ -1,0 +1,44 @@
+# LunaStack Core Pack — the 25 highest-leverage skills.
+# Installed by `./setup.sh --core`. One skill name per line; # lines are comments.
+#
+# Selection criterion: skills that encode NON-OBVIOUS procedure an AI assistant
+# would not reliably do by default. Breadth skills (specialist roles, domain
+# advisors) are excluded — install everything with --global if you want them.
+# Full discovery cost of this pack: ~2.5K tokens vs ~25K for all 249.
+
+# Session + routing
+luna
+onboard
+
+# Before building
+office-hours
+interview-me
+inquiry
+premortem
+spec
+plan
+no-placeholders
+
+# While building
+tdd
+debug
+ralph-loop
+context-budget-check
+second-opinion
+
+# Proving quality
+verify
+verify-completion
+security-review
+silent-failure-audit
+design-review
+
+# Shipping
+ship
+graceful-escalation
+
+# Learning loop
+retro
+learn
+compound
+self-improve

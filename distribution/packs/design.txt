@@ -1,0 +1,22 @@
+# LunaStack Design Pack — UI/UX quality, from direction to pixel.
+# Installed by `./setup.sh --pack design`.
+
+# Direction
+design-consultation
+design-shotgun
+design-variants
+design-html
+
+# Quality gates
+design-review
+design-critique
+design-system
+implement-design
+
+# User-facing quality
+friction
+a11y
+responsive
+visual-check
+ux-writer
+creative-director

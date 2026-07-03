@@ -1,0 +1,27 @@
+# LunaStack Security Pack — hardened development, auditing, and skill safety.
+# Installed by `./setup.sh --pack security`.
+
+# Code + application review
+security-review
+cso-audit
+threat-model
+security-response
+
+# Supply chain
+cve-scan
+supply-chain-audit
+codeql-semgrep
+sbom
+dependency-typosquat
+threat-db
+
+# Skill/agent ecosystem safety
+skill-security-audit
+malicious-skill-detection
+sandbox-design
+
+# Operational safety
+guard
+careful-mode
+secret-rotation-plan
+privacy

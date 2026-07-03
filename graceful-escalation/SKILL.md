@@ -1,6 +1,6 @@
 ---
 name: graceful-escalation
-description: Use when the AI cannot solve a problem confidently. Defines when and how to stop and hand back to a human with structured context, rather than producing low-confidence output.
+description: Use when the AI cannot solve a problem confidently. Defines when and how to stop and hand back to a HUMAN with structured context, rather than producing low-confidence output. For AI-to-AI session continuity, see /handoff.
 ---
 
 # /graceful-escalation — AI-to-Human Handoff Protocol

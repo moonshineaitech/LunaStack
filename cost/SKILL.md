@@ -1,6 +1,6 @@
 ---
 name: cost
-description: Infrastructure Cost Projection.
+description: Use when projecting infrastructure cost at 1x/10x/100x scale. For tracking AI/LLM API spend and cost-per-feature, see /cost-tracker.
 ---
 
 # /cost — Infrastructure Cost Projection
