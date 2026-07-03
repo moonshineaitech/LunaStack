@@ -1,6 +1,6 @@
 ---
 name: security-review
-description: Use before merging any PR or deploying any feature. Systematic security review informed by 2026 research on AI-assisted code vulnerabilities and skill-based attack surfaces (arxiv:2601.17548).
+description: Use before merging any PR or deploying any feature. Code-level review targeting AI-generated vulnerability patterns and trust boundaries. For a full application audit (OWASP Top 10 + STRIDE), see /cso-audit.
 ---
 
 # /security-review — Security Review (2026 Threat Model)

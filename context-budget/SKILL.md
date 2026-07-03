@@ -1,6 +1,6 @@
 ---
 name: context-budget
-description: Use when sessions feel slow or Claude starts making mistakes mid-conversation.
+description: Use when sessions feel slow or Claude starts making mistakes mid-conversation. Strategies for spending the token window wisely. For a point-in-time capacity estimate, see /context-budget-check.
 ---
 
 # /context-budget — Manage Your Context Window

@@ -1,6 +1,6 @@
 ---
 name: cso-audit
-description: CSO Security Audit (OWASP + STRIDE).
+description: Use for a full application security audit — OWASP Top 10 + STRIDE, systematic and scored. For per-PR code-level review of AI-generated changes, see /security-review.
 ---
 
 # /cso-audit — CSO Security Audit (OWASP + STRIDE)

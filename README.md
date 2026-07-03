@@ -36,9 +36,13 @@
 
 ```bash
 git clone https://github.com/moonshineaitech/LunaStack ~/lunastack
-cd ~/lunastack && ./setup.sh --global    # symlinks 249 skills
+cd ~/lunastack && ./setup.sh             # core pack: 25 highest-leverage skills
 claude "/luna"                              # start
 ```
+
+Want everything? `./setup.sh --global` installs all 249. The core pack keeps
+skill discovery lean (~290 tokens vs ~2.8K) and routing sharp; the full set is
+there when you need a specialist. Curation lives in `distribution/core.txt`.
 
 **Method 3 — Team Install (auto-updating)**
 

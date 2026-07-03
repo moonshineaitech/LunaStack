@@ -1,6 +1,6 @@
 ---
 name: cost-tracker
-description: Use to track and optimize AI development costs. Monitors token usage, model selection, and cost-per-feature across sessions.
+description: Use to track and optimize AI development costs. Monitors token usage, model selection, and cost-per-feature across sessions. For infrastructure cost projection, see /cost.
 ---
 
 # /cost-tracker — AI Development Cost Optimization

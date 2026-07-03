@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: Session State Capture.
+description: Use at end of session to capture state so the next AI session can resume seamlessly. For handing off to a HUMAN when blocked, see /graceful-escalation.
 ---
 
 # /handoff — Session State Capture
