@@ -37,7 +37,8 @@ done | sort | paste -sd ', ' -)
 count=$(ls -d "$REPO_DIR"/*/SKILL.md | wc -l | tr -d ' ')
 
 # --- Emit header with substitutions ---
-sed -e "s|{{COMMANDS}}|${commands}|" -e "s|{{COUNT}}|${count}|" "$HEADER" >> "$TMP"
+version="$(tr -d ' \n' < "$REPO_DIR/VERSION")"
+sed -e "s|{{COMMANDS}}|${commands}|" -e "s|{{COUNT}}|${count}|" -e "s|{{VERSION}}|${version}|" "$HEADER" >> "$TMP"
 
 # --- Helper: emit one section's header+intro from sections.md ---
 emit_section_block() {

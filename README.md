@@ -40,9 +40,19 @@ cd ~/lunastack && ./setup.sh             # core pack: 25 highest-leverage skills
 claude "/luna"                              # start
 ```
 
-Want everything? `./setup.sh --global` installs all 249. The core pack keeps
-skill discovery lean (~290 tokens vs ~2.8K) and routing sharp; the full set is
-there when you need a specialist. Curation lives in `distribution/core.txt`.
+Want more? Curated packs stack — run setup once per pack:
+
+```bash
+./setup.sh --list-packs        # see all packs
+./setup.sh --pack security     # +17 skills: audits, supply chain, skill safety
+./setup.sh --pack design       # +14 skills: direction → pixel-perfect
+./setup.sh --pack founder      # +23 skills: right thing, funding, growth
+./setup.sh --pack ship-it      # +16 skills: delivery, ops, performance
+./setup.sh --global            # everything (all 249)
+```
+
+The core pack keeps skill discovery lean (~290 tokens vs ~2.8K) and routing
+sharp; packs add depth where you work. Curation lives in `distribution/packs/`.
 
 **Method 3 — Team Install (auto-updating)**
 

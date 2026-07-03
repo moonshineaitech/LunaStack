@@ -7,7 +7,7 @@
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-CORE="$REPO_DIR/distribution/core.txt"
+PACKS_DIR="$REPO_DIR/distribution/packs"
 bold='\033[1m'; red='\033[0;31m'; green='\033[0;32m'; yellow='\033[0;33m'; dim='\033[2m'; reset='\033[0m'
 errors=0
 
@@ -33,37 +33,47 @@ for skill in "$REPO_DIR"/*/SKILL.md; do
   heaviest+="$w /$name"$'\n'
 done
 
-# --- Core pack: every entry must exist; compute its cost ---
-core_words=0
-core_count=0
-if [ -f "$CORE" ]; then
-  while IFS= read -r line; do
-    line="${line%%#*}"; line="$(echo "$line" | tr -d ' \t')"
-    [ -z "$line" ] && continue
-    if [ ! -f "$REPO_DIR/$line/SKILL.md" ]; then
-      printf "${red}FAIL${reset} core pack lists /%s but no such skill exists\n" "$line"
-      errors=$((errors + 1))
-      continue
-    fi
-    w=$(desc_words "$REPO_DIR/$line/SKILL.md")
-    core_words=$((core_words + w))
-    core_count=$((core_count + 1))
-  done < "$CORE"
+# --- Packs: every entry in every pack must exist; compute per-pack cost ---
+pack_report=""
+if [ -d "$PACKS_DIR" ] && ls "$PACKS_DIR"/*.txt >/dev/null 2>&1; then
+  for pack in "$PACKS_DIR"/*.txt; do
+    pname="$(basename "$pack" .txt)"
+    p_words=0
+    p_count=0
+    while IFS= read -r line; do
+      line="${line%%#*}"; line="$(echo "$line" | tr -d ' \t')"
+      [ -z "$line" ] && continue
+      if [ ! -f "$REPO_DIR/$line/SKILL.md" ]; then
+        printf "${red}FAIL${reset} pack '%s' lists /%s but no such skill exists\n" "$pname" "$line"
+        errors=$((errors + 1))
+        continue
+      fi
+      w=$(desc_words "$REPO_DIR/$line/SKILL.md")
+      p_words=$((p_words + w))
+      p_count=$((p_count + 1))
+    done < "$pack"
+    pack_report+="$(printf "  Pack %-8s %3d skills, %5d words ≈ %5d tokens" "$pname:" "$p_count" "$p_words" "$((p_words * 4 / 3))")"$'\n'
+  done
 else
-  printf "${red}FAIL${reset} distribution/core.txt is missing\n"
+  printf "${red}FAIL${reset} distribution/packs/ is missing or empty\n"
+  errors=$((errors + 1))
+fi
+
+# Core pack is the recommended default — it must exist
+if [ ! -f "$PACKS_DIR/core.txt" ]; then
+  printf "${red}FAIL${reset} distribution/packs/core.txt is missing (setup.sh default)\n"
   errors=$((errors + 1))
 fi
 
 # Tokens ≈ words × 4/3 (typical English tokenization)
 full_tokens=$((total_words * 4 / 3))
-core_tokens=$((core_words * 4 / 3))
 
 echo -e "${dim}Heaviest 8 descriptions:${reset}"
 printf '%s' "$heaviest" | sort -rn | head -8 | awk '{printf "  %3d words  %s\n", $1, $2}'
 echo ""
 echo -e "${bold}Discovery cost${reset}"
 printf "  Full install (--global): %3d skills, %5d words ≈ %5d tokens\n" "$count" "$total_words" "$full_tokens"
-printf "  Core pack   (--core):    %3d skills, %5d words ≈ %5d tokens\n" "$core_count" "$core_words" "$core_tokens"
+printf '%s' "$pack_report"
 echo ""
 
 if [ "$errors" -gt 0 ]; then

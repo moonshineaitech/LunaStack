@@ -1,0 +1,26 @@
+# LunaStack Ship-It Pack — delivery, operations, and production health.
+# Installed by `./setup.sh --pack ship-it`.
+
+# Release
+ship
+canary
+deploy-check
+rollback
+changelog
+readiness-dashboard
+
+# Production health
+monitor
+incident
+postlaunch
+sre
+
+# Pipeline + infra
+ci
+docker
+feature-flag
+
+# Performance
+perf-budget
+load-test
+query
