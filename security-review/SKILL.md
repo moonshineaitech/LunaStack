@@ -44,4 +44,11 @@ Trust Boundary Check:
 VERDICT: [APPROVED / BLOCKED — N issues to fix]
 ```
 
+Scoping rule: review the diff plus every file that calls into it — nothing else. Diffs over 400 lines get 2 passes so late files get equal attention.
+
+BAD finding: "Input validation could be improved." (no location, no data path, unactionable)
+GOOD finding: "user_id from the query string reaches raw SQL at db.py:88 without parameterization — CWE-89 — fix: use cursor.execute(sql, (user_id,))."
+
+Skip when: the diff touches only docs, tests, or generated files with no runtime code path — note the skip and why.
+
 Gotchas: AI-generated code passes human review more easily because it "looks right" — be extra skeptical of plausible patterns. Don't skip the dependency check — AI frequently suggests packages by approximate name. Don't trust "it worked in testing" — test with malicious input, not just valid input.

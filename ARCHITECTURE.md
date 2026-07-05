@@ -118,7 +118,7 @@ Three installation modes:
 | Team | `./setup.sh --team` | `~/.claude/skills/` + auto-update hook | Shared team setup |
 
 **Hardening in setup.sh:**
-- Refuses to run as root (`EUID` check, exits immediately)
+- Refuses to run as root (`EUID` check) unless `LUNASTACK_ALLOW_ROOT=1` is set — containers and CI legitimately run as root
 - Directory name allowlist: only `[a-z0-9][a-z0-9-]*` passes; anything else is skipped with a warning
 - Skips directories without a `SKILL.md` file
 - Replaces existing symlinks cleanly; never overwrites real directories

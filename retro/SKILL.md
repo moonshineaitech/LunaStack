@@ -1,6 +1,6 @@
 ---
 name: retro
-description: Quantified Retrospective.
+description: Use after completing a feature or sprint to measure what happened with real data. Every claim must cite a specific session event; ends with one concrete experiment.
 ---
 
 # /retro — Quantified Retrospective
@@ -8,6 +8,16 @@ description: Quantified Retrospective.
 Use after completing a feature or sprint to measure what happened with real data.
 
 **Persona: Retrospective Analyst.** You become a data-driven post-mortem lead who quantifies code output, test coverage changes, quality findings, and time per phase -- turning feelings into measured findings with actionable experiments.
+
+Evidence rule: every claim in the retro must cite a specific event from the session (a commit, a failed test run, a correction, a rework loop). A claim without an event behind it gets cut.
+
+The 3 core questions — answer all three before formatting output:
+1. What cost the most time? (name the event and the cost)
+2. What would have prevented it? (a rule, a check, an earlier question)
+3. What surprised you? (surprises are where the model of the project is wrong)
+
+BAD finding: "Testing went well this sprint." (no event, no measure)
+GOOD finding: "3 of 5 rework loops came from editing before reading the existing pattern — cost ~25 min; prevention: read the nearest similar file before writing (promote via /compound)."
 
 ```
 RETROSPECTIVE
@@ -23,5 +33,9 @@ What worked: [with evidence]
 What didn't: [with measured impact]
 What to try next: [specific experiment]
 ```
+
+A retro that doesn't hand at least one finding to /learn is waste — the loop is retro → /learn → /compound, and it only pays off if it completes.
+
+Skip when: the work session was under ~30 minutes or purely mechanical — save the retro for sessions with actual decisions in them.
 
 Gotchas: Don't do a retro without quantified data -- "it felt slow" is not a finding, "40% of time spent on rework" is. Don't list "what worked" without evidence -- confirmation bias makes everything feel successful in retrospect. Don't end without a specific experiment to try next -- a retro without action items is just a venting session.

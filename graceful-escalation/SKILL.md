@@ -43,4 +43,11 @@ Revert command:   git revert [commit] (if changes were made)
 Resume point:     [what to tell the AI when resuming after human decision]
 ```
 
+The trigger with a number: the **3rd failed attempt at the same approach is a mandatory escalation** — not optional, not "one more try."
+
+BAD escalation: "I couldn't figure out the auth bug, sorry. Let me know how you'd like to proceed." (no attempts listed, no context packaged, human starts from zero)
+GOOD escalation: the structured handoff below — attempts with results, what's known, the specific decision needed, and a resume point.
+
+Skip when: the blocker is missing information you can still obtain yourself (search the codebase, read the docs, try a subagent) — escalation is for walls, not for friction.
+
 Gotchas: Don't escalate for things you could solve with more research — try subagent delegation first. Don't produce low-confidence output and hope the human catches it — that's worse than escalating. Always include a resume point so the human can hand back to AI seamlessly.
