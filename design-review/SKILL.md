@@ -1,6 +1,6 @@
 ---
 name: design-review
-description: 80-Item Visual Audit.
+description: Use after building any user-facing surface, before shipping it. 80-item visual audit against live HTML with letter grades and AI-slop detection.
 ---
 
 # /design-review — 80-Item Visual Audit
@@ -50,5 +50,9 @@ VERIFIED FIXES (8 of 9)
 ```
 
 This is the highest-signal protocol for catching "AI slop" aesthetics before they ship.
+
+Grade rubric (mechanical, not vibes): **A** = 0 HIGH findings · **B** = 1-2 HIGH · **C** = 3+ HIGH · **F** = any accessibility blocker (unlabeled form, keyboard trap, contrast below 4.5:1 on body text) regardless of other scores.
+
+Skip when: the change is backend-only, CLI-only, or touches no rendered surface — and skip for throwaway internal prototypes explicitly marked as such.
 
 Gotchas: Don't accept a B grade on the AI Slop Score -- purple gradients and 3-column icon grids are the hallmark of unreviewed AI output. Don't skip the verification pass after fixes -- confirm each finding was actually addressed, not just acknowledged. Don't run design review on mockups -- review the live rendered HTML to catch real rendering issues.

@@ -39,4 +39,9 @@ Next unit:  [description]
 Resume:     Read .claude/ralph-plan.md → pick next pending unit
 ```
 
+BAD unit: "Unit 3: refactor the backend." (unbounded, no done-check, needs the whole context to understand)
+GOOD unit: "Unit 3: extract auth middleware from server.ts into auth.ts. Done-check: tests pass AND server.ts no longer imports jsonwebtoken."
+
+Skip when: the whole task fits comfortably in half a context window — the loop's commit-and-reset overhead only pays for itself on genuinely large work.
+
 Gotchas: Each unit must be truly atomic — if it depends on seeing the output of another unit, it's not independent. Don't skip the commit step — that's how the next fresh context picks up progress. Don't plan more than 10 units without checking if the task should be split into separate features.

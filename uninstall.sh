@@ -2,7 +2,10 @@
 set -euo pipefail
 
 # Security: refuse to run as root
-[[ ${EUID:-$(id -u)} -eq 0 ]] && { echo "Error: do not run as root."; exit 1; }
+if [[ ${EUID:-$(id -u)} -eq 0 && "${LUNASTACK_ALLOW_ROOT:-}" != "1" ]]; then
+  echo "Error: refusing to run as root. In a container/CI, set LUNASTACK_ALLOW_ROOT=1."
+  exit 1
+fi
 
 LUNA_DIR="$(cd "$(dirname "$0")" && pwd)"
 SD="${1:-$HOME/.claude/skills}"

@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Security: refuse to run as root
-[[ ${EUID:-$(id -u)} -eq 0 ]] && { echo "Error: do not run as root."; exit 1; }
+# Security: refuse to run as root on multi-user systems.
+# Containers and CI legitimately run as root (Claude Code on the web does) —
+# set LUNASTACK_ALLOW_ROOT=1 to override in those environments.
+if [[ ${EUID:-$(id -u)} -eq 0 && "${LUNASTACK_ALLOW_ROOT:-}" != "1" ]]; then
+  echo "Error: refusing to run as root. In a container/CI, set LUNASTACK_ALLOW_ROOT=1."
+  exit 1
+fi
 
 LUNA_DIR="$(cd "$(dirname "$0")" && pwd)"
 PACKS_DIR="$LUNA_DIR/distribution/packs"

@@ -7,24 +7,24 @@
 
 | Command | Description |
 |---|---|
-| /luna | Session Start. |
+| /luna | Use at the beginning of any session to orient and route to the right protocol. Reads context, replies in three lines or fewer, routes — never does the work itself. |
 | /init | Project Setup. |
 | /status | Health Check. |
 | /calibrate | Adjust Rigor. |
-| /onboard | Codebase Orientation. |
+| /onboard | Use when joining a new project or starting work in an unfamiliar codebase. Ten-minute scan in a fixed order, producing a project map with danger zones. |
 | /guard | Intercept dangerous commands, destructive operations, and leaked secrets before they execute. |
-| /second-opinion | Push Back. |
+| /second-opinion | Use when the user's plan contains an irreversible action, touches security-sensitive surface, or contradicts a constraint they stated earlier. Evidence-backed push-back with an alternative, then defer. |
 | /audit-review | Process Check. |
 
 ## Inquiry (7)
 
 | Command | Description |
 |---|---|
-| /inquiry | Problem Discovery. |
+| /inquiry | Use when the user has a vague idea but hasn't defined the problem clearly yet. Four questions asked one at a time, pushing for a real person and falsifiable evidence. |
 | /thesis | Product Thesis. |
 | /scope | Scope Calibration. |
 | /landscape | Competitive Research. |
-| /premortem | Prospective Failure Analysis. |
+| /premortem | Use before committing to a plan or project. Assume it already failed, explain why — with category quotas so product and execution failures get equal airtime with technical ones. |
 | /spike | Timeboxed Investigation. |
 | /brief | Stakeholder Summary. |
 
@@ -45,8 +45,8 @@
 
 | Command | Description |
 |---|---|
-| /spec | Detailed Specification. |
-| /plan | Task Decomposition. |
+| /spec | Use when requirements are clear enough to write down but code hasn't started. Produces testable acceptance criteria, an edge-case checklist, and an explicit out-of-scope list. |
+| /plan | Use when a spec is ready and needs to be broken into executable tasks. 2-5 minute tasks with exact files, done-checks, and a dependency graph. |
 | /autoplan | Quick Plan. |
 | /story | User Story Mapping. |
 | /kpi | Success Metrics. |
@@ -56,11 +56,11 @@
 
 | Command | Description |
 |---|---|
-| /tdd | Test-Driven Development. |
+| /tdd | Use when writing any new behavior or fixing any bug. Red-green-refactor with a strict definition of a valid RED; one behavior per cycle. |
 | /build | Implementation. |
 | /batch | Parallel Execution. |
 | /pair | Pair Programming. |
-| /debug | Systematic Debugging. |
+| /debug | Use when a bug resists the first fix attempt, or before touching code whose failure you don't yet understand. Reproduce, isolate by binary search, fix the root cause, prove it with a regression test. |
 | /explain | Deep Code Explanation. |
 | /trace | Request Tracing. |
 | /dig | Code Archaeology. |
@@ -73,7 +73,7 @@
 
 | Command | Description |
 |---|---|
-| /verify | Review Board. |
+| /verify | Use before merging or shipping any non-trivial change. Multi-angle review board over the diff and its blast radius, with an explicit blocking verdict. |
 | /threat-model | Run a STRIDE threat analysis on system components crossing trust boundaries and produce a prioritized risk matrix. |
 | /chaos | Fault Injection. |
 | /visual-check | Compare UI screenshots across breakpoints to catch visual regressions before merge. |
@@ -95,7 +95,7 @@
 
 | Command | Description |
 |---|---|
-| /ship | Policy-Gated Release. |
+| /ship | Use when the user says ship, deploy, merge, or release. Four gates in strict order with explicit pass criteria; any gate fails, stop and report — never proceed to the next gate. |
 | /canary | Staged Rollout. |
 | /deploy-check | Post-Deployment Verification. |
 | /rollback | Make a rapid rollback-vs-fix-forward decision and execute an emergency revert with communication and verification. |
@@ -108,9 +108,9 @@
 
 | Command | Description |
 |---|---|
-| /retro | Quantified Retrospective. |
-| /learn | Extract Learnings. |
-| /compound | Feed Forward. |
+| /retro | Use after completing a feature or sprint to measure what happened with real data. Every claim must cite a specific session event; ends with one concrete experiment. |
+| /learn | Use after any session where mistakes were made or patterns discovered. Extracts evidence-backed learnings with confidence scores, presented for human approval before anything is recorded. |
+| /compound | Use after /learn approves learnings, or at end of session. Promotes validated learnings into persistent project instructions so every future session starts smarter. |
 | /search-memory | Search conversation history, uploaded files, and project knowledge for prior decisions and context. |
 | /handoff | Capture session state so the next AI session resumes seamlessly. For handing off to a human, see /graceful-escalation. |
 | /snapshot | Quick Checkpoint. |
@@ -201,7 +201,7 @@
 
 | Command | Description |
 |---|---|
-| /interview-me | Use when starting any feature larger than a quick fix. From Anthropic's official best practices. |
+| /interview-me | Use when starting any feature larger than a quick fix. The AI interviews YOU — 5-9 hard questions, one at a time — then writes the spec. From Anthropic's official best practices. |
 | /fresh | Use when context is degraded, or when starting a new task, or when you've corrected Claude twice on the same issue. |
 | /two-sessions | Spec Session + Execution Session. |
 | /parallel-compare | Use when there are 2-3 viable approaches and you're not sure which is best. Run parallel implementations on separate branches, then compare. |
@@ -283,7 +283,7 @@
 
 | Command | Description |
 |---|---|
-| /self-improve | Self-Improvement Loop (Boris's Golden Rule). |
+| /self-improve | Use after ANY correction to the AI's output, or when the AI makes a mistake. Converts the correction into one positive, reusable rule with a placement decision. |
 | /babysit | Use when you have PRs in review, CI pipelines to watch, or recurring tasks to automate. |
 | /verify-loop | Give Claude Verification Infrastructure (2-3x quality). |
 | /plan-execute | Plan Mode → Auto-Accept (Boris's Core Pattern). |
@@ -298,12 +298,12 @@
 | Command | Description |
 |---|---|
 | /1pct-rule | Use at the start of EVERY task, before any action including clarifying questions. |
-| /no-placeholders | Zero Tolerance Plan Validation. |
+| /no-placeholders | Use after writing any implementation plan, before execution. Scans for TBDs, ellipses, and unresolved choices; placeholders in acceptance criteria block, and each becomes a concrete question back to the user. |
 | /subagent-driven | Use when executing a multi-task plan. Main agent spawns subagents for each task, then reviews their work in two stages. See also /subagent-pattern for ad-hoc research delegation. |
 | /skill-priority | Use when there's a conflict between different instruction sources. |
 | /tool-mapping | Use when running protocols across different harnesses (Claude Code, Codex, Gemini, Copilot, Cursor). |
 | /find-duplicates | Use when refactoring, or when codebase feels bloated. |
-| /verify-completion | Use BEFORE claiming any task is complete. |
+| /verify-completion | Use BEFORE claiming any task is complete. Every acceptance criterion needs a VERIFIED row with the command run and its output — no evidence, not done. |
 | /yagni-enforce | You Aren't Gonna Need It. |
 | /evidence-over-claims | Use whenever Claude is about to claim something works. |
 | /linear-pipeline | The Superpowers Linear Pipeline. |
@@ -314,11 +314,11 @@
 
 | Command | Description |
 |---|---|
-| /office-hours | Use at the START of every project. Before /spec, before /plan, before any code. |
+| /office-hours | Use at the START of every project, before /spec or any code. YC-partner interrogation of the stated request; ends within 6 exchanges in a verdict — build, reshape, or don't build. |
 | /design-consultation | Build Design System From Scratch. |
 | /design-shotgun | Use when you need to escape the first-idea trap on a UI design. |
 | /design-html | HTML-First Design Pipeline. |
-| /design-review | 80-Item Visual Audit. |
+| /design-review | Use after building any user-facing surface, before shipping it. 80-item visual audit against live HTML with letter grades and AI-slop detection. |
 | /codex-review | Cross-Model Independent Review. |
 | /cso-audit | Full application security audit — OWASP Top 10 + STRIDE. For per-PR review of AI-generated changes, see /security-review. |
 | /careful-mode | Warn Before Destructive. |
@@ -376,13 +376,13 @@
 
 | Command | Description |
 |---|---|
-| /ralph-loop | Use for large tasks that will exhaust the context window. Decomposes work into atomic units, commits after each, resets context between units. |
-| /context-budget-check | Point-in-time context capacity estimate — continue/compact/fresh. For ongoing budget strategy, see /context-budget. |
-| /security-review | Code-level review targeting AI-generated vulnerability patterns. For a full application audit, see /cso-audit. |
+| /ralph-loop | Use for large tasks that will exhaust the context window. Decomposes work into atomic units, commits after each, resets context between units. Based on the Ralph Wiggum Loop pattern (2026). |
+| /context-budget-check | Use when a session is getting long, quality is dropping, or before starting a complex task. Estimates remaining context capacity and recommends continue/compact/fresh. For ongoing budget strategy, see /context-budget. |
+| /security-review | Use before merging any PR or deploying any feature. Code-level review targeting AI-generated vulnerability patterns and trust boundaries. For a full application audit (OWASP Top 10 + STRIDE), see /cso-audit. |
 | /agent-orchestra | Use when a task benefits from multiple specialized agents working in parallel. Hierarchical multi-agent orchestration. |
 | /drift-detect | Use periodically to detect when AI behavior has drifted from project conventions. |
 | /cost-tracker | Track and optimize AI development spend — tokens, model tiers, cost-per-feature. For infra cost, see /cost. |
-| /silent-failure-audit | Use after AI code generation to catch subtle defects. AI code creates 1.7x more issues than human code. |
+| /silent-failure-audit | Use after any significant AI code generation to catch the subtle defects AI creates. Research shows AI code creates 1.7x more issues than human code, with most being plausible-but-wrong patterns that pass human review. |
 | /ai-provenance | Use when shipping AI-generated code to production. EU AI Act compliance and provenance tracking. |
-| /graceful-escalation | Stop and hand back to a HUMAN with packaged context when confidence is low. For AI-to-AI continuity, see /handoff. |
+| /graceful-escalation | Use when the AI cannot solve a problem confidently. Defines when and how to stop and hand back to a HUMAN with structured context, rather than producing low-confidence output. For AI-to-AI session continuity, see /handoff. |
 | /perception-gap | Use periodically to check whether AI is actually making you faster. Combats the measured speed illusion. |

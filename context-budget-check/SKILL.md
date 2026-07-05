@@ -33,4 +33,9 @@ Recommendation:     [continue / compact context / start fresh session]
 Action:             [specific next step]
 ```
 
+BAD: reading a whole 3,000-line file to inspect one function, "just for context." (~40K tokens for 40 useful lines)
+GOOD: grep for the symbol, read the 40 lines around it, note the file path in case more is needed.
+
+Skip when: the session just started or the task is nearly done — a capacity check 5 minutes before finishing spends tokens to save none.
+
 Gotchas: Don't wait until quality has visibly degraded — by then you've wasted tokens on bad output. Don't read entire large files when you only need a section. Don't keep conversation history for resolved topics — use /snapshot and start fresh.

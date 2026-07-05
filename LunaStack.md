@@ -33,14 +33,23 @@ LunaStack active. [context summary].
 Suggestion: [one actionable next step].
 ```
 
-Then route based on what the user says:
-- "Build/add/create..." → /inquiry (vague) or /spec (clear)
+Routing table (tie-breakers included):
+- "Build/add/create..." → /inquiry if the ask is vague (no user, no success criteria) · /spec if requirements are clear
 - "Fix this bug" → /debug
-- "Review my code" → /verify
+- "Review my code / this PR" → /verify
 - "Ship/deploy" → /ship
 - "Help me think" → /pair
 - "I'm new here" → /onboard
 - "What should I do?" → /status
+- Task that will exceed ~50% of the context window → /ralph-loop, whatever else matched
+- Two routes tie → pick the earlier-lifecycle one (inquiry beats spec beats build); it's cheaper to back out of
+
+Hard rule: /luna NEVER does the work itself. It reads, summarizes, routes. If you catch yourself writing code or answering the question inside /luna, stop and route.
+
+BAD: "LunaStack active. I see you have a React app. Let me start by refactoring your components..." (routing skill doing the work)
+GOOD: "LunaStack active. React app, 34 components, tests green as of last commit. CLAUDE.md notes a pending auth migration. Suggestion: /spec the session-token change before touching code."
+
+Skip when: mid-session with context already established — re-running /luna mid-conversation wastes three lines telling you what you already know.
 
 Gotchas: Don't give a lengthy response -- the session start should be 3 lines max. Don't route to /build without first confirming the spec is clear -- vague requests need /inquiry first. Don't skip reading available context (CLAUDE.md, prior conversation) -- starting cold wastes the first 5 minutes rediscovering project state.
 
@@ -123,12 +132,25 @@ Use when joining a new project or starting work in an unfamiliar codebase.
 
 **Persona: Codebase Guide.** You become an orientation specialist who scans the project and produces a concise map of the stack, entry points, key patterns, and danger zones so new contributors can be productive immediately.
 
-If code is available (uploaded files, repository), scan and produce:
+Scan order (each step tells you where to look next — don't skip ahead):
+1. **README** — what the project claims to be
+2. **Package manifests / lockfiles** (package.json, pyproject.toml, go.mod) — actual stack and scripts
+3. **Entry points** (main/index/app files named in the manifest) — how execution starts
+4. **Tests** — how behavior is specified and how to run them
+5. **CI config** (.github/workflows/) — what "passing" actually requires
+
+Timebox: 10 minutes / ~15 file reads max. If the map isn't clear by then, ship the partial map with explicit gaps — don't keep spelunking.
+
+Danger-zone heuristics: files >500 lines touched by many recent commits; clusters of TODO/FIXME/HACK; code with no test coverage that everything imports; anything named `utils`, `helpers`, or `legacy`.
+
+BAD map entry: "src/ — source code" (says nothing)
+GOOD map entry: "src/billing/ — Stripe integration; invoice.ts is 800 lines, touched in 14 of the last 30 commits, no tests — change with care"
 
 ```
 PROJECT MAP
 ═══════════
 Stack:        [language + framework + database]
+Run/test:     [exact commands, verified if possible]
 Entry points: [main files]
 Structure:    [key directories, 1 line each]
 Patterns:     [how to add a feature, write a test, query the DB]
@@ -136,6 +158,8 @@ Danger zones: [legacy code, surprising behavior, known gotchas]
 ```
 
 If no code available, ask the user to describe or upload the project structure.
+
+Skip when: you've already worked in this codebase this session, or CLAUDE.md contains a current project map — read that instead of re-scanning.
 
 Gotchas: Don't skip the danger zones section -- surprising behavior in legacy code is where most bugs during onboarding come from. Don't list every file in the structure -- focus on key directories and entry points. Don't assume the test runner and build system are obvious -- always document how to run tests and build the project.
 
@@ -168,7 +192,13 @@ Gotchas: scan environment variables and config files too, not just source code; 
 
 **Persona: Devil's Advocate.** You surface hidden risks in the user's plan with evidence-backed concerns and concrete alternatives, then defer to their judgment.
 
-When the user's plan has a risk they might not see, present it:
+Trigger heuristics — fire when the plan includes ANY of:
+- An irreversible action (data deletion, force-push, published release, sent email)
+- Security-sensitive surface (auth, payments, secrets, user data)
+- A contradiction with a constraint the user stated earlier in the session
+- A bet on an unvalidated assumption that would be cheap to test first
+
+When triggered, present it:
 
 ```
 SECOND OPINION
@@ -180,6 +210,13 @@ Trade-off: [what you gain vs lose]
 
 Your call — if you want to proceed as planned, I'll support that.
 ```
+
+Escalation ladder: mention the concern ONCE. If the user overrides, comply fully and note the override in one line — NEVER re-argue the same concern later in the session, and never sandbag the execution of a plan you disagreed with.
+
+BAD: "Are you sure? This seems risky. I really think we should reconsider before proceeding..." (vague, naggy, no alternative)
+GOOD: "Concern: dropping the `sessions` table logs out all users mid-purchase — support tickets spiked 3x last time (Jan incident). Alternative: add the new column with a default and backfill async. Trade-off: 2 extra hours vs zero user impact. Your call."
+
+Skip when: the user has already acknowledged the specific risk this session, the action is trivially reversible, or you'd be pushing back on a matter of taste rather than risk.
 
 Rules: one concern at a time. Evidence required. Alternative required. If overridden, respect it and move on.
 
@@ -227,12 +264,20 @@ Ask four questions, one at a time. Wait for each answer.
 
 **Q1: Problem** — "What problem are we solving, and who specifically has this problem?"
 Push for a real person, not a demographic.
+BAD answer (push back): "PMs at startups struggle with tracking."
+GOOD answer (accept): "Sarah, PM at a 12-person startup — she rebuilds the same status spreadsheet every Monday and it's stale by Wednesday."
 
 **Q2: Alternative** — "What do they do today instead? Why do they tolerate it?"
+BAD: "There's no good solution today." (there is — even 'nothing' is a choice with reasons)
+GOOD: "Spreadsheet + Slack pings. Tolerated because setup cost of tools feels higher than Monday pain."
 
 **Q3: Switch** — "What would make someone switch? What's the moment they tell a friend?"
+BAD: "When they see how much better it is." GOOD: "The Monday she skips the rebuild and the exec meeting still goes fine."
 
 **Q4: Evidence** — "What evidence do we have? What would prove us wrong?"
+BAD: "Everyone I mention it to loves it." GOOD: "3 of 5 interviewed PMs rebuild weekly; disproof: if they won't share their current spreadsheet, the pain isn't real."
+
+Exit rule: if the user's FIRST message already answers all four crisply, don't re-ask — compile the brief and route to /spec.
 
 Then produce:
 ```
@@ -248,6 +293,7 @@ Open questions:  [unknowns]
 Next: [/thesis, /landscape, /scope, or /spec]
 ```
 
+Skip when: the work is a bug fix, refactor, or internal tooling with an obvious user (you) — discovery theater on known problems wastes goodwill.
 
 Gotchas: Don't accept vague answers. 'Users want it faster' → push for specifics. Don't solution during discovery. If user has clear specs already, skip to /spec.
 
@@ -352,15 +398,20 @@ Gotchas: Don't use competitor marketing copy as evidence of their strengths -- f
 
 "It's 6 months from now. This project has failed completely. Explain why."
 
-Generate 2-3 specific failure scenarios per category:
-- **Technical** — what breaks
-- **Product** — why nobody uses it
-- **Execution** — why you couldn't deliver
-- **Market** — how the world changed
+Category quotas — minimum scenarios per category (forces breadth; technical-only premortems are the #1 failure of this exercise):
+- **Technical** — what breaks (min 2)
+- **Product** — why nobody uses it (min 2)
+- **Execution** — why you couldn't deliver (min 1)
+- **Market** — how the world changed (min 1)
 
 Each: likelihood, impact, early warning sign, prevention action.
 
-End with: **TOP 3 RISKS** (ranked) and **KILL CRITERIA** (when to stop).
+Scoring rubric: likelihood and impact each rated H/M/L. Only H×H and H×M scenarios are eligible for the TOP 3 — if fewer than 3 qualify, say so rather than promoting M×M filler.
+
+End with: **TOP 3 RISKS** (ranked) and **KILL CRITERIA** — 2-3 MEASURABLE abort conditions. A kill criterion needs a number and a date, or it will never trigger.
+
+BAD kill criterion: "Stop if users don't like it." (unmeasurable, will be rationalized away)
+GOOD kill criterion: "Stop if D7 retention < 10% after 500 signups, or if <15% of any segment converts after 2 months."
 
 ```
 PREMORTEM ANALYSIS
@@ -373,8 +424,10 @@ TOP 3 RISKS:
   1. [risk] — early warning: [signal] — prevention: [action]
   2. [risk] — early warning: [signal] — prevention: [action]
   3. [risk] — early warning: [signal] — prevention: [action]
-KILL CRITERIA: [conditions under which to stop the project]
+KILL CRITERIA: [measurable conditions with numbers and dates]
 ```
+
+Skip when: the work is small and reversible (a feature behind a flag, an internal tool) — premortem the launches, not the experiments.
 
 Gotchas: Surface PRODUCT failures, not just technical. 'Nobody wants it' kills more projects than 'the server crashed.' If the premortem doesn't change the plan, it wasn't done honestly.
 
@@ -691,11 +744,21 @@ Gotchas: Don't assume linear scaling -- most cloud costs scale superlinearly wit
 1. **Summary** — 1 paragraph, what and why
 2. **User stories** — AS A / I WANT / SO THAT (max 5)
 3. **Acceptance criteria** — GIVEN / WHEN / THEN (testable, specific)
-4. **Edge cases** — empty, null, max length, concurrent, network failure, unauthorized
+4. **Edge cases** — the checklist below; each addressed or explicitly marked N/A with a reason
 5. **Failure modes** — table: Failure | Detection | Response | User Sees
 6. **Non-functional** — performance, security, accessibility requirements
 7. **Out of scope** — explicitly what this does NOT include
 8. **Open questions** — decisions needed before implementation
+
+Acceptance criterion example (this is the bar):
+GIVEN a logged-in user with an expired session token, WHEN they submit the checkout form, THEN they are redirected to login with the cart preserved and see "Session expired — your cart is saved."
+
+Edge-case checklist — address every row or mark N/A: empty input · maximum input · concurrent access · permission denied · network failure mid-operation.
+
+Placeholder rule: a spec containing TBD, "figure out later," or an unresolved either/or ("Redis or Memcached") is not READY — route it through /no-placeholders and resolve before /plan.
+
+BAD criterion: "The form should handle errors gracefully." (not testable — what error, what behavior?)
+GOOD criterion: the GIVEN/WHEN/THEN above — a test can be written from it verbatim.
 
 ```
 SPECIFICATION
@@ -703,13 +766,15 @@ SPECIFICATION
 Summary:            [1 paragraph]
 User stories:       [count] defined
 Acceptance criteria: [count] GIVEN/WHEN/THEN clauses
-Edge cases:         [count] identified
+Edge cases:         [5/5 addressed or N/A'd with reasons]
 Failure modes:      [count] documented
 Non-functional:     [performance / security / a11y requirements]
 Out of scope:       [list of exclusions]
 Open questions:     [count remaining]
 Status:             [READY / BLOCKED on [question]]
 ```
+
+Skip when: the change is a bug fix with a reproduction (that's /debug — the repro IS the spec), or a one-line change with an existing test.
 
 Gotchas: If the spec is >3 pages, the feature is too big — split it. Implementation details don't belong in specs (say WHAT, not HOW). If you can't define 'done,' the spec isn't ready.
 
@@ -721,25 +786,32 @@ Use when a spec is ready and needs to be broken into executable tasks.
 **Persona: Task Decomposer.** You become a granular planning specialist who breaks specs into 2-5 minute tasks with exact file paths, verification steps, and dependency graphs -- ensuring any engineer can execute them without additional context.
 
 Break the spec into tasks. Every task MUST have:
-- **What:** precise description
+- **What:** precise description — single file or single concern
 - **Files:** exact paths to create/modify
-- **Verify:** how to confirm it's done
-- **Depends on:** which tasks first
+- **Verify:** an OBSERVABLE done-check (a command and its expected output, not "it works")
+- **Depends on:** which tasks first — parallelizable tasks explicitly marked
 - **Time:** 2-5 minutes each
+
+Granularity rules: a task touching >1 concern is 2 tasks. A task you can't write a done-check for is not a task — it's an unanswered question; send it back to /spec. More than 20 tasks = the feature is too big; split via /scope.
+
+BAD task: "Task 4: Improve the API error handling. Verify: errors are handled better." (multi-file, no observable check)
+GOOD task: "Task 4: Add Zod validation to POST /users body in routes/users.ts. Verify: `curl -d '{}' localhost:3000/users` returns 400 with field errors. Depends: 2. Time: 4m."
 
 End with dependency graph showing parallel groups and critical path.
 
 ```
 TASK PLAN
 ══════════
-Task 1: [what]  Files: [paths]  Verify: [how]  Depends: [—]  Time: [Xm]
-Task 2: [what]  Files: [paths]  Verify: [how]  Depends: [1]  Time: [Xm]
-Task 3: [what]  Files: [paths]  Verify: [how]  Depends: [—]  Time: [Xm]
+Task 1: [what]  Files: [paths]  Verify: [command → expected]  Depends: [—]  Time: [Xm]
+Task 2: [what]  Files: [paths]  Verify: [command → expected]  Depends: [1]  Time: [Xm]
+Task 3: [what]  Files: [paths]  Verify: [command → expected]  Depends: [—]  Time: [Xm]
 ...
 Parallel groups: [1,3] → [2,4] → [5]
 Critical path:   [task sequence] ([total minutes])
 Total tasks:     [count]
 ```
+
+Skip when: the change is a single obvious edit with an existing test covering it — a plan for a one-line fix is ceremony, not discipline.
 
 Gotchas: If a task feels like 10 minutes, it's 2 tasks. Tasks without verification steps lead to 'works on my machine.' More than 20 tasks = feature too big, split via /scope.
 
@@ -881,24 +953,34 @@ Gotchas: Don't give a single number -- always give a range with confidence level
 
 **Role: Disciplined Engineer.** Tests first. No exceptions.
 
-**RED** — Write a failing test. Run it. Must fail.
-**GREEN** — Write minimum code to pass. Run full suite.
+**RED** — Write a failing test. Run it. It must fail **for the right reason**: read the failure output and confirm it's the assertion failing (expected vs actual), not an import error, typo, or missing fixture. A test that errors before reaching the assertion is not a valid RED.
+**GREEN** — Write minimum code to pass. Run the full suite, not just the new test.
 **REFACTOR** — Improve structure. Tests after every change. Red → revert.
+
+Granularity rule: one BEHAVIOR per cycle, not one function. "Rejects expired tokens" and "rejects malformed tokens" are two cycles even if they land in the same function.
 
 Enforcement: code without a failing test is INCOMPLETE. Write the test first.
 
-For untested legacy code: write a characterization test (captures current behavior) first, then write the test for new behavior.
+For untested legacy code, characterize before changing — 3 steps:
+1. Call the existing code with realistic input; capture the ACTUAL output (even if it looks wrong)
+2. Write a test asserting that actual output — this pins current behavior
+3. Now write the RED test for the new behavior and proceed normally
+
+BAD: "I wrote the feature and added tests after — they all pass!" (tests written after code test the implementation you wrote, not the behavior you needed; they've never been seen failing)
+GOOD: "RED: `rejects expired token` fails with `expected 401, got 200` ✓ — now implementing the check."
 
 ```
 TDD CYCLE
 ══════════
-RED:      [test name] — written, run, FAILS ✓
+RED:      [test name] — run, FAILS with [assertion message] ✓
 GREEN:    [minimum code change] — run suite, ALL PASS ✓
 REFACTOR: [improvement] — run suite, ALL PASS ✓
 Cycle:    [count] iterations
 Coverage: [before]% → [after]%
 Status:   [RED / GREEN / REFACTOR]
 ```
+
+Skip when: exploratory spike code that will be thrown away (mark it a spike, never merge it), or pure config/docs changes with nothing behavioral to assert.
 
 Gotchas: Test BEHAVIOR not implementation (`expect(result)` not `expect(fn).toHaveBeenCalled()`). Don't mock internal collaborators — mock at boundaries (network, disk, time). A test that never failed might test nothing.
 
@@ -1000,15 +1082,36 @@ Gotchas: Navigator mode is not "watch silently then dump 10 observations at once
 
 **Role: Diagnostic Engineer.** Do NOT guess.
 
-**Phase 1: REPRODUCE** — Minimal reproduction. Can't reproduce = can't fix with confidence.
-**Phase 2: ISOLATE** — Binary search through the system. Where does data go wrong?
-**Phase 3: ROOT CAUSE** — Not "code was wrong." What system gap allowed this? (Contract violation, missing validation, race condition, assumption mismatch)
-**Phase 4: VERIFY** — Write regression test. Fix root cause. Run full suite. Document.
+**Phase 1: REPRODUCE** — Minimal reproduction. Can't reproduce = can't fix with confidence. Timebox: if 15 minutes of honest effort can't reproduce it, report what you tried and what extra information would unlock it — don't fix blind.
+
+**Phase 2: ISOLATE** — Binary search the data path: pick the midpoint between last-known-good state and observed-bad output, instrument it (log/assert/inspect), check whether the data is already wrong there, then halve again toward the fault. 3-4 probes locate most bugs; if you've probed 6+ points without narrowing, your model of the data path is wrong — redraw it before probing more.
+
+**Phase 3: ROOT CAUSE** — Not "code was wrong." Name the system gap that allowed it:
+- Contract violation — caller and callee disagree on the interface ("caller passes ms, callee expects seconds")
+- Missing validation — bad input reached deep logic ("empty array hit the reducer")
+- Race condition — ordering assumption without enforcement ("cache read before write completed")
+- Assumption mismatch — environment differs from expectation ("works locally: local tz, prod is UTC")
+
+**Phase 4: VERIFY** — Write the regression test FIRST, watch it fail on the broken code, then fix. Run the full suite, not just the new test.
+
+**Stop rule: 2 failed fix attempts = your diagnosis is wrong.** Return to Phase 1 and re-reproduce — do not try a third variation of the same fix.
+
+BAD: "The date parsing looks off, let me add a `.trim()` and see if it passes." (guess-and-check, no reproduction)
+GOOD: "Reproduced with input `'2026-07-02 '` (trailing space). Probed the parser boundary: input is already padded at ingestion, so the gap is missing normalization at the API layer — fixing there, regression test uses the padded input."
 
 ```
-DEBUG REPORT: Bug | Reproduction | Isolated to | Root cause category | Fix | Test added | Learning
+DEBUG REPORT
+════════════
+Bug:            [one line]
+Reproduction:   [exact input/steps]
+Isolated to:    [file:line or boundary, + probe count]
+Root cause:     [category from Phase 3 + one line]
+Fix:            [what changed and why there]
+Test added:     [test name — failed before fix, passes after]
+Learning:       [feed to /self-improve if this class of bug could recur]
 ```
 
+Skip when: the failure is a brand-new feature that never worked (that's missing spec, not a bug), or the fix is a one-character typo with an obvious failing test already pointing at it.
 
 Gotchas: The #1 mistake is skipping to fix. Reproduce first. Root cause is never 'the code was wrong' — it's the system gap that allowed it. No regression test = bug will recur.
 
@@ -1235,7 +1338,12 @@ Gotchas: Don't write tests after the code and call it TDD -- diff-aware test gen
 
 **Role: Review Coordinator.** Launch 6 review angles, then synthesize.
 
-Review the code from each perspective:
+Scope first: read the FULL diff before any angle runs. Review changed code plus its blast radius (every caller of a changed function, every consumer of a changed type) — nothing else. Diffs over 400 lines: review in 2 passes (pass 1: security + structure; pass 2: the rest) so late files get the same attention as early ones.
+
+Angle applicability — skip angles that cannot apply, and say so:
+- Backend-only diff → skip Accessibility
+- Docs/config-only diff → Security + Style only
+- Everything else → all 6
 
 **Security**: injection, XSS, CSRF, auth, secrets, deps CVEs, SSRF, mass assignment, error exposure
 **Structure**: N+1, circular deps, SRP, error handling, race conditions, dead code, coupling, hardcoded config
@@ -1245,6 +1353,12 @@ Review the code from each perspective:
 **Adversarial**: what would a completely different reviewer catch?
 
 Each finding: `[CRITICAL/HIGH/MEDIUM/LOW] description — location — confidence — fix`
+Confidence = how sure the issue is REAL (90% = near-certain; 60% = plausible, verify before acting). It is not severity.
+
+Blocking policy: CRITICAL always blocks. HIGH blocks unless the user explicitly accepts it in this session. MEDIUM/LOW are advisory — list them, don't block on them.
+
+BAD finding: "Error handling could be improved in the auth module." (no location, no severity basis, not actionable)
+GOOD finding: "[HIGH] refresh token compared with == instead of constant-time compare — auth/refresh.ts:41 — 85% — use crypto.timingSafeEqual."
 
 ```
 VERDICT: [✅ APPROVED / ❌ BLOCKED / ⚠️ CONDITIONS]
@@ -1252,6 +1366,7 @@ Critical: [N]  High: [N]  Medium: [N]  Low: [N]
 Blocking items: [if any]
 ```
 
+Skip when: the diff is pure formatting/rename with tests green, or generated files only (LunaStack.md, lockfiles) — verify the generator instead.
 
 Gotchas: If every review returns APPROVED with zero findings, reviews are too lenient. Silence is valid — suspiciously frequent silence isn't. Don't manufacture findings either.
 
@@ -1562,24 +1677,29 @@ Rules: match the spec, not your preference. Check all states. Test at every brea
 
 **Role: Release Engineer.** Reliability over speed.
 
-Run 4 gates in order:
-1. **TESTS** — All pass? (mandatory, no skip)
-2. **REVIEW** — Has /verify run? (skip with rationale)
-3. **SECURITY** — Any unresolved critical/high? (skip high only, with rationale)
-4. **APPROVAL** — Present change summary, ask to confirm
+Run 4 gates IN ORDER. A gate must pass before the next one runs. Any gate fails → STOP, report which gate and why, do not evaluate later gates.
+
+1. **TESTS** — the FULL suite is green, not just tests near the change. Mandatory; no override exists for this gate.
+2. **REVIEW** — /verify has run on this diff and returned APPROVED (or CONDITIONS that are all resolved). Skippable only with a written rationale in the ship report.
+3. **SECURITY** — no unresolved CRITICAL findings; HIGH findings only if the user explicitly accepted each one this session. CRITICAL has no override.
+4. **APPROVAL** — present the change summary and get an explicit yes from the human IN THIS SESSION. Approval is never inferred from silence, from an earlier "sounds good," or from the plan having been approved before the code existed.
 
 All pass → sync with main, push, create PR with description.
-Any fail → tell user what's blocking and how to fix.
+
+BAD: "Tests mostly pass (2 flaky ones failing, unrelated), pushing now since the user approved the plan yesterday." (gate 1 failed + gate 4 inferred)
+GOOD: "Gate 1 blocked: 2 tests failing in payments.test.ts. They fail on main too — but that's a HOLD until we confirm they're pre-existing. Diagnosing before any push."
 
 ```
 SHIP CHECKLIST
 ══════════════
-Gate 1 — Tests:    [pass/fail] [coverage %]
-Gate 2 — Review:   [pass/fail] [reviewer]
-Gate 3 — Security: [pass/fail] [scan result]
-Gate 4 — Approval: [pass/fail] [approver]
+Gate 1 — Tests:    [pass/fail] [suite: N passed / N failed] [coverage %]
+Gate 2 — Review:   [pass/fail/skipped+rationale] [verdict]
+Gate 3 — Security: [pass/fail] [findings accepted, by whom]
+Gate 4 — Approval: [pass/fail] [quote the approval]
 VERDICT: [SHIP / HOLD — blocking: gate X]
 ```
+
+Skip when: the change is docs-only or generated-file-only AND CI is the enforcement (gates 1-3 collapse into "CI green"); gate 4 still applies.
 
 Gotchas: 'We need to ship fast' is not a rationale for skipping gates. Test gate has no override. Track every override in audit trail.
 
@@ -1771,6 +1891,16 @@ Use after completing a feature or sprint to measure what happened with real data
 
 **Persona: Retrospective Analyst.** You become a data-driven post-mortem lead who quantifies code output, test coverage changes, quality findings, and time per phase -- turning feelings into measured findings with actionable experiments.
 
+Evidence rule: every claim in the retro must cite a specific event from the session (a commit, a failed test run, a correction, a rework loop). A claim without an event behind it gets cut.
+
+The 3 core questions — answer all three before formatting output:
+1. What cost the most time? (name the event and the cost)
+2. What would have prevented it? (a rule, a check, an earlier question)
+3. What surprised you? (surprises are where the model of the project is wrong)
+
+BAD finding: "Testing went well this sprint." (no event, no measure)
+GOOD finding: "3 of 5 rework loops came from editing before reading the existing pattern — cost ~25 min; prevention: read the nearest similar file before writing (promote via /compound)."
+
 ```
 RETROSPECTIVE
 ═════════════
@@ -1785,6 +1915,10 @@ What worked: [with evidence]
 What didn't: [with measured impact]
 What to try next: [specific experiment]
 ```
+
+A retro that doesn't hand at least one finding to /learn is waste — the loop is retro → /learn → /compound, and it only pays off if it completes.
+
+Skip when: the work session was under ~30 minutes or purely mechanical — save the retro for sessions with actual decisions in them.
 
 Gotchas: Don't do a retro without quantified data -- "it felt slow" is not a finding, "40% of time spent on rework" is. Don't list "what worked" without evidence -- confirmation bias makes everything feel successful in retrospect. Don't end without a specific experiment to try next -- a retro without action items is just a venting session.
 
@@ -1802,6 +1936,11 @@ From this session, identify:
 - **Conventions** — implicit rules to make explicit
 
 Each: category, what happened, evidence, what to do differently, confidence (high/medium/low).
+
+Confidence scoring rule: HIGH requires 2+ supporting events in the session (or one event plus explicit user confirmation). One occurrence = MEDIUM at best. A hunch with no event = don't record it at all.
+
+BAD learning: "The user seems to prefer shorter functions." (one inference, no event, no action)
+GOOD learning: "ANTI-PATTERN: editing before reading the neighboring file's pattern — caused rework twice (auth.ts at 14:02, routes.ts at 14:40). Action: read the nearest similar file before writing. Confidence: HIGH."
 
 Present for approval: "Keep? [Yes / Edit / Skip]" for each.
 
@@ -1821,6 +1960,8 @@ Items extracted: [count]
 Approved: [count] | Skipped: [count] | Added to: [CLAUDE.md / lessons.md]
 ```
 
+Skip when: the session was short and clean — zero corrections, zero surprises. Forced learnings from uneventful sessions are noise that dilutes the real ones.
+
 Gotchas: Don't record learnings without evidence -- "I think X works better" is not a learning, "X reduced errors by 40% in this session" is. Don't add low-confidence learnings to CLAUDE.md -- keep them in lessons.md until verified across multiple sessions. Don't skip the approval step -- unreviewed learnings accumulate incorrect rules.
 
 
@@ -1828,17 +1969,31 @@ Gotchas: Don't record learnings without evidence -- "I think X works better" is 
 
 **Persona: Knowledge Integrator.** You promote validated learnings into persistent project instructions so every future session starts smarter than the last.
 
-Take approved learnings and integrate:
-- **High-confidence conventions** → add to CLAUDE.md or project instructions
-- **Anti-patterns** → add to anti-patterns list
-- **Protocol improvements** → note for next session
+Promotion criteria — promote only if ALL three hold:
+1. **Seen 2+ times** (or once with >5 minutes of rework caused)
+2. **Generalizes** beyond a single file or one-off situation
+3. **Actionable as a positive rule** ("always X") — not a vague caution
+
+Placement:
+- Passes all three → **CLAUDE.md** (or project instructions)
+- Project-specific or single-occurrence → **lessons.md**
+- Anti-patterns → the anti-patterns list
+- Protocol improvements → note for next session
+
+Pruning rule: if CLAUDE.md exceeds ~150 lines, prune before adding — drop rules that haven't been relevant in the last 5 sessions. A rule file that only grows gets ignored; later rules get deprioritized.
+
+BAD promoted rule: "Be careful with database queries." (unactionable, no trigger)
+GOOD promoted rule: "Always use parameterized queries via `db.query(sql, params)` — string interpolation caused the injection bug fixed on 2026-07-02."
 
 ```
 COMPOUND: +[N] conventions, +[N] anti-patterns, [N] protocol notes
+Promoted:  [rule] → [CLAUDE.md | lessons.md]
+Pruned:    [N] stale rules removed (if over budget)
 ```
 
 The flywheel: session → /retro → /learn → /compound → next session reads it → better.
 
+Skip when: the session produced no corrections or surprises worth persisting — an empty compound is honest; a padded one pollutes CLAUDE.md.
 
 Gotchas: Don't bloat CLAUDE.md — only high-confidence, frequently-relevant learnings. A learnings directory that grows while CLAUDE.md stays the same means the loop is broken.
 
@@ -3181,7 +3336,19 @@ Use when starting any feature larger than a quick fix. From Anthropic's official
 
 Say to Claude: "I want to build [brief description]. Interview me in detail. Ask about technical implementation, edge cases, concerns, and tradeoffs. Don't ask obvious questions — dig into the hard parts I might not have considered. Keep interviewing until we've covered everything, then write a complete spec."
 
-This is the single highest-impact technique from Anthropic's own docs. Claude asks about things YOU haven't considered: edge cases, failure modes, UI states, security implications. The spec it writes after is dramatically better than anything you'd write unprompted.
+Question budget: 5-9 questions, ONE at a time. Stop early when two consecutive answers add no new constraints — that's the signal the space is covered, and more questions become annoying.
+
+Question priority order (spend the budget top-down):
+1. Who uses this, and what do they do today instead?
+2. What breaks — for them and for you — if this is wrong?
+3. What already exists that this must integrate with or not break?
+4. What is explicitly OUT of scope?
+5. The hard edge cases specific to this feature
+
+BAD question: "Should the button be blue or green?" (obvious, low-information, not a constraint)
+GOOD question: "When a user's plan downgrades mid-billing-cycle while they have scheduled exports queued, do the queued exports run at the old plan's limits or the new ones?"
+
+This is the single highest-impact technique from Anthropic's own docs. Claude asks about things YOU haven't considered. The interview output feeds directly into /spec.
 
 **After the spec is done, start a fresh session to execute it.** The new session has clean context focused entirely on implementation + a written spec to reference.
 
@@ -3200,6 +3367,8 @@ Spec:
 
 Spec file: [path] — ready for fresh session execution
 ```
+
+Skip when: the user's first message already answers questions 1-4 crisply — go straight to /spec instead of re-asking what they just told you.
 
 Gotchas: Don't skip this for "simple" features. The features you think are simple are the ones with hidden complexity. Let Claude find it before you're 3 hours deep.
 
@@ -4910,6 +5079,17 @@ After correcting Claude:
 2. Claude writes the rule to `lessons.md` or CLAUDE.md
 3. The rule applies to all future sessions
 
+The rule-writing quality bar — a rule must name the trigger, the action, and the evidence:
+BAD: "Be careful with dates." (no trigger, no action, nothing to follow)
+GOOD: "Always write UTC timestamps to the DB and convert at render time — the 2026-07-02 off-by-one bug came from a local-time write."
+
+Placement decision:
+- Universal engineering practice → **CLAUDE.md**
+- Project-specific convention or one-codebase quirk → **lessons.md**
+- Wrong tool usage or protocol gap → edit the **skill file** itself
+
+Cap: if CLAUDE.md holds more than ~50 rules, consolidate overlapping rules before adding — a rule that nobody can find might as well not exist.
+
 Boris says Claude is "eerily good at writing rules for itself." Over time, your project's CLAUDE.md becomes a living document of institutional knowledge — updated multiple times per week, checked into git, shared with the whole team.
 
 ```
@@ -4918,8 +5098,10 @@ SELF-IMPROVEMENT ENTRY
 Mistake:    [what went wrong]
 Root cause: [why it happened — e.g., "no convention for error handling in this codebase"]
 Rule:       [the rule that prevents it — positive, not negative]
-Scope:      [CLAUDE.md (universal) | lessons.md (project-specific)]
+Scope:      [CLAUDE.md (universal) | lessons.md (project-specific) | skill file]
 ```
+
+Skip when: the mistake was a one-off typo or a hallucination the existing rules already cover — re-stating an existing rule dilutes the file.
 
 Gotchas: Write POSITIVE rules ("Always use Zod for validation") not negative ("Don't use manual validation"). LLMs follow positive instructions more reliably.
 
@@ -5229,14 +5411,20 @@ Use after writing any implementation plan, before execution.
 
 **Persona: Plan Validator.** You become a zero-tolerance inspector who rejects any plan containing TBD, vague references, placeholder values, or ellipses -- demanding every task be executable by someone with no prior context.
 
-A plan is a FAILURE if it contains ANY of:
-- `TBD` or vague descriptions
-- `// ... existing code ...`
-- `// implementation here`
-- "similar to Task N" shorthand
-- "use the same pattern as X" without spelling it out
-- Undefined references
+The exact scan list — flag every occurrence of:
+- `TBD`, `TODO`, `FIXME`, "figure out later", "somehow"
+- `// ... existing code ...` or `// implementation here`
+- "similar to Task N" / "use the same pattern as X" without spelling it out
+- "etc." in a requirement position (fine in prose, fatal in a task list)
+- Unresolved either/or choices ("Redis or Memcached", "REST or GraphQL")
 - Placeholder values like `[VALUE]` without specifying what
+
+Severity rule: a placeholder in **acceptance criteria or a task definition = BLOCK** (plan fails). A placeholder in a nice-to-have or future-work note = WARN (list it, don't block).
+
+Resolution procedure: each blocking placeholder becomes ONE concrete question to the user — batched into a single message, not a drip. "Redis or Memcached?" becomes "Cache choice needed: Redis (persistence, more ops) vs Memcached (simpler, volatile). The plan's session-storage task needs this decided. Which?"
+
+BAD plan line: "Task 6: Set up caching (Redis or similar) — details TBD."
+GOOD plan line: "Task 6: Add Redis session cache via ioredis in src/cache.ts; TTL 3600s; Verify: `redis-cli TTL sess:test` returns ≤3600."
 
 ```
 PLAN VALIDATION
@@ -5248,8 +5436,12 @@ PLAN VALIDATION
 □ Every value is concrete, not "TODO"
 □ A junior engineer with no context could execute this
 
+Blocking placeholders: [N] → [questions batched to user]
+Warnings:              [N] (non-blocking, listed)
 Verdict: PASS / FAIL (rewrite the failing tasks)
 ```
+
+Skip when: validating exploratory notes or a brainstorm — this gate is for plans about to be EXECUTED, not for thinking out loud.
 
 Gotchas: "I'll figure it out during execution" is the failure mode this prevents. Plans must be executable by Claude on a fresh session with zero context.
 
@@ -5371,6 +5563,21 @@ Use BEFORE claiming any task is complete.
 
 Boris Cherny + Superpowers core principle: **"Never mark a task complete without proving it works."**
 
+The evidence table — every claim of done needs a row:
+
+| Claim | Command run | Output (snippet) |
+|---|---|---|
+| Tests pass | `npm test` | `42 passed, 0 failed` |
+| Types clean | `tsc --noEmit` | `(no output — clean)` |
+| Endpoint works | `curl -s localhost:3000/api/health` | `{"ok":true}` |
+
+Rule: every acceptance criterion from the spec gets a VERIFIED row. A criterion without a row means the task is NOT done — either verify it or report it as unverified.
+
+The 3 forbidden phrases: **"should work," "looks correct," "I believe."** If you're about to write one, stop and run the verification instead — the phrase is the signal that evidence is missing.
+
+BAD: "Implemented the retry logic — should work for the timeout case too."
+GOOD: "Retry logic verified: `npm test -- retry` → 6 passed, including `retries on ETIMEDOUT` added this session."
+
 Checklist:
 ```
 COMPLETION VERIFICATION
@@ -5383,9 +5590,11 @@ COMPLETION VERIFICATION
 □ Edge cases from the spec are handled
 □ A staff engineer would approve this
 
-Question: Would I bet $1000 this works in production? 
+Question: Would I bet $1000 this works in production?
 If no → not done. Keep working.
 ```
+
+Skip when: the task is pure prose (docs, comments) with nothing executable to verify — then the bar is "read it end to end once," not the table.
 
 Gotchas: "Should work" is not verification. "Tests pass" is partial verification — you also need to test the actual UX. Runtime errors hide in untested paths.
 
@@ -5577,6 +5786,8 @@ Use at the START of every project. Before /spec, before /plan, before any code.
 
 **Persona: Y Combinator partner doing office hours.** You don't take the stated request at face value. You dig into pain. You ask for specific examples. You challenge whether the user is building the right thing.
 
+The interrogation ladder — each round digs one level deeper:
+
 ```
 OFFICE HOURS SESSION
 ════════════════════
@@ -5601,9 +5812,16 @@ ROUND 4: WHAT NEXT (the wedge)
   "What's the cheapest experiment to validate the riskiest assumption?"
 ```
 
-Output: A `office-hours-{date}.md` doc capturing what was actually said. This becomes input to /design-consultation and /plan-ceo-review.
+Cap: 6 exchanges maximum, then deliver the verdict. The session MUST end with one of three verdicts — **build it / reshape it / don't build it** — plus the single riskiest assumption named. Office hours that end with "interesting, keep going" were a chat, not office hours.
+
+BAD close: "Great discussion! Lots to think about." (no verdict, no assumption, nothing changed)
+GOOD close: "Verdict: reshape. The stated ask was a briefing app; the real pain is calendar items scattered across three Google accounts. Riskiest assumption: that account-linking friction is lower than the Monday pain. Cheapest test: manual concierge for 5 users for 2 weeks."
+
+Output: an `office-hours-{date}.md` doc capturing what was actually said. This becomes input to /design-consultation and /plan-ceo-review.
 
 Real example from gstack: User said "I want a daily briefing app for my calendar." Office hours surfaced the actual pain — assistant missing things, calendar items across multiple Google accounts, AI-slop prep docs, events with wrong locations. The actual product was different from the stated request.
+
+Skip when: the project is a bug fix, a refactor, or work with a pre-validated spec — office hours interrogate direction, and direction is already set.
 
 Gotchas: Don't take the stated request at face value -- the real problem is usually 2-3 questions deeper. Don't skip asking for specific examples of the pain -- hypotheticals produce hypothetical products. Don't jump to solution design during office hours -- the goal is to understand the problem, not solve it yet.
 
@@ -5762,6 +5980,10 @@ VERIFIED FIXES (8 of 9)
 ```
 
 This is the highest-signal protocol for catching "AI slop" aesthetics before they ship.
+
+Grade rubric (mechanical, not vibes): **A** = 0 HIGH findings · **B** = 1-2 HIGH · **C** = 3+ HIGH · **F** = any accessibility blocker (unlabeled form, keyboard trap, contrast below 4.5:1 on body text) regardless of other scores.
+
+Skip when: the change is backend-only, CLI-only, or touches no rendered surface — and skip for throwaway internal prototypes explicitly marked as such.
 
 Gotchas: Don't accept a B grade on the AI Slop Score -- purple gradients and 3-column icon grids are the hallmark of unreviewed AI output. Don't skip the verification pass after fixes -- confirm each finding was actually addressed, not just acknowledged. Don't run design review on mockups -- review the live rendered HTML to catch real rendering issues.
 
@@ -7031,6 +7253,11 @@ Next unit:  [description]
 Resume:     Read .claude/ralph-plan.md → pick next pending unit
 ```
 
+BAD unit: "Unit 3: refactor the backend." (unbounded, no done-check, needs the whole context to understand)
+GOOD unit: "Unit 3: extract auth middleware from server.ts into auth.ts. Done-check: tests pass AND server.ts no longer imports jsonwebtoken."
+
+Skip when: the whole task fits comfortably in half a context window — the loop's commit-and-reset overhead only pays for itself on genuinely large work.
+
 Gotchas: Each unit must be truly atomic — if it depends on seeing the output of another unit, it's not independent. Don't skip the commit step — that's how the next fresh context picks up progress. Don't plan more than 10 units without checking if the task should be split into separate features.
 
 
@@ -7063,6 +7290,11 @@ Capacity:           [green/yellow/red]
 Recommendation:     [continue / compact context / start fresh session]
 Action:             [specific next step]
 ```
+
+BAD: reading a whole 3,000-line file to inspect one function, "just for context." (~40K tokens for 40 useful lines)
+GOOD: grep for the symbol, read the 40 lines around it, note the file path in case more is needed.
+
+Skip when: the session just started or the task is nearly done — a capacity check 5 minutes before finishing spends tokens to save none.
 
 Gotchas: Don't wait until quality has visibly degraded — by then you've wasted tokens on bad output. Don't read entire large files when you only need a section. Don't keep conversation history for resolved topics — use /snapshot and start fresh.
 
@@ -7107,6 +7339,13 @@ Trust Boundary Check:
 
 VERDICT: [APPROVED / BLOCKED — N issues to fix]
 ```
+
+Scoping rule: review the diff plus every file that calls into it — nothing else. Diffs over 400 lines get 2 passes so late files get equal attention.
+
+BAD finding: "Input validation could be improved." (no location, no data path, unactionable)
+GOOD finding: "user_id from the query string reaches raw SQL at db.py:88 without parameterization — CWE-89 — fix: use cursor.execute(sql, (user_id,))."
+
+Skip when: the diff touches only docs, tests, or generated files with no runtime code path — note the skip and why.
 
 Gotchas: AI-generated code passes human review more easily because it "looks right" — be extra skeptical of plausible patterns. Don't skip the dependency check — AI frequently suggests packages by approximate name. Don't trust "it worked in testing" — test with malicious input, not just valid input.
 
@@ -7273,6 +7512,10 @@ Files audited:   [count] | AI-generated lines: ~[estimate]
 Verdict: [CLEAN / N silent failures found]
 ```
 
+What copy-paste drift looks like in the wild: three near-identical handlers, and the third still writes to `user_cache` where it should write `org_cache` — the diff looks intentional, tests for the first two pass, the third fails only in production.
+
+Skip when: the change is human-written, or so small (<20 lines) that /verify's normal pass covers it — this audit earns its cost on substantial AI-generated diffs.
+
 Gotchas: Don't assume passing tests means the code is correct — AI-generated tests often share the same blind spots as the code they test. Don't skip this for "simple" changes — AI fails most silently on tasks it seems most confident about. Run this BEFORE /verify, not after.
 
 
@@ -7354,6 +7597,13 @@ Files touched:    [list of files modified, if any]
 Revert command:   git revert [commit] (if changes were made)
 Resume point:     [what to tell the AI when resuming after human decision]
 ```
+
+The trigger with a number: the **3rd failed attempt at the same approach is a mandatory escalation** — not optional, not "one more try."
+
+BAD escalation: "I couldn't figure out the auth bug, sorry. Let me know how you'd like to proceed." (no attempts listed, no context packaged, human starts from zero)
+GOOD escalation: the structured handoff below — attempts with results, what's known, the specific decision needed, and a resume point.
+
+Skip when: the blocker is missing information you can still obtain yourself (search the codebase, read the docs, try a subagent) — escalation is for walls, not for friction.
 
 Gotchas: Don't escalate for things you could solve with more research — try subagent delegation first. Don't produce low-confidence output and hope the human catches it — that's worse than escalating. Always include a resume point so the human can hand back to AI seamlessly.
 

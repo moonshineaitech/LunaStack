@@ -45,4 +45,8 @@ Files audited:   [count] | AI-generated lines: ~[estimate]
 Verdict: [CLEAN / N silent failures found]
 ```
 
+What copy-paste drift looks like in the wild: three near-identical handlers, and the third still writes to `user_cache` where it should write `org_cache` — the diff looks intentional, tests for the first two pass, the third fails only in production.
+
+Skip when: the change is human-written, or so small (<20 lines) that /verify's normal pass covers it — this audit earns its cost on substantial AI-generated diffs.
+
 Gotchas: Don't assume passing tests means the code is correct — AI-generated tests often share the same blind spots as the code they test. Don't skip this for "simple" changes — AI fails most silently on tasks it seems most confident about. Run this BEFORE /verify, not after.
