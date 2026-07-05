@@ -23,9 +23,12 @@ Pruning rule: if CLAUDE.md exceeds ~150 lines, prune before adding — drop rule
 BAD promoted rule: "Be careful with database queries." (unactionable, no trigger)
 GOOD promoted rule: "Always use parameterized queries via `db.query(sql, params)` — string interpolation caused the injection bug fixed on 2026-07-02."
 
+Count honestly: the "+N conventions" tally counts ONLY rules that reached CLAUDE.md — a rule routed to lessons.md is not a CLAUDE.md convention. And do the budget arithmetic for real: if you prune 2 and add 2, line count is net-zero, so a file at ~160 is still over the ~150 ceiling — don't claim "under budget" when the math says otherwise. Report the actual after-count.
+
 ```
-COMPOUND: +[N] conventions, +[N] anti-patterns, [N] protocol notes
+COMPOUND: +[N to CLAUDE.md] conventions, +[N] anti-patterns, [N] to lessons.md
 Promoted:  [rule] → [CLAUDE.md | lessons.md]
+CLAUDE.md:  [lines before] → [lines after] ([under / OVER ~150 budget])
 Pruned:    [N] stale rules removed (if over budget)
 ```
 

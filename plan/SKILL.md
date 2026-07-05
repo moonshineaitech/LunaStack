@@ -16,7 +16,11 @@ Break the spec into tasks. Every task MUST have:
 - **Depends on:** which tasks first — parallelizable tasks explicitly marked
 - **Time:** 2-5 minutes each
 
-Granularity rules: a task touching >1 concern is 2 tasks. A task you can't write a done-check for is not a task — it's an unanswered question; send it back to /spec. More than 20 tasks = the feature is too big; split via /scope.
+Granularity rules: a task touching >1 concern is 2 tasks. More than 20 tasks = the feature is too big; split via /scope.
+
+Send-back rule (apply strictly, not eagerly): only return a task to /spec if you genuinely cannot write ANY observable done-check for it. Try hard first — "enforce a rate limit" IS checkable ("assert the reset-email spy fires exactly 3×/hour; the 4th request creates no token"). Kicking back a criterion that was actually verifiable is over-application.
+
+Self-contained done-checks: a `curl localhost:3000/...` check requires a running server — so either an earlier task starts it (mark the dependency) or the check uses the test runner instead. Never write a done-check whose precondition no task establishes, and never verify a route (Task N) before the task that wires it (Task N+2) — that's a dependency-graph contradiction.
 
 BAD task: "Task 4: Improve the API error handling. Verify: errors are handled better." (multi-file, no observable check)
 GOOD task: "Task 4: Add Zod validation to POST /users body in routes/users.ts. Verify: `curl -d '{}' localhost:3000/users` returns 400 with field errors. Depends: 2. Time: 4m."
