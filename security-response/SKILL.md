@@ -1,11 +1,13 @@
 ---
 name: security-response
-description: When You Find a Vulnerability.
+description: Use when you have just discovered a live security vulnerability — exposed secret, exploitable endpoint, auth bypass, or data leak — and need to triage and contain it now. Incident-commander mode: mitigate first, investigate second.
 ---
 
 # /security-response — When You Find a Vulnerability
 
 **Role: Incident Commander.** You just discovered a security vulnerability. Time matters.
+
+Decision rule: score severity by CVSS, not vibes. CVSS >= 9.0, active exploitation visible in logs, OR unauthenticated access to user data = CRITICAL (mitigate within 1 hour). CVSS 7.0-8.9 = HIGH. CVSS 4.0-6.9 = MEDIUM. Below 4.0 = LOW. If you can't compute CVSS in 5 minutes, round UP one level and act on the higher severity.
 
 ```
 SEVERITY ASSESSMENT (first 5 minutes)
@@ -37,5 +39,11 @@ MEDIUM/LOW:
 ```
 
 Gotchas: Don't investigate before mitigating a critical vulnerability -- disable the vulnerable feature first, then investigate. Don't overwrite logs during incident response -- they're evidence you'll need for the postmortem and potentially for legal. Don't skip notifying affected users if data was exposed -- GDPR requires notification within 72 hours.
+
+BAD: "Found SQL injection in /search, spent an hour tracing which queries are affected, then disabled the endpoint." GOOD: "Disabled /search at 14:02, THEN traced affected queries." Containment precedes investigation for CRITICAL.
+
+If a value wasn't measured -- user count, exploitation status, CVSS score -- write "unknown" or "not measured"; never estimate, back-solve, or invent it. A guessed blast radius misdirects the entire response.
+
+Skip when: it's a theoretical scanner finding with no reproduction, a dependency CVE that doesn't reach your usage, or a hardening suggestion with no live exposure -- those route to /security-review or a backlog ticket, not incident response.
 
 ---

@@ -9,6 +9,10 @@ Use before shipping any feature with auth, payments, user data, or external inpu
 
 **Persona: Chief Security Officer.** You think in attack surfaces, threat models, and worst-case scenarios.
 
+Decision rule: any single CRITICAL finding forces VERDICT = DO NOT SHIP — never average or downgrade it; 3 or more HIGH findings = FIX FIRST; all-pass or justified-N/A = SHIP. Run the OWASP pass twice on any diff over 400 lines. Audit every trust boundary the feature crosses, not just the entry point.
+
+Skip when: the change touches no auth, payments, user data, or external input (a copy edit, CSS tweak, or internal-only refactor) — use /security-review for per-PR checks instead of a full audit.
+
 ```
 SECURITY AUDIT: [feature name]
 ══════════════════════════════
@@ -38,5 +42,9 @@ CRITICAL FINDINGS
 
 VERDICT: SHIP / FIX FIRST / DO NOT SHIP
 ```
+
+BAD: "A01 Broken Access Control: pass" because the route sits behind a login. GOOD: "A01 FAIL — GET /api/orders/{id} returns any user's order; no object-level ownership check. Exploit: change id to 1002, read another customer's invoice. Fix: assert order.user_id == session.user_id."
+
+If you didn't actually trace or test a control, mark it "not verified" — never assume pass, back-solve a verdict from the outcome you want, or invent an exploit path you didn't follow.
 
 Gotchas: Don't mark items N/A without justification -- lazy N/A is how vulnerabilities slip through. Don't run the audit only at launch -- re-audit after every feature that changes auth, data handling, or external input. Don't treat STRIDE as a checklist exercise -- think like an attacker at each trust boundary.

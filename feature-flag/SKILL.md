@@ -1,6 +1,6 @@
 ---
 name: feature-flag
-description: Feature Flags.
+description: Use when gating a new feature behind a runtime toggle — gradual rollout, A/B test, kill switch, or plan-tier entitlement — so code can turn on or off per-user or per-cohort without a redeploy.
 ---
 
 # /feature-flag — Feature Flags
@@ -27,5 +27,9 @@ RULES
   □ Maximum 20 active flags (more = unmanageable complexity)
   □ Flags are in config service, not hardcoded
 ```
+
+BAD: `if (user.email.endsWith("@acme.com")) enableCheckout()` — targeting hardcoded in source, no owner, no removal date, needs a redeploy to change. GOOD: flag `new-checkout` in the config service, owner @jane, remove-by 2026-09-01, targeting the `beta` cohort at 10% — toggled live without shipping code.
+
+Skip when: the value never varies per-user or per-cohort and never needs toggling without a deploy — that is a plain config constant or env var, not a feature flag.
 
 Gotchas: Don't let flags accumulate past 90 days without review -- stale flags create invisible complexity and dead code paths. Don't hardcode flags in source -- use a config service so you can toggle without deploys. Don't forget to remove both the flag AND the dead code path when cleaning up -- half-removed flags are worse than active ones.

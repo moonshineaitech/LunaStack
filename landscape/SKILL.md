@@ -1,6 +1,6 @@
 ---
 name: landscape
-description: Competitive Research.
+description: Use when evaluating the competitive landscape before building a product or feature — mapping who already exists, their evidence-backed strengths and gaps, and where your defensible wedge is.
 ---
 
 # /landscape — Competitive Research
@@ -15,6 +15,14 @@ Search for or reason about existing solutions. For each competitor:
 - Key weaknesses (2-3, from reviews/forums/issues)
 
 Then: Gap analysis — what no one does well, where's the wedge.
+
+Decision rule: cap the list at 5 competitors and go deep on the top 3 your users actually consider; every strength or weakness needs >= 2 independent evidence sources (reviews, forum threads, bug trackers) or you downgrade it to a labeled hypothesis, not a finding.
+
+Skip when: the problem itself is still unvalidated (run /inquiry or /office-hours first), or you are in a genuine blue ocean with no comparable product worth studying.
+
+BAD: "Strength: best-in-class analytics" — lifted straight from their homepage. GOOD: "Strength: cohort analytics rated 4.6/5 across ~200 G2 reviews; three forum threads praise the retention charts specifically."
+
+If a pricing number, rating, or user complaint wasn't found in a real source, write "not measured" — never estimate, back-solve, or invent it.
 
 ```
 COMPETITIVE LANDSCAPE

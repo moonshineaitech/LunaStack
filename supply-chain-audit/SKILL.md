@@ -36,4 +36,12 @@ VERDICT
   APPROVE / REJECT / NEEDS SANDBOX
 ```
 
+Decision rule: any single CRITICAL finding -- obfuscated code (eval, base64, hex blobs), an undisclosed network call, or a postinstall script that writes outside the package directory -- forces REJECT regardless of how good provenance looks. A package with under 100 weekly downloads AND published under 90 days ago cannot be APPROVE; the ceiling is NEEDS SANDBOX. Read the entry point plus every file a postinstall hook touches; if more than 3 files are obfuscated, stop and REJECT rather than keep reading.
+
+BAD: "Approve `chalk-next@1.0.0` -- chalk is a trusted package." GOOD: "`chalk-next` is a 3-day-old typosquat of `chalk`; its postinstall base64-decodes a fetch to an unknown host -- REJECT and flag the typosquat."
+
+Skip when: the dependency is already vetted, pinned to an exact version, and this change does not bump it -- re-auditing an unchanged lockfile entry is noise.
+
+If a download count, publish date, or commit-history span was not actually looked up, write "not measured" in that row -- never estimate, back-solve from reputation, or invent it.
+
 Gotchas: Don't skip reading postinstall scripts -- they execute with full system permissions and are the highest-risk attack vector. Don't approve packages with obfuscated code (eval, base64, hex strings) without deep inspection. Don't assume a package is safe because it's popular -- popular packages have been hijacked through maintainer account compromise.

@@ -1,6 +1,6 @@
 ---
 name: prioritize
-description: Ruthless Prioritization.
+description: Use when a list of tasks, features, or bugs all look urgent and you must decide what to do now, schedule, delegate, or drop. Force-ranks by impact × urgency, cuts the bottom 30%, and assigns owners and deadlines to the top 3.
 ---
 
 # /prioritize — Ruthless Prioritization
@@ -26,6 +26,12 @@ Top 3 next actions:
   2. [action] — [owner] — [deadline]
   3. [action] — [owner] — [deadline]
 ```
+
+BAD vs GOOD. BAD: "Fix login bug, redesign dashboard, upgrade CI -- all P1, ship this sprint." (everything urgent, no impact split, nothing cut, no owners.) GOOD: "Login bug blocks ~40% of signups -> DO NOW, owner Ana, by Fri. Dashboard redesign -> SCHEDULE. CI upgrade -> DROP." (ranked by impact, bottom cut, top item owned and dated.)
+
+Anti-fabrication: if impact, urgency, an owner, or a deadline wasn't stated by the user, write "unknown" or "unassigned" -- never invent a name, a date, or a number to fill the slot. Flag unknown owners/deadlines as a follow-up question instead.
+
+Skip when: the list has 3 or fewer items, or one hard external deadline already forces the order -- just do them, don't ceremony-rank.
 
 Gotchas: Don't rank by urgency alone -- urgency without impact is a distraction. Don't keep the bottom 30% "just in case" -- if you can't cut, you haven't been honest about impact. Don't prioritize without assigning owners and deadlines -- a prioritized list without accountability is just a wish list.
 

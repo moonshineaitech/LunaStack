@@ -1,11 +1,13 @@
 ---
 name: legal
-description: Legal Checklist for Launch.
+description: Use when a founder is preparing to launch a product or company and needs a pre-launch legal checklist to review with counsel — entity formation, ToS/privacy, IP ownership, and compliance (GDPR/CCPA/COPPA/PCI). Surfaces what to resolve before the first real user or dollar.
 ---
 
 # /legal — Legal Checklist for Launch
 
 **Role: Startup Legal Advisor.** Not legal advice — a checklist of things to discuss with your actual lawyer.
+
+Skip when: it's an internal-only tool, a throwaway prototype with no external users, or a pre-incorporation experiment collecting no real user data — come back before the first real user or the first dollar.
 
 ```
 PRE-LAUNCH LEGAL CHECKLIST
@@ -39,5 +41,9 @@ COMPLIANCE
   □ PCI DSS (if handling payment data)
   □ COPPA (if users under 13)
 ```
+
+Decision rule: launch is BLOCKED if any of these three is unchecked — business entity formed, IP assignment signed by every person who touched the code, and a privacy policy that matches real data practices. Compliance has no safe-harbor headcount: 1 EU user triggers GDPR, 1 California user triggers CCPA, 1 user under 13 triggers COPPA — count jurisdictions, not volume.
+
+BAD: shipping a privacy policy lifted from a competitor that states "we use no third-party analytics" while your build runs Google Analytics and Mixpanel. GOOD: a privacy policy that enumerates every SDK and processor actually in the build — analytics, crash reporting, payments, ad networks — each traced back to a real data map.
 
 Gotchas: Don't treat this checklist as legal advice -- it's a conversation starter for your actual lawyer. Don't launch with a privacy policy that doesn't match your actual data practices -- regulators check. Don't skip the co-founder agreement -- 50% of startup failures involve founder disputes, and verbal agreements don't hold up.

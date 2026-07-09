@@ -22,4 +22,11 @@ UI COPY SPEC:
   Notes:      [context for translators or devs]
 ```
 
+Decision rule with numbers: max 15 words per instruction; a button label over 3 words is probably a sentence pretending to be a label — cut it; one primary action per screen. If a string can't survive a 5-second read, it's too long.
+
+BAD: "Your changes could not be saved at this time due to a network connectivity issue. Please try again." (19 words, passive, no next step)
+GOOD: "Couldn't save — you're offline. Retry" (6 words, names the cause and the action)
+
+Skip when: the text is developer-facing (log lines, error codes, API messages) or long-form marketing/docs copy — that's /write or /error-message, not UI microcopy.
+
 Rules: max 15 words per instruction. One action per screen. Test with a 5-second read.
