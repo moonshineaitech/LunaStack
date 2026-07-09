@@ -20,6 +20,11 @@ LunaStack.md is the generated single-file distribution.
 - [README.md](README.md): quick start — `./setup.sh` installs the 25-skill core pack; `--list-packs` shows curated packs (security, design, founder, ship-it); `--global` installs all 251
 - [distribution/packs/](distribution/packs/): pack definitions
 
+## Ecosystem Wiki
+
+- [wiki/catalog.md](wiki/catalog.md): 140 external skill categories cross-referenced to LunaStack skills
+- [wiki/registries.md](wiki/registries.md): where the ecosystem's skills live (registries + official vendor sets)
+
 ## Optional
 
 - [ETHOS.md](ETHOS.md): project philosophy

@@ -24,6 +24,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   planner/executor privilege separation, deterministic output mediation, side-effect
   tools gated by confirm/allowlist. System-prompt leakage covered defensively (OWASP
   LLM07) — no leaked third-party prompts bundled.
+- **Ecosystem wiki (`wiki/`)** — a July-2026 index of the wider AI-skill ecosystem:
+  140 external skill categories across 12 domains, each cross-referenced to the
+  LunaStack skill that covers it, plus a registry map (Chat2AnyLLM, VoltAgent,
+  addyosmani, seb1n…) and the first-party vendor skill sets. Sourced from public
+  registries with the same anti-fabrication discipline the skills enforce — no
+  invented rankings.
 
 ### Changed
 - **All 63 non-core pack skills deep-upgraded to behavior-grade** (security, design,

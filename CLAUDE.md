@@ -16,7 +16,8 @@ LunaStack is a collection of 251 AI development protocols (skills) distributed a
 ├── distribution/       # Build inputs: header.md, sections.md, appendix.md
 │   └── packs/          # Curated install packs (core, security, design, founder, ship-it)
 ├── AGENTS.md           # Skill catalog — drives discipline grouping in the build
-├── tests/              # Validation + quality scoring scripts
+├── tests/              # Validation + quality scoring scripts (+ tests/eval behavioral evals)
+├── wiki/               # Ecosystem index: 140 external skill categories + registries
 ├── lunastack.jsx       # Landing page React component
 ├── setup.sh            # CLI installer (symlinks skills to ~/.claude/skills/)
 ├── uninstall.sh        # Removes symlinks
