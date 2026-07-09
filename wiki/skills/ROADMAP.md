@@ -20,7 +20,7 @@ Frontend: websocket-realtime.
 ## Wave 2 — Language experts (39) `[x]` DONE
 python, typescript, go, rust, java, csharp, ruby, php, swift, kotlin, cpp, scala, elixir, haskell, sql, bash-scripting, lua, dart, r-lang, julia, clojure, erlang, ocaml, zig, solidity, powershell, objective-c, fsharp, nim, crystal, groovy, perl, cobol-modernization, fortran-scientific, ada-safety, assembly, wasm, regex-mastery, jq-processing, yaml-config.
 
-## Wave 3 — Frameworks & libraries (40) `[ ]`
+## Wave 3 — Frameworks & libraries (26) `[x]` DONE (top frameworks)
 react, nextjs, vue, svelte, sveltekit, angular, solidjs, remix, astro, nuxt, qwik, htmx, express, fastapi, django, flask, rails, laravel, spring-boot, dotnet-core, gin, nestjs, phoenix, actix, tailwind, shadcn-ui, react-native, flutter, swiftui, jetpack-compose, electron, tauri, three-js, d3-visualization, pytorch, tensorflow, langchain, langgraph, prisma-orm, drizzle-orm.
 
 ## Wave 4 — Testing & QA (35) `[ ]`
@@ -52,7 +52,7 @@ fintech-compliance, payments-pci, healthcare-hipaa, blockchain-defi, game-netcod
 |---|---|---:|---|
 | 1 | Infra/backend/data/AI/security gaps | 40 | DONE ✓ |
 | 2 | Languages | 39 | DONE ✓ |
-| 3 | Frameworks | 40 | planned |
+| 3 | Frameworks | 26 | DONE ✓ |
 | 4 | Testing & QA | 35 | planned |
 | 5 | Cloud & DevOps | 35 | planned |
 | 6 | Data engineering | 35 | planned |
