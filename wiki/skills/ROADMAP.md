@@ -4,7 +4,7 @@ The build plan for the verified skill library. Each skill is generated in a
 **draft → adversarial-verify → structural-validate** wave; only skills that pass
 verification are committed. Check a box when its wave lands and passes.
 
-**Status:** Waves 1-2 done (79 skills). Wave 3 in progress. Legend: `[x]` verified & committed · `[~]` in current wave · `[ ]` planned.
+**Status:** 128 verified wiki skills across all 13 domains. Waves 1-3 done; 4-5 partial; 6-10 planned. Each skill drafted to the behavior-grade bar and passing tests/validate_wiki_skills.sh. Legend: `[x]` verified & committed · `[~]` in current wave · `[ ]` planned.
 
 ---
 
@@ -53,14 +53,15 @@ fintech-compliance, payments-pci, healthcare-hipaa, blockchain-defi, game-netcod
 | 1 | Infra/backend/data/AI/security gaps | 40 | DONE ✓ |
 | 2 | Languages | 39 | DONE ✓ |
 | 3 | Frameworks | 26 | DONE ✓ |
-| 4 | Testing & QA | 35 | planned |
-| 5 | Cloud & DevOps | 35 | planned |
+| 4 | Testing & QA | 8 | partial |
+| 5 | Cloud & DevOps | 8 | partial |
 | 6 | Data engineering | 35 | planned |
 | 7 | AI/ML engineering | 35 | planned |
-| 8 | Frontend & design | 30 | planned |
-| 9 | Product/growth/ops | 30 | planned |
+| 8 | Frontend & design | 3 | partial |
+| 9 | Product/growth | 5 | partial |
 | 10+ | Domain-specialized | 30+ | planned |
 | | **Planned total** | **~350** | |
+| | **Current verified** | **128** | across all 13 domains ✓ |
 
 Each wave is verified before commit. Re-run a wave's generator (see the workflow
 scripts under the session's `workflows/scripts/`) to extend or refresh a domain.
