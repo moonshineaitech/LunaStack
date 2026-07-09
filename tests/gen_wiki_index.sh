@@ -3,7 +3,7 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)/wiki/skills"
 OUT="$ROOT/INDEX.md"
-total=$(find "$ROOT" -name '*.md' ! -name 'INDEX.md' ! -name 'README.md' | wc -l | tr -d ' ')
+total=$(find "$ROOT" -name '*.md' ! -name 'INDEX.md' ! -name 'README.md' ! -name 'ROADMAP.md' | wc -l | tr -d ' ')
 {
   echo "# Skill Wiki Index"
   echo ""
@@ -11,7 +11,7 @@ total=$(find "$ROOT" -name '*.md' ! -name 'INDEX.md' ! -name 'README.md' | wc -l
   echo ""
   for d in $(find "$ROOT" -mindepth 1 -maxdepth 1 -type d | sort); do
     dom=$(basename "$d")
-    files=$(find "$d" -name '*.md' | sort)
+    files=$(find "$d" -name '*.md' ! -name 'ROADMAP.md' | sort)
     [ -z "$files" ] && continue
     count=$(echo "$files" | grep -c . || true)
     printf '## %s (%s)\n\n' "$dom" "$count"

@@ -18,7 +18,7 @@ while IFS= read -r f; do
   grep -q '```\|═══' "$f" && out=$((out+1)) || { printf "${red}FAIL${reset} %s: no output block\n" "$name"; err=$((err+1)); }
   grep -qiE 'Gotchas:|Rules:' "$f" || { printf "${red}FAIL${reset} %s: no gotchas\n" "$name"; err=$((err+1)); }
   wc=$(echo "$fm" | sed -n 's/^description: *//p' | wc -w); [ "$wc" -le 100 ] || { printf "${red}FAIL${reset} %s: desc %sw>100\n" "$name" "$wc"; err=$((err+1)); }
-done < <(find "$ROOT" -name '*.md' ! -name 'INDEX.md' ! -name 'README.md')
+done < <(find "$ROOT" -name '*.md' ! -name 'INDEX.md' ! -name 'README.md' ! -name 'ROADMAP.md')
 echo ""
 printf "${bold}wiki/skills: %d skills | escape-hatch %d | BAD/GOOD %d | output %d${reset}\n" "$n" "$hatch" "$ex" "$out"
 if [ "$err" -gt 0 ]; then printf "${red}${bold}FAILED — %d errors${reset}\n" "$err"; exit 1; else printf "${green}${bold}PASSED${reset}\n"; fi
