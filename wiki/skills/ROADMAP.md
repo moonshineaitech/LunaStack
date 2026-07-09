@@ -17,7 +17,7 @@ Ops: distributed-tracing, log-aggregation, slo-design, alerting-strategy, oncall
 Security: dast-testing, smart-contract-audit, zero-trust-architecture, oauth-implementation.
 Frontend: websocket-realtime.
 
-## Wave 2 — Language experts (40) `[ ]`
+## Wave 2 — Language experts (39) `[x]` DONE
 python, typescript, go, rust, java, csharp, ruby, php, swift, kotlin, cpp, scala, elixir, haskell, sql, bash-scripting, lua, dart, r-lang, julia, clojure, erlang, ocaml, zig, solidity, powershell, objective-c, fsharp, nim, crystal, groovy, perl, cobol-modernization, fortran-scientific, ada-safety, assembly, wasm, regex-mastery, jq-processing, yaml-config.
 
 ## Wave 3 — Frameworks & libraries (40) `[ ]`
@@ -51,7 +51,7 @@ fintech-compliance, payments-pci, healthcare-hipaa, blockchain-defi, game-netcod
 | Wave | Domain | Skills | Status |
 |---|---|---:|---|
 | 1 | Infra/backend/data/AI/security gaps | 40 | generating |
-| 2 | Languages | 40 | planned |
+| 2 | Languages | 39 | DONE ✓ |
 | 3 | Frameworks | 40 | planned |
 | 4 | Testing & QA | 35 | planned |
 | 5 | Cloud & DevOps | 35 | planned |
