@@ -4,11 +4,11 @@ The build plan for the verified skill library. Each skill is generated in a
 **draft → adversarial-verify → structural-validate** wave; only skills that pass
 verification are committed. Check a box when its wave lands and passes.
 
-**Status:** Wave 1 generating. Legend: `[x]` verified & committed · `[~]` in current wave · `[ ]` planned.
+**Status:** Waves 1-2 done (79 skills). Wave 3 in progress. Legend: `[x]` verified & committed · `[~]` in current wave · `[ ]` planned.
 
 ---
 
-## Wave 1 — Infra / Backend / Data / AI / Security gaps (40) `[~]`
+## Wave 1 — Infra / Backend / Data / AI / Security gaps (40) `[x]` DONE
 Cloud: kubernetes-operations, terraform-iac, serverless-architecture, edge-computing, multi-region-failover, cloud-cost-optimization.
 Backend: graphql-api-design, grpc-services, event-sourcing, cqrs-pattern, saga-distributed-transactions, idempotency-design, webhook-reliability, api-gateway-design, rate-limiter-design.
 Data: vector-database-design, data-pipeline-design, data-quality-checks, redis-caching-patterns, database-sharding, read-replica-strategy, time-series-data.
@@ -50,7 +50,7 @@ fintech-compliance, payments-pci, healthcare-hipaa, blockchain-defi, game-netcod
 
 | Wave | Domain | Skills | Status |
 |---|---|---:|---|
-| 1 | Infra/backend/data/AI/security gaps | 40 | generating |
+| 1 | Infra/backend/data/AI/security gaps | 40 | DONE ✓ |
 | 2 | Languages | 39 | DONE ✓ |
 | 3 | Frameworks | 40 | planned |
 | 4 | Testing & QA | 35 | planned |
