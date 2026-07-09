@@ -1,6 +1,6 @@
 # AGENTS.md — LunaStack Skill Index
 
-> 249 skills · 27 disciplines · 55 specialist roles
+> 251 skills · 27 disciplines · 55 specialist roles
 > Quick reference for all available `/commands`.
 
 ## Meta (8)
@@ -359,10 +359,12 @@
 | /universal-skill | Use when authoring a new protocol that should work on all platforms. |
 | /host-config | Use when LunaStack needs to behave differently on different platforms. |
 
-## Security Skills (8)
+## Security Skills (10)
 
 | Command | Description |
 |---|---|
+| /red-team | Use when you have written authorization to security-test an AI/LLM system you own or are contracted to assess. Structured adversarial evaluation across the OWASP LLM Top 10, gated on authorization, with severity scoring and coordinated disclosure. Never for systems you don't own. |
+| /prompt-injection-defense | Use when building or hardening an LLM application that ingests untrusted content — user text, tool/function results, retrieved documents, web pages, emails. Designs the trust boundaries and controls that stop injected instructions from being executed. The blue-team counterpart to /red-team. |
 | /cve-scan | Use when preparing a release, merging a PR that adds or bumps dependencies, or auditing a project's dependency tree — any point where shipping code that pulls in a vulnerable package is possible. Scans every dependency (direct and transitive) for known CVEs. |
 | /supply-chain-audit | Use when adding new dependencies, or auditing existing ones. |
 | /codeql-semgrep | Use when wiring automated vulnerability scanners (CodeQL, Semgrep, SAST) into the dev loop, or before merging code that has no static-analysis gate. |

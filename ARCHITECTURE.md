@@ -2,12 +2,12 @@
 
 ## System Overview
 
-LunaStack is 249 AI development protocols organized into 27 disciplines with 55 specialist roles. Each protocol is a Markdown file that instructs an AI coding assistant to adopt a specific persona, follow a defined procedure, and produce structured output. The protocols cover the full software lifecycle: discovery, architecture, construction, verification, delivery, and learning.
+LunaStack is 251 AI development protocols organized into 27 disciplines with 55 specialist roles. Each protocol is a Markdown file that instructs an AI coding assistant to adopt a specific persona, follow a defined procedure, and produce structured output. The protocols cover the full software lifecycle: discovery, architecture, construction, verification, delivery, and learning.
 
 There are two distribution modes:
 
-- **Single-file** (`LunaStack.md`, 344KB) -- All 249 protocols concatenated into one file by `build.sh` (skills are the source of truth; the single file is a build artifact verified in CI). Upload to a Claude Project's knowledge base. The agent scans the full file and activates the matching protocol when a user types a `/command`.
-- **Individual skills** (`*/SKILL.md`, 249 directories) -- Each protocol in its own directory. Installed into `~/.claude/skills/` via symlinks for Claude Code CLI. The agent loads only the relevant skill file when activated.
+- **Single-file** (`LunaStack.md`, 344KB) -- All 251 protocols concatenated into one file by `build.sh` (skills are the source of truth; the single file is a build artifact verified in CI). Upload to a Claude Project's knowledge base. The agent scans the full file and activates the matching protocol when a user types a `/command`.
+- **Individual skills** (`*/SKILL.md`, 251 directories) -- Each protocol in its own directory. Installed into `~/.claude/skills/` via symlinks for Claude Code CLI. The agent loads only the relevant skill file when activated.
 
 ## How Skills Work
 
@@ -106,7 +106,7 @@ Repository                          Target
   tdd/SKILL.md        -- ln -s -->    tdd/ -> ~/lunastack/tdd/
   verify/SKILL.md      -- ln -s -->    verify/ -> ~/lunastack/verify/
   ship/SKILL.md        -- ln -s -->    ship/ -> ~/lunastack/ship/
-  ... (249 dirs)                      ... (249 symlinks)
+  ... (251 dirs)                      ... (251 symlinks)
 ```
 
 Three installation modes:
@@ -165,15 +165,15 @@ CLAUDE PROJECTS (single-file mode):
   tdd/SKILL.md ----+
   verify/SKILL.md --+--> built by build.sh --> LunaStack.md --> upload to --> Claude Project
   ship/SKILL.md ----+                          (344KB)          Knowledge Base
-  ... (249 files)
+  ... (251 files)
 
 
 CLAUDE CODE CLI (skill directory mode):
 
   tdd/SKILL.md ----+
   verify/SKILL.md --+--> setup.sh symlinks --> ~/.claude/skills/ --> Claude Code CLI
-  ship/SKILL.md ----+                          (249 symlinks)       reads on /command
-  ... (249 dirs)
+  ship/SKILL.md ----+                          (251 symlinks)       reads on /command
+  ... (251 dirs)
 
 
 SUPPORTING FILES:

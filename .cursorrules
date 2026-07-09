@@ -1,6 +1,6 @@
-LunaStack -- 249 AI Development Protocols
+LunaStack -- 251 AI Development Protocols
 
-LunaStack is a collection of 249 AI development protocols covering 27 disciplines and 55 specialist roles. Each protocol lives in its own directory as a SKILL.md file within this project.
+LunaStack is a collection of 251 AI development protocols covering 27 disciplines and 55 specialist roles. Each protocol lives in its own directory as a SKILL.md file within this project.
 
 SKILL INVOCATION
 When the user types a /command, find the matching skill directory in this project
@@ -46,6 +46,6 @@ SKILL FILE STRUCTURE
 - Skill directories are in the project root using kebab-case names
 - Each directory contains exactly one SKILL.md with YAML frontmatter (name, description)
 - The frontmatter is followed by persona, procedure, output format, and anti-patterns
-- There are 249 skills total across 27 disciplines
+- There are 251 skills total across 27 disciplines
 
 Start with /luna to begin a session.

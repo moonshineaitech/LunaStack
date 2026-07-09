@@ -62,13 +62,13 @@ export default function App(){
     </h1>
     <div style={{width:36,height:1.5,background:C.a,margin:"20px 0"}}/>
     <p style={{fontSize:13,lineHeight:1.7,color:C.sil,maxWidth:440}}>
-      249 protocols. 55 specialist roles. 27 disciplines. Every session feeds the next. One Markdown file.
+      251 protocols. 55 specialist roles. 27 disciplines. Every session feeds the next. One Markdown file.
     </p>
   </header>
 
   <div style={{maxWidth:720,margin:"0 auto",padding:"32px 24px 0",opacity:v?1:0,transition:"opacity 0.7s ease 0.2s"}}>
     <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",borderTop:`1px solid ${C.b}`,borderBottom:`1px solid ${C.b}`}}>
-      {[{v:"249",l:"Protocols"},{v:"27",l:"Disciplines"},{v:"55",l:"Roles"},{v:"344KB",l:"Package"}].map((s,i)=>(
+      {[{v:"251",l:"Protocols"},{v:"27",l:"Disciplines"},{v:"55",l:"Roles"},{v:"344KB",l:"Package"}].map((s,i)=>(
         <div key={i} style={{padding:"16px 0",textAlign:"center",borderRight:i<3?`1px solid ${C.b}`:"none"}}>
           <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:26,fontWeight:600,color:C.w}}>{s.v}</div>
           <div style={{fontFamily:"'IBM Plex Mono',monospace",fontSize:8,letterSpacing:2,textTransform:"uppercase",color:C.ad,marginTop:3}}>{s.l}</div>

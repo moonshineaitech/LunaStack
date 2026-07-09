@@ -1,6 +1,6 @@
 # LunaStack
 
-> 249 AI development protocols across 27 disciplines with 55 specialist roles.
+> 251 AI development protocols across 27 disciplines with 55 specialist roles.
 > Type a /command and the AI follows the protocol. Works in claude.ai, Claude
 > Desktop, Claude Code, Cursor, Codex, Gemini CLI, and OpenCode.
 
@@ -9,7 +9,7 @@ LunaStack.md is the generated single-file distribution.
 
 ## Docs
 
-- [AGENTS.md](AGENTS.md): complete catalog of all 249 skills with one-line descriptions, grouped by discipline
+- [AGENTS.md](AGENTS.md): complete catalog of all 251 skills with one-line descriptions, grouped by discipline
 - [LunaStack.md](LunaStack.md): the full single-file distribution — every protocol, ready to paste into a Claude Project
 - [ARCHITECTURE.md](ARCHITECTURE.md): system design — how skills work, discipline taxonomy, the compound learning loop
 - [CONTRIBUTING.md](CONTRIBUTING.md): protocol format specification and PR process
@@ -17,7 +17,7 @@ LunaStack.md is the generated single-file distribution.
 
 ## Install
 
-- [README.md](README.md): quick start — `./setup.sh` installs the 25-skill core pack; `--list-packs` shows curated packs (security, design, founder, ship-it); `--global` installs all 249
+- [README.md](README.md): quick start — `./setup.sh` installs the 25-skill core pack; `--list-packs` shows curated packs (security, design, founder, ship-it); `--global` installs all 251
 - [distribution/packs/](distribution/packs/): pack definitions
 
 ## Optional
