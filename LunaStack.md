@@ -1,4 +1,4 @@
-# LunaStack v1.2.0
+# LunaStack v1.3.0
 
 Paste into a Claude Project's Knowledge, or into any conversation.
 Type any /command and Claude follows the protocol.
