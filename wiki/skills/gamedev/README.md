@@ -1,10 +1,19 @@
-# Game-Dev × Health Skills
+# Game-Dev Skills
 
-Skills for building **health and medical content into games** — written for projects
-like **LunaCelsus** (a game integrating medical themes) and any serious/health-adjacent
-game. They bridge two LunaStack strengths: the personal-health domain's
-safety-by-construction discipline (`wiki/skills/health/`) and shipping-quality
-product craft.
+The game-development domain has two halves:
+
+**General gamedev craft** — engine-agnostic foundations (`game-loop-architecture`,
+`ecs-architecture`, `multiplayer-netcode`, `game-balancing-methodology`,
+`procedural-generation`, `game-telemetry-analytics`, `game-ai-behavior-trees`,
+`level-design-principles`, `game-audio-design`, `shader-programming`) plus
+engine-specific architecture (`unity-architecture`, `unreal-architecture`,
+`godot-architecture`).
+
+**Health × games safety** — skills for building **health and medical content into
+games**, written for projects like **LunaCelsus** (a game integrating medical
+themes) and any serious/health-adjacent game. They bridge two LunaStack
+strengths: the personal-health domain's safety-by-construction discipline
+(`wiki/skills/health/`) and shipping-quality product craft.
 
 ## The premise
 
@@ -14,7 +23,7 @@ Games teach — whether you design for it or not. A game that shows CPR teaches 
 hands players a resource (988) or leaves them alone with it. These skills make the
 teaching deliberate and the failure modes designed-out.
 
-## The three skills
+## The three health×games skills
 
 - **`health-game-content-review`** — audit pass for any game shipping medical/health
   content: accuracy of depicted procedures, dangerous-imitability screening,

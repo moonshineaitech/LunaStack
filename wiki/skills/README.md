@@ -4,10 +4,38 @@ A growing library of **behavior-grade, verified `.md` skills** — the same form
 LunaStack's core protocols, but broader and deeper: every framework, language,
 platform, and technique a working AI coding assistant runs into.
 
-These are **reference skills**, not part of the installed core. LunaStack's 251-skill
-core is a curated *methodology* layer (kept lean on purpose); this wiki is the wide
-library you draw from when you need depth in a specific domain. Copy any skill into
-your `~/.claude/skills/` (or a project's `.claude/skills/`) to activate it.
+## The two layers (how the whole repo fits together)
+
+| Layer | Where | What it is | Count |
+|---|---|---|---|
+| **Core protocols** | repository root (`/*/SKILL.md`) | *Process* skills — how to work: `/tdd`, `/debug`, `/ship`, `/spec`, `/premortem`, `/red-team`… Installed via `./setup.sh`; kept lean on purpose. | 251 |
+| **Skill wiki** | `wiki/skills/<domain>/` | *Domain-knowledge* skills — what a specialist knows: `/postgres-production-tuning`, `/context-engineering`, `/multiplayer-netcode`, `/chemo-cycle-support`… | see [INDEX.md](INDEX.md) |
+
+Rule of thumb: **core tells the agent how to behave; the wiki tells it what a
+specialist knows.** They compose — run `/tdd` (core) while `/react-expert` (wiki)
+informs the code. Wiki skills are reference skills, not installed by default:
+copy any into `~/.claude/skills/` (or a project's `.claude/skills/`) to activate it.
+
+## How the wiki is organized
+
+Domains are directories; every skill is one self-contained `.md` file. The
+generated **[INDEX.md](INDEX.md)** lists every skill with a one-line description
+(regenerate with `tests/gen_wiki_index.sh` after any change).
+
+- **Build**: `languages` · `frameworks` · `frontend` · `backend` · `mobile` · `gamedev` · `ai`
+- **Run**: `cloud` · `ops` · `databases` · `data` · `security` · `testing`
+- **Design & decide**: `architecture` · `design` · `docs` · `devtools` · `engineering`
+- **Grow & lead**: `product` · `growth` · `business` · `leadership`
+- **Live**: `health`
+
+Domains with special rules carry their own README:
+
+- **[health/](health/README.md)** — 100 personal-health skills under a CI-enforced
+  safety contract (non-diagnostic, disclaimer-first, 911/988 escalation,
+  defer-to-professional). **Read its README before touching the domain.**
+- **[gamedev/](gamedev/README.md)** — game development, including the
+  medical-content-in-games safety skills that bridge health × games
+  (built for LunaCelsus-class projects).
 
 ## Quality bar (every skill here passes it)
 
@@ -24,14 +52,9 @@ scored 5/5 in LunaStack's behavioral evals:
 8. Anti-fabrication rule wherever the skill reports measured values
 9. Technically correct, specific content — **no generic filler**
 
-Validated by `tests/validate_wiki_skills.sh`.
-
-## Domains
-
-`engineering` · `frontend` · `backend` · `cloud` · `data` · `ai` · `security` ·
-`design` · `product` · `growth` · `ops` · `languages` · `frameworks`
-
-See **[INDEX.md](INDEX.md)** for the full, generated list (updated as the library grows).
+Validated by `tests/validate_wiki_skills.sh`; health skills additionally pass
+`tests/validate_health_skills.sh` (the safety gate). The behavioral eval harness
+in `tests/eval/` goes further, testing what skills make an agent *do*.
 
 ## Sourcing
 
