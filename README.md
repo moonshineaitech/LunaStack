@@ -76,7 +76,7 @@ specialist skills across 23 domains, from `/postgres-production-tuning` to
 - **Run**: cloud · ops · databases · data · security · testing
 - **Design & decide**: architecture · design · docs · devtools · engineering
 - **Grow & lead**: product · growth · business · leadership
-- **Live**: [health](wiki/skills/health/README.md) — 100 personal-health skills
+- **Live**: [health](wiki/skills/health/README.md) — 100+ personal-health skills
   under a CI-enforced safety contract (non-diagnostic, disclaimer-first,
   emergency-escalation) — read its README first
 

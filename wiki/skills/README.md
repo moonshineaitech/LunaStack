@@ -30,7 +30,7 @@ generated **[INDEX.md](INDEX.md)** lists every skill with a one-line description
 
 Domains with special rules carry their own README:
 
-- **[health/](health/README.md)** — 100 personal-health skills under a CI-enforced
+- **[health/](health/README.md)** — 100+ personal-health skills under a CI-enforced
   safety contract (non-diagnostic, disclaimer-first, 911/988 escalation,
   defer-to-professional). **Read its README before touching the domain.**
 - **[gamedev/](gamedev/README.md)** — game development, including the
