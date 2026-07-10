@@ -1,6 +1,6 @@
 ---
 name: readiness-dashboard
-description: Review Status Dashboard.
+description: Use when you are about to /ship and need to confirm every required review has actually run and passed. Renders all gates in one table and blocks the release until each conditional gate that applies to this change is cleared.
 ---
 
 # /readiness-dashboard — Review Status Dashboard
@@ -27,5 +27,13 @@ Use before /ship to see all required reviews at a glance.
 ```
 
 Eng Review is the only universally required gate. Others are conditional based on what changed (UI changes need Design Review, security-touching changes need CSO Audit, etc.).
+
+Decision rule: any required gate with Runs = 0 forces VERDICT: BLOCKED — a single unrun required review is enough, you do not average it away. A required review whose Last Run predates the latest commit by even 1 commit counts as stale (treat it as Runs = 0). A required Design Review graded below B also blocks. Only when every required gate reads Runs >= 1, is not stale, and meets its bar do you print CLEARED.
+
+BAD: printing "VERDICT: CLEARED" while CSO Audit shows Runs = 0 because "the diff looked safe." GOOD: CSO Audit Runs = 0 on a security-touching change -> "VERDICT: BLOCKED — CSO Audit required (sec) and never run," listed as the reason.
+
+If a value was not actually observed, write it as unrun: Runs = 0, Last Run = "—", Status = "—". Never estimate a run count, back-solve a timestamp, or invent a grade you did not read from the review's real output.
+
+Skip when: the change is docs-only or a comment/typo fix that triggers no required conditional gate beyond Eng Review — check that one gate directly and ship, no table needed.
 
 Gotchas: Don't ship with unrun required reviews -- a dashboard showing gaps is only useful if you act on them. Don't make every review required for every change -- conditional gates prevent review fatigue. Don't let "CLEARED" mean "perfect" -- it means minimum quality bar met, not that there are zero issues.

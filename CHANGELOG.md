@@ -5,6 +5,44 @@ All notable changes to LunaStack will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2026-07-05
+
+### Added
+- **Behavioral eval harness (`tests/eval/`)** — the tier that proves a skill *exercises
+  its own decision rules* when applied, not just that it's structurally complete. Three
+  independent agents per skill (execute → adversarial judge → refute). The core pack
+  scored **4.68/5**; the harness immediately caught a real defect (`/retro` fabricating
+  metrics to fill its output format) that every structural check passed. Scorecards are
+  committed under `tests/eval/results/` — diffable across versions.
+- **`/red-team`** — authorized AI/LLM adversarial testing, mapped to the OWASP LLM Top 10
+  (2025). Hard authorization gate (written auth + scope + rules-of-engagement before any
+  probe), severity = impact × exploitability, coordinated 90-day disclosure. Refuses to
+  test systems you don't own; ships no payload library. The authorization gate was
+  behaviorally verified: applied to an unauthorized target, it stops and refuses (0
+  attack techniques emitted).
+- **`/prompt-injection-defense`** — the blue-team counterpart. Trust-boundary design,
+  planner/executor privilege separation, deterministic output mediation, side-effect
+  tools gated by confirm/allowlist. System-prompt leakage covered defensively (OWASP
+  LLM07) — no leaked third-party prompts bundled.
+- **Ecosystem wiki (`wiki/`)** — a July-2026 index of the wider AI-skill ecosystem:
+  140 external skill categories across 12 domains, each cross-referenced to the
+  LunaStack skill that covers it, plus a registry map (Chat2AnyLLM, VoltAgent,
+  addyosmani, seb1n…) and the first-party vendor skill sets. Sourced from public
+  registries with the same anti-fabrication discipline the skills enforce — no
+  invented rankings.
+
+### Changed
+- **All 63 non-core pack skills deep-upgraded to behavior-grade** (security, design,
+  founder, ship-it): sharp trigger-condition descriptions, decision rules with numbers,
+  BAD vs GOOD examples, "Skip when:" escape hatches, and anti-fabrication rules on every
+  quantitative skill. The entire recommended install surface — not just the core — now
+  carries the rules that change model behavior mid-task.
+- **Core-skill fixes driven by eval findings**: `/retro` 2→5, `/plan` 4→5, `/compound`
+  4→5, `/onboard` re-hardened — all traced to specific behavioral failures. The root
+  lesson (output formats with quantitative fields pressure the model to fabricate data)
+  is now encoded as an anti-fabrication rule wherever a skill reports numbers.
+- 251 protocols (was 249); Security Skills discipline now 10; security pack now 19.
+
 ## [1.2.0] - 2026-07-05
 
 ### Changed
@@ -86,6 +124,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `CONTRIBUTING.md` with protocol format specification
 - `ETHOS.md` project philosophy
 
+[1.3.0]: https://github.com/moonshineaitech/LunaStack/releases/tag/v1.3.0
 [1.2.0]: https://github.com/moonshineaitech/LunaStack/releases/tag/v1.2.0
 [1.1.0]: https://github.com/moonshineaitech/LunaStack/releases/tag/v1.1.0
 [1.0.0]: https://github.com/moonshineaitech/LunaStack/releases/tag/v1.0.0

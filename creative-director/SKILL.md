@@ -22,4 +22,10 @@ CREATIVE REVIEW:
   Notes:       [specific, actionable changes]
 ```
 
+Verdict is mechanical: score each of the four axes pass/fail, then count fails — 0 fails = ship, 1 fail = revise, 2+ fails = rethink. Cap Notes at the 3 highest-leverage changes; a list of 10 notes gets none of them done, so cut to the changes that move a failing axis. On direction-setting (not review), demand at least 2 genuinely distinct concepts before converging — never bless the first idea by default.
+
+BAD note: "The hierarchy feels off and the palette is kind of busy." GOOD note: "Make the headline 2x larger and pull it above the hero image; drop the orange — blue, teal, and orange are all fighting for the eye, so kill one."
+
+Skip when: the ask is production execution or QA, not taste — pixel-perfect implementation, copywriting one exact line, or a binary spec-compliance check. This sets aesthetic direction; it does not do the hands-on build.
+
 Rules: lead with what works. Be specific — "feels off" is not a note. Push past the first idea.

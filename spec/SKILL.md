@@ -23,6 +23,8 @@ Edge-case checklist — address every row or mark N/A: empty input · maximum in
 
 Placeholder rule: a spec containing TBD, "figure out later," or an unresolved either/or ("Redis or Memcached") is not READY — route it through /no-placeholders and resolve before /plan.
 
+Don't-invent rule: when the source ticket is genuinely ambiguous (does an invalid row abort the whole file or just that row?), the ambiguity goes in **Open Questions** — never silently pick one and present it as settled. Same for non-functional numbers you weren't given (p95 latency, concurrency limits): write them as "assumption — confirm," not as fixed requirements. Inventing a settled answer to an open question is how a spec launders a guess into a contract.
+
 BAD criterion: "The form should handle errors gracefully." (not testable — what error, what behavior?)
 GOOD criterion: the GIVEN/WHEN/THEN above — a test can be written from it verbatim.
 

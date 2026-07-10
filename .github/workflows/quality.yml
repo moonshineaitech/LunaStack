@@ -24,6 +24,12 @@ jobs:
       - name: Run quality scoring (Tier 2)
         run: bash tests/quality_score.sh
 
+      - name: Run health-skill safety gate (disclaimer + escalation)
+        run: bash tests/validate_health_skills.sh
+
+      - name: Run wiki-skill behavior-grade validation
+        run: bash tests/validate_wiki_skills.sh
+
       - name: Run discovery context-tax audit
         run: bash tests/context_cost.sh
 

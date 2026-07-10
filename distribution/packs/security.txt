@@ -7,6 +7,10 @@ cso-audit
 threat-model
 security-response
 
+# AI/LLM security (authorized testing + hardening)
+red-team
+prompt-injection-defense
+
 # Supply chain
 cve-scan
 supply-chain-audit

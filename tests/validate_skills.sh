@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # tests/validate_skills.sh — Tier 1: Static validation (free, <5s)
-# Validates all 239 skills for structural correctness.
+# Validates all skill directories for structural correctness.
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
@@ -21,7 +21,7 @@ echo -e "\n${bold}LunaStack Skill Validation — Tier 1${reset}\n"
 echo -e "${dim}1. Checking SKILL.md presence...${reset}"
 for dir in "$REPO_DIR"/*/; do
   [[ "$(basename "$dir")" == .* ]] && continue
-  [[ "$(basename "$dir")" == tests || "$(basename "$dir")" == distribution ]] && continue
+  [[ "$(basename "$dir")" == tests || "$(basename "$dir")" == distribution || "$(basename "$dir")" == wiki ]] && continue
   [ -f "$dir/SKILL.md" ] || fail "$(basename "$dir")" "Missing SKILL.md"
 done
 
@@ -99,14 +99,14 @@ done
 # --- Test 4: Structural integrity ---
 echo -e "${dim}4. Checking structural integrity...${reset}"
 skill_count=$(ls -d "$REPO_DIR"/*/SKILL.md 2>/dev/null | wc -l)
-if [ "$skill_count" -lt 240 ]; then
-  fail "repo" "Expected ~249 skills, found only $skill_count"
+if [ "$skill_count" -lt 250 ]; then
+  fail "repo" "Expected ~251 skills, found only $skill_count"
 fi
 
 # Check for unsafe directory names
 for dir in "$REPO_DIR"/*/; do
   [[ "$(basename "$dir")" == .* ]] && continue
-  [[ "$(basename "$dir")" == tests || "$(basename "$dir")" == distribution ]] && continue
+  [[ "$(basename "$dir")" == tests || "$(basename "$dir")" == distribution || "$(basename "$dir")" == wiki ]] && continue
   dname="$(basename "$dir")"
   if ! [[ "$dname" =~ ^[a-z0-9][a-z0-9-]*$ ]]; then
     fail "$dname" "Directory name contains unsafe characters"

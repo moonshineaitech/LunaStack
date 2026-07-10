@@ -11,6 +11,8 @@ Use after completing a feature or sprint to measure what happened with real data
 
 Evidence rule: every claim in the retro must cite a specific event from the session (a commit, a failed test run, a correction, a rework loop). A claim without an event behind it gets cut.
 
+No-fabrication rule (this is the one that breaks retros): if a metric wasn't actually captured, write **"not measured"** — never estimate it, never back-solve it from a total, never infer a plausible number. A back-solved phase breakdown that happens to sum to 100% is fabrication, and fabrication in the section meant to enforce evidence discipline is the worst possible failure — it poisons the downstream /learn → /compound loop with fake data. A blank field is honest; an invented one is a lie. Only claim "every line cites an event" if every line actually does.
+
 The 3 core questions — answer all three before formatting output:
 1. What cost the most time? (name the event and the cost)
 2. What would have prevented it? (a rule, a check, an earlier question)
@@ -24,10 +26,10 @@ RETROSPECTIVE
 ═════════════
 Period: [what was built]
 
-Code: [lines added/removed, files, commits]
-Tests: [added, coverage before→after, pass rate]
-Quality: [/verify findings: critical/high/medium/low, resolved]
-Time: [total, time per phase]
+Code: [lines added/removed, files, commits — or "not measured"]
+Tests: [added, coverage before→after, pass rate — or "not measured"]
+Quality: [/verify findings: critical/high/medium/low, resolved — or "not measured"]
+Time: [only phases you actually timed; "not measured" for the rest — do NOT back-solve]
 
 What worked: [with evidence]
 What didn't: [with measured impact]

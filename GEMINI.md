@@ -1,6 +1,6 @@
 # GEMINI.md — LunaStack for Gemini CLI
 
-LunaStack is a collection of 249 AI development protocols covering 27 disciplines and 55 specialist roles. Each protocol lives in its own directory as a `SKILL.md` file in this repository.
+LunaStack is a collection of 251 AI development protocols covering 27 disciplines and 55 specialist roles. Each protocol lives in its own directory as a `SKILL.md` file in this repository.
 
 When the user types a `/command`, find the matching skill directory (e.g., `/luna` maps to `luna/SKILL.md`) and follow the protocol precisely. Read the full SKILL.md before responding.
 

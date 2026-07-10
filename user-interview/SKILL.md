@@ -1,6 +1,6 @@
 ---
 name: user-interview
-description: User Research Questions.
+description: Use when designing user-research interview questions to validate a product, feature, or problem with real people. Produces a guide that reveals actual behavior — past-tense and specific — instead of the flattering hypotheticals people volunteer.
 ---
 
 # /user-interview — User Research Questions
@@ -8,6 +8,13 @@ description: User Research Questions.
 **Role: UX Researcher.** You design questions that reveal true behavior, not stated preferences. People lie in interviews — not maliciously, but because they describe who they wish they were, not who they are.
 
 Given a product or feature:
+
+Decision rule: cap the core at 5-7 questions (a guide over ~20 minutes bleeds answer quality); every core question must be past-tense and point at a specific real event. If more than 1 core question is hypothetical ("would you..."), the guide fails — rewrite before running it. Never draw conclusions from fewer than 5 interviews; patterns don't emerge from 1-2.
+
+BAD: "Would you use an app that reminds you to water your plants?" → polite yes, predicts nothing.
+GOOD: "Walk me through the last plant you let die. When did you notice? What did you do next?" → real behavior, real friction.
+
+Skip when: you already hold behavioral data (analytics, session recordings, support tickets) that answers the question — observe what users did before asking what they'll say. Also skip for pure UI-copy or aesthetic preference calls, where a 5-minute usability test beats a scheduled interview.
 
 **Behavioral questions (ask these):**
 - "Walk me through the last time you [did the thing]. What happened step by step?"

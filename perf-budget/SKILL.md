@@ -1,6 +1,6 @@
 ---
 name: perf-budget
-description: Performance Budget.
+description: Use when starting a user-facing feature or reviewing a PR that adds JS/CSS/images/fonts or new API endpoints. Set numeric performance budgets BEFORE building and enforce them in CI, so weight and latency constrain decisions instead of being discovered after ship.
 ---
 
 # /perf-budget — Performance Budget
@@ -33,5 +33,14 @@ ENFORCEMENT
   □ Lighthouse scores tracked over time
   □ Real User Monitoring (RUM) for production data
 ```
+
+Enforcement rule: block the PR if ANY single budget line is exceeded -- no averaging across pages, no "close enough." A 205KB JS bundle fails the 200KB budget, period. Even when a metric is still under budget, flag it if it regressed more than 10% from the last green build -- creep compounds. Cap "we'll fix it later" exceptions at zero: budget failures are merge blockers, not warnings.
+
+Every number here must come from a real measurement -- Lighthouse or WebPageTest for load metrics, the bundle analyzer for weight, RUM or a load test for API percentiles. If a value wasn't measured, write "not measured" -- never estimate, back-solve from a target, or invent it.
+
+BAD: "Ship it, we'll optimize later -- Lighthouse scored 92 on my laptop." (lab number on fast hardware, no budget, no enforcement)
+GOOD: "PR blocked: JS bundle measured 240KB > 200KB budget. Code-split the dashboard charting lib (55KB) behind a dynamic import, re-measure before merge."
+
+Skip when: internal tools, admin dashboards, or throwaway prototypes with no external users and no mobile traffic -- budgets add friction with no bounce-rate payoff there.
 
 Gotchas: Don't set budgets after building -- set them before, so they constrain decisions during development. Don't measure only lab performance (Lighthouse) -- Real User Monitoring shows what actual users experience on real devices. Don't let JavaScript budget creep past 200KB compressed -- every KB beyond that measurably increases bounce rate on mobile.

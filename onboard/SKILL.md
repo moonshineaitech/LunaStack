@@ -16,7 +16,9 @@ Scan order (each step tells you where to look next — don't skip ahead):
 4. **Tests** — how behavior is specified and how to run them
 5. **CI config** (.github/workflows/) — what "passing" actually requires
 
-Timebox: 10 minutes / ~15 file reads max. If the map isn't clear by then, ship the partial map with explicit gaps — don't keep spelunking.
+Timebox: 10 minutes / ~15 reads max — and a read is a read: file opens, directory listings, lockfiles, and `git log` all count against the budget. Don't reclassify a lockfile as "just a listing" to look under budget; if you went over, say so. If the map isn't clear by the limit, ship the partial map with explicit gaps — don't keep spelunking.
+
+Use only numbers you actually observed — never derive, multiply out, or clone one. Report figures exactly as given; don't back-solve an aggregate that was never stated (a "~40 charges/night for a week" report does NOT become "~280 total" — that multiplication invents a headline number), don't turn fuzzy prose into a precise count ("a week" stays "a week," not "~7 nights"), and never manufacture a counterfactual figure ("~200 if only weeknights ran" invents an operating assumption that appears nowhere). The "14 of 30 commits" figure in the example below is illustrative — report the churn you actually observed, not that number.
 
 Danger-zone heuristics: files >500 lines touched by many recent commits; clusters of TODO/FIXME/HACK; code with no test coverage that everything imports; anything named `utils`, `helpers`, or `legacy`.
 

@@ -22,7 +22,7 @@ jobs:
             # Skip hidden dirs and .github
             [[ "$dir" == .* ]] && continue
             # Skip non-skill directories
-            [[ "$dir" == "tests/" || "$dir" == "distribution/" ]] && continue
+            [[ "$dir" == "tests/" || "$dir" == "distribution/" || "$dir" == "wiki/" ]] && continue
             # Security: skip directory names with unsafe characters
             [[ "$(basename "$dir")" =~ ^[a-z0-9][a-z0-9-]*/?$ ]] || { printf 'WARNING: skipping unsafe dir name: %s\n' "$dir"; continue; }
             if [ ! -f "$dir/SKILL.md" ]; then
@@ -82,8 +82,8 @@ jobs:
         run: |
           count=$(ls -d */SKILL.md 2>/dev/null | wc -l)
           printf 'Found %d skills\n' "$count"
-          if [ "$count" -lt 240 ]; then
-            printf 'WARNING: Expected ~249 skills, found only %d\n' "$count"
+          if [ "$count" -lt 250 ]; then
+            printf 'WARNING: Expected ~251 skills, found only %d\n' "$count"
             exit 1
           fi
           echo "Skill count looks good: $count"
