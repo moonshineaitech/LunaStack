@@ -17,7 +17,7 @@ while IFS= read -r f; do
   grep -qiE '911|988|emergency (number|department|room|services)|call your local emergency|seek emergency' "$f" \
     || { printf "${red}FAIL${reset} %s: no emergency-escalation path\n" "$name"; err=$((err+1)); }
   # 3. Defer-to-professional cue
-  grep -qiE 'licensed|clinician|doctor|physician|healthcare (professional|provider)|pharmacist|professional|surgeon|surgical team|care team|prescriber|specialist|allergist|dietitian|nurse|counselor|therapist|attorney|advocate|dentist|dermatologist|optometrist|ophthalmologist|podiatrist|eye doctor|eye-care|travel clinic' "$f" \
+  grep -qiE 'licensed|clinician|doctor|physician|healthcare (professional|provider)|pharmacist|professional|surgeon|surgical team|care team|prescriber|specialist|allergist|dietitian|nurse|counselor|therapist|attorney|advocate|dentist|dermatologist|optometrist|ophthalmologist|podiatrist|eye doctor|eye-care|travel clinic|pediatrician|obstetrician|midwife|audiologist' "$f" \
     || { printf "${red}FAIL${reset} %s: no defer-to-professional cue\n" "$name"; err=$((err+1)); }
   # 4. Must NOT claim to diagnose (forbidden phrasing).
   #    Exclude BAD:/GOOD: example lines — they legitimately demonstrate what NOT to say.
