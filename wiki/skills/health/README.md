@@ -24,7 +24,7 @@ doctor-visit preparer; a vitals log with trend awareness; evidence-based wellnes
 guidance; and a coordinator for the logistics of care — all so you walk into an
 appointment prepared, not so you skip it.
 
-This library now spans 75+ skills across the whole personal-health journey —
+This library now spans 100 skills across the whole personal-health journey —
 grouped roughly as:
 
 - **Tracking & understanding:** symptom-journal, vitals-tracking, lab-result-explainer,
