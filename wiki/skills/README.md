@@ -22,11 +22,11 @@ Domains are directories; every skill is one self-contained `.md` file. The
 generated **[INDEX.md](INDEX.md)** lists every skill with a one-line description
 (regenerate with `tests/gen_wiki_index.sh` after any change).
 
-- **Build**: `languages` · `frameworks` · `frontend` · `backend` · `mobile` · `gamedev` · `ai`
+- **Build**: `languages` · `frameworks` · `frontend` · `backend` · `mobile` · `embedded` · `gamedev` · `ai` · `agents`
 - **Run**: `cloud` · `ops` · `databases` · `data` · `security` · `testing`
 - **Design & decide**: `architecture` · `design` · `docs` · `devtools` · `engineering`
 - **Grow & lead**: `product` · `growth` · `business` · `leadership`
-- **Live**: `health`
+- **Live**: `second-brain` · `health`
 
 Domains with special rules carry their own README:
 
