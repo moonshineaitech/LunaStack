@@ -24,6 +24,27 @@ doctor-visit preparer; a vitals log with trend awareness; evidence-based wellnes
 guidance; and a coordinator for the logistics of care — all so you walk into an
 appointment prepared, not so you skip it.
 
+This library now spans 40+ skills across the whole personal-health journey —
+grouped roughly as:
+
+- **Tracking & understanding:** symptom-journal, vitals-tracking, lab-result-explainer,
+  medication-tracker, pain-tracking, menstrual-cycle-tracking, wearable-metrics-literacy.
+- **Visits & records:** doctor-visit-prep, telehealth-visit-prep, pediatric-visit-prep,
+  medical-records-organizer, second-opinion-prep, new-diagnosis-navigation,
+  family-health-history, emergency-info-card.
+- **Managing care:** chronic-condition-support, caregiver-coordination,
+  medication-interaction-awareness (pharmacist-deferred), surgery-prep-recovery,
+  allergy-management, immunization-record, advance-directive-organizer.
+- **Prevention & wellness:** preventive-care-schedule, sleep-optimization,
+  nutrition-tracking, exercise-programming, hydration-tracking, health-goal-setting,
+  dental-health-habits, vision-eye-care, skin-health-awareness, fall-prevention,
+  travel-health-prep, smoking-cessation-support.
+- **Support & safety:** symptom-triage-education, first-aid-guidance,
+  mental-health-support (988-first), stress-management-techniques,
+  health-data-privacy, health-insurance-navigator, prescription-cost-navigator.
+
+See `INDEX.md` (generated) for the current full list.
+
 ## The safety contract (every skill enforces it)
 
 Every skill in this directory carries, by construction (checked by
