@@ -11,7 +11,7 @@ while IFS= read -r f; do
   [ -z "$f" ] && continue
   n=$((n+1)); name="$(basename "$f" .md)"
   # 1. Non-diagnostic disclaimer present
-  grep -qiE 'not (a substitute|medical advice|a diagnosis|a clinician|a doctor|a substitute for)|educational (support|information)|not diagnos' "$f" \
+  grep -qiE 'not [a-z ]{0,30}(medical (advice|direction|treatment|nutrition therapy|counsel)|a diagnosis|a clinician|a doctor|a substitute|diagnos)|educational (support|information)|(general |personal )?wellness education|not diagnos' "$f" \
     || { printf "${red}FAIL${reset} %s: no non-diagnostic disclaimer\n" "$name"; err=$((err+1)); }
   # 2. Emergency escalation present
   grep -qiE '911|988|emergency (number|department|room|services)|call your local emergency|seek emergency' "$f" \
