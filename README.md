@@ -18,6 +18,7 @@
 <p align="center">
   <a href="#use-it-in-60-seconds">Quick Start</a> ·
   <a href="#whats-inside">All Protocols</a> ·
+  <a href="#the-skill-wiki">Skill Wiki</a> ·
   <a href="#whats-new-mythos-edition">What's New</a> ·
   <a href="#sources">Sources</a>
 </p>
@@ -59,6 +60,31 @@ sharp; packs add depth where you work. Curation lives in `distribution/packs/`.
 ```bash
 ./setup.sh --team    # SessionStart hook auto-updates from origin
 ```
+
+---
+
+## The Skill Wiki
+
+Beyond the 251 core protocols, LunaStack ships a **verified domain-knowledge
+library**: [`wiki/skills/`](wiki/skills/README.md) — hundreds of behavior-grade
+specialist skills across 23 domains, from `/postgres-production-tuning` to
+`/context-engineering` to `/multiplayer-netcode`.
+
+**Core = how to work. Wiki = what a specialist knows.** They compose.
+
+- **Build**: languages (39) · frameworks · frontend · backend · mobile · gamedev · ai
+- **Run**: cloud · ops · databases · data · security · testing
+- **Design & decide**: architecture · design · docs · devtools · engineering
+- **Grow & lead**: product · growth · business · leadership
+- **Live**: [health](wiki/skills/health/README.md) — 100 personal-health skills
+  under a CI-enforced safety contract (non-diagnostic, disclaimer-first,
+  emergency-escalation) — read its README first
+
+Browse the full generated catalog in
+[`wiki/skills/INDEX.md`](wiki/skills/INDEX.md), and the library map in
+[`wiki/skills/README.md`](wiki/skills/README.md). Every wiki skill passes
+`tests/validate_wiki_skills.sh`; health skills additionally pass the
+`tests/validate_health_skills.sh` safety gate.
 
 ---
 
