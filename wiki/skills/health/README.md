@@ -24,7 +24,7 @@ doctor-visit preparer; a vitals log with trend awareness; evidence-based wellnes
 guidance; and a coordinator for the logistics of care — all so you walk into an
 appointment prepared, not so you skip it.
 
-This library now spans 40+ skills across the whole personal-health journey —
+This library now spans 75+ skills across the whole personal-health journey —
 grouped roughly as:
 
 - **Tracking & understanding:** symptom-journal, vitals-tracking, lab-result-explainer,
@@ -42,8 +42,25 @@ grouped roughly as:
 - **Support & safety:** symptom-triage-education, first-aid-guidance,
   mental-health-support (988-first), stress-management-techniques,
   health-data-privacy, health-insurance-navigator, prescription-cost-navigator.
+- **Clinical action & transitions:** hospital-discharge-plan,
+  medication-reconciliation, specialist-referral-navigation, lab-test-prep,
+  imaging-exam-prep, procedure-bowel-prep-support, informed-consent-understanding,
+  clinical-trial-navigation, wound-care-tracking, self-injection-support,
+  physical-therapy-adherence, cpap-therapy-adherence, home-bp-monitoring,
+  asthma-action-plan-support, glucose-monitoring-support, anticoagulation-support.
+- **Home diagnostics & acute home care:** home-test-kit-literacy,
+  home-pulse-oximeter-use, fever-home-care, cold-flu-home-care,
+  gi-illness-home-care, migraine-headache-journal, digestive-symptom-journal,
+  antibiotic-stewardship, medication-safe-storage-disposal.
+- **Life stages:** prenatal-visit-prep, postpartum-recovery-support,
+  newborn-care-basics, pediatric-visit-prep, teen-to-adult-care-transition,
+  menstrual-cycle-tracking, menopause-symptom-tracking, memory-concern-journal,
+  hearing-health-protection, concussion-recovery-support.
+- **Emergency readiness:** emergency-info-card, cpr-aed-education,
+  naloxone-overdose-response, disaster-medical-preparedness.
 
-See `INDEX.md` (generated) for the current full list.
+See `INDEX.md` (generated) for the current full list. For building this content
+into games (e.g. LunaCelsus), see `wiki/skills/gamedev/`.
 
 ## The safety contract (every skill enforces it)
 
