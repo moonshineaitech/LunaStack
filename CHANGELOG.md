@@ -5,6 +5,33 @@ All notable changes to LunaStack will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- **The Skill Wiki (`wiki/skills/`)** — a verified, domain-knowledge companion to the
+  251-protocol core: **682 behavior-grade specialist skills across 29 domains**, each
+  self-contained and passing `tests/validate_wiki_skills.sh` (frontmatter with a
+  trigger-condition description, a persona, ≥1 numeric decision rule, a BAD/GOOD
+  contrast, a concrete output block, a "Skip when:" escape hatch, and Gotchas — ≤65
+  lines). The mental model: **core tells the agent *how to work*; the wiki tells it
+  *what a specialist knows*.** Domains span Build (languages, frameworks, frontend,
+  backend, mobile, embedded, gamedev, ai, agents), Run (cloud, ops, databases, data,
+  security, testing), Design & decide (architecture, design, docs, devtools,
+  engineering), Grow & lead (product, growth, business, leadership, education,
+  content-creation), and Live (second-brain, finance, health).
+- **Personal-health domain (133 skills)** under a dedicated, CI-enforced safety
+  contract (`tests/validate_health_skills.sh`): every health skill carries a
+  non-diagnostic disclaimer, an emergency-escalation path (911/988), a
+  defer-to-professional cue, and zero diagnostic assertions — non-diagnostic and
+  disclaimer-first by construction.
+- **Agent-engineering domain** — personas, multi-agent topologies, tool design,
+  autonomy ladders, coding-agent harnesses, open-model (Hermes/Llama/Qwen-class) agents,
+  and skill-authoring craft.
+- **`wiki/skills/INDEX.md`** — a generated catalog (via `tests/gen_wiki_index.sh`) with a
+  per-domain table of contents, and **`wiki/skills/README.md`**, the library map.
+- **Front-page + `llms.txt` refresh** — the README and machine-readable index now present
+  the full library (933 skills total = 251 core + 682 wiki).
+
 ## [1.3.0] - 2026-07-05
 
 ### Added
