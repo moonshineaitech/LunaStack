@@ -1,11 +1,13 @@
 # LunaStack
 
-> 251 AI development protocols across 27 disciplines with 55 specialist roles.
+> 251 core AI-development protocols (27 disciplines, 55 specialist roles) PLUS a
+> 682-skill verified specialist wiki across 29 domains — 933 skills total.
 > Type a /command and the AI follows the protocol. Works in claude.ai, Claude
 > Desktop, Claude Code, Cursor, Codex, Gemini CLI, and OpenCode.
 
-Individual SKILL.md files (one directory per skill) are the source of truth.
-LunaStack.md is the generated single-file distribution.
+Core: individual SKILL.md files (one directory per skill) are the source of truth;
+LunaStack.md is the generated single-file distribution. Wiki: self-contained
+behavior-grade skills under wiki/skills/<domain>/, browsable via wiki/skills/INDEX.md.
 
 ## Docs
 
@@ -20,8 +22,11 @@ LunaStack.md is the generated single-file distribution.
 - [README.md](README.md): quick start — `./setup.sh` installs the 25-skill core pack; `--list-packs` shows curated packs (security, design, founder, ship-it); `--global` installs all 251
 - [distribution/packs/](distribution/packs/): pack definitions
 
-## Ecosystem Wiki
+## Skill Wiki (verified specialist library)
 
+- [wiki/skills/INDEX.md](wiki/skills/INDEX.md): generated catalog of all 682 wiki skills across 29 domains
+- [wiki/skills/README.md](wiki/skills/README.md): library map — core (how to work) vs wiki (what a specialist knows)
+- [wiki/skills/health/README.md](wiki/skills/health/README.md): the 133-skill personal-health domain and its CI-enforced safety contract
 - [wiki/catalog.md](wiki/catalog.md): 140 external skill categories cross-referenced to LunaStack skills
 - [wiki/registries.md](wiki/registries.md): where the ecosystem's skills live (registries + official vendor sets)
 
