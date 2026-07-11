@@ -25,8 +25,8 @@ generated **[INDEX.md](INDEX.md)** lists every skill with a one-line description
 - **Build**: `languages` · `frameworks` · `frontend` · `backend` · `mobile` · `embedded` · `gamedev` · `ai` · `agents`
 - **Run**: `cloud` · `ops` · `databases` · `data` · `security` · `testing`
 - **Design & decide**: `architecture` · `design` · `docs` · `devtools` · `engineering`
-- **Grow & lead**: `product` · `growth` · `business` · `leadership`
-- **Live**: `second-brain` · `health`
+- **Grow & lead**: `product` · `growth` · `business` · `leadership` · `education` · `content-creation`
+- **Live**: `second-brain` · `finance` · `health`
 
 Domains with special rules carry their own README:
 
