@@ -22,6 +22,7 @@ ndom=$(echo "$domains" | grep -c . || true)
     [ "$count" = "0" ] && continue
     about=""
     case "$dom" in
+      agents) about="Agent engineering: personas, topologies, tools, harnesses, autonomy" ;;
       ai) about="LLM systems: agents, RAG, evals, inference, guardrails" ;;
       architecture) about="System design: boundaries, DDD, ADRs, resilience" ;;
       backend) about="Server-side patterns: APIs, queues, caching, tenancy" ;;
@@ -32,6 +33,7 @@ ndom=$(echo "$domains" | grep -c . || true)
       design) about="Product design: design systems, UX research, interaction, motion" ;;
       devtools) about="Developer tooling: git, CLIs, dev environments, AI pairing" ;;
       docs) about="Documentation craft: writing, references, tutorials, RFCs" ;;
+      embedded) about="Embedded & IoT: firmware, RTOS, BLE, MQTT, OTA, fleets" ;;
       engineering) about="Engineering process: monorepos, flags, debt, migrations" ;;
       frameworks) about="Framework expertise: React/Next/Vue/Rails/Spring and 25+ more" ;;
       frontend) about="Web platform: performance, CSS, state, PWA, animation" ;;
@@ -43,6 +45,7 @@ ndom=$(echo "$domains" | grep -c . || true)
       mobile) about="Mobile: SwiftUI, Compose, offline sync, releases, push" ;;
       ops) about="Production operations: observability, incidents, CI/CD, GitOps" ;;
       product) about="Product management: discovery, analytics, adoption" ;;
+      second-brain) about="Personal knowledge & life ops: PKM, GTD, reviews, journaling" ;;
       security) about="Security engineering: threat modeling, hardening, response" ;;
       testing) about="Test engineering: pyramids, e2e, contracts, flake control" ;;
     esac

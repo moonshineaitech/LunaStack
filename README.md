@@ -67,16 +67,16 @@ sharp; packs add depth where you work. Curation lives in `distribution/packs/`.
 
 Beyond the 251 core protocols, LunaStack ships a **verified domain-knowledge
 library**: [`wiki/skills/`](wiki/skills/README.md) — hundreds of behavior-grade
-specialist skills across 23 domains, from `/postgres-production-tuning` to
+specialist skills across 26 domains, from `/postgres-production-tuning` to
 `/context-engineering` to `/multiplayer-netcode`.
 
 **Core = how to work. Wiki = what a specialist knows.** They compose.
 
-- **Build**: languages (39) · frameworks · frontend · backend · mobile · gamedev · ai
+- **Build**: languages · frameworks · frontend · backend · mobile · embedded · gamedev · ai · agents
 - **Run**: cloud · ops · databases · data · security · testing
 - **Design & decide**: architecture · design · docs · devtools · engineering
 - **Grow & lead**: product · growth · business · leadership
-- **Live**: [health](wiki/skills/health/README.md) — 100+ personal-health skills
+- **Live**: second-brain (PKM & life ops) · [health](wiki/skills/health/README.md) — 100+ personal-health skills
   under a CI-enforced safety contract (non-diagnostic, disclaimer-first,
   emergency-escalation) — read its README first
 
