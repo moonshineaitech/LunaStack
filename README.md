@@ -202,7 +202,7 @@ POST-INCIDENT:
 | [shanraisshan/best-practice](https://github.com/shanraisshan/claude-code-best-practice) | 17K★ | Gotchas sections, goals+constraints, /redo, /grill, comprehensive workflow patterns |
 | [Anthropic official docs](https://code.claude.com/docs/en/best-practices) | Authoritative | /interview-me, fresh sessions, subagent delegation, context management |
 | [HumanLayer research](https://www.humanlayer.dev/blog/writing-a-good-claude-md) | Production | CLAUDE.md ~80% compliance, hooks 100%, ~150-200 instruction limit |
-| [OpenClaw](https://github.com/steipete/openclaw) | 247K★ (fastest growing) | Skill security lessons, multi-LLM routing, vibe coding warnings |
+| [OpenClaw](https://github.com/openclaw/openclaw) | Official repo | Skill security lessons, multi-LLM routing, vibe coding warnings |
 | [Trail of Bits](https://github.com/trailofbits) | Security firm | CodeQL/Semgrep, supply chain audit, CVE-mapped threats |
 | [NeoLabHQ/reflexion](https://github.com/NeoLabHQ) | Open source | Self-correction loops |
 | [Compound Engineering](https://every.to/) | Every.to | Plan → work → review → compound learning loop |

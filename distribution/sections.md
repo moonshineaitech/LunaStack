@@ -74,7 +74,7 @@ The Superpowers methodology (94K stars on superpowers-dev) eliminates the "impro
 GStack (66K stars, 28 commands by April 2026) is Garry Tan's exact Claude Code setup. 600K lines in 60 days, 10K LOC/week, 100 PRs/week. Encodes "explicit gears" — planning is not review, review is not shipping.
 
 <!-- SECTION: OpenClaw Patterns -->
-# 🔬 OPENCLAW PATTERNS — Multi-Model + Skill Security (lessons from steipete/openclaw, 247K stars)
+# 🔬 OPENCLAW PATTERNS — Multi-Model + Skill Security (lessons from openclaw/openclaw)
 
 OpenClaw is the fastest-growing repo in GitHub history. Its success exposed real lessons about skill systems, multi-LLM routing, and security gaps that LunaStack explicitly addresses.
 
