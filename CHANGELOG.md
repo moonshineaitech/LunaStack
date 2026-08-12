@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **`/social-media` evidence loop** — grounds post briefs in current audience signals, including optional user-provided TweetClaw source packets, without granting publish or account-action authority.
 - **The Skill Wiki (`wiki/skills/`)** — a verified, domain-knowledge companion to the
   251-protocol core: **682 behavior-grade specialist skills across 29 domains**, each
   self-contained and passing `tests/validate_wiki_skills.sh` (frontmatter with a
@@ -139,7 +140,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 55 specialist roles
 - Superpowers Pipeline (12 protocols) from obra/superpowers v5.0.7
 - GStack Team (15 protocols) from garrytan/gstack v0.15.14.0
-- OpenClaw Patterns (10 protocols) from steipete/openclaw lessons
+- OpenClaw Patterns (10 protocols) from openclaw/openclaw lessons
 - Multi-Host compatibility (8 protocols) for Claude Code, Codex, Cursor, Gemini CLI, Copilot CLI, OpenCode
 - Security Skills (8 protocols) from Trail of Bits + CVE lessons
 - Latest Patterns (9 protocols) from Boris Cherny
